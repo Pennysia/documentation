@@ -1,0 +1,14 @@
+# Ensure proper language detection
+*.ts linguist-detectable=true
+*.mts linguist-detectable=true
+*.css linguist-detectable=true
+*.md linguist-documentation=true
+
+# VitePress config files are TypeScript
+docs/.vitepress/config.mts linguist-language=TypeScript
+docs/.vitepress/theme/index.ts linguist-language=TypeScript
+
+# Mark build/cache files as generated
+docs/.vitepress/dist/** linguist-generated=true
+docs/.vitepress/cache/** linguist-generated=true
+node_modules/** linguist-vendored=true
