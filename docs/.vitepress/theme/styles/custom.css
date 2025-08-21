@@ -1,0 +1,99 @@
+:root {
+  --vp-c-brand-1: #0ea5e9;
+  /* primary */
+  --vp-c-brand-2: #0284c7;
+  /* primary dark */
+  --vp-c-brand-3: #38bdf8;
+  /* primary light */
+  --vp-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.VPHome {
+  height: fit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Home hero layout polishing */
+.VPHomeHero {
+  background-color: rgba(14, 165, 233, 0.2);
+}
+
+.VPHomeHero .image img {
+  width: fit-content;
+  border: 2px solid white;
+  border-radius: 15px;
+  max-width: 100%;
+}
+
+
+.VPHomeHero .name {
+  font-weight: 600;
+}
+
+.VPHomeHero .text {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: var(--vp-c-text-2);
+}
+
+.VPHomeHero .tagline {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.VPHome .VPHero {
+  margin-top: 0px;
+}
+
+.VPHome .VPHero .VPButton.brand {
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.35);
+}
+
+.VPHome .VPHero .VPButton.alt {
+  background: rgb(255, 255, 255);
+  color: rgb(53, 53, 53);
+  border: 1px solid var(--vp-c-divider);
+}
+
+
+
+
+.VPFeatures .items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .VPFeatures .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .VPFeatures .items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.VPHome .VPFeatures .item {
+  width: 100%;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.VPHome .VPFeatures .item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 8, 23, 0.08);
+}
+
+/* Footer align center if present */
+.VPFooter {
+  text-align: center;
+}
