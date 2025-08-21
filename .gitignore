@@ -5,6 +5,8 @@ pnpm-lock.yaml
 # VitePress build output
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+.vitepress/dist/
+.vitepress/cache/
 
 # Environment variables
 .env
