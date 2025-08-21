@@ -12,7 +12,6 @@ export default defineConfig({
   title: "Pennysia Docs",
   description: "Everything about our products and services",
   lang: 'en-US',
-  srcDir: './src',
   lastUpdated: true,
   themeConfig: {
     logo: '/favicon.svg',
