@@ -13,13 +13,13 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /
+      link: /overview/intro
     - theme: alt
       text: User Guide
-      link: /exaaaa/markdown-examples
+      link: /guides/how-to-swap
     - theme: alt
       text: GitHub
-      link: /exaaaa/api-examples
+      link: https://github.com/Pennysia
 
 features:
   - title: Consistent, enterprise-ready docs
