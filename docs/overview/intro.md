@@ -18,7 +18,7 @@ Pennysia is an AMM protocol engineered to be its most optimized for liquidity pr
 - **Fungible Liquidity Token**: LP tokens are fungible and can be integrated with other DeFi protocols.
 - **Auto-Compounded Rewards**: All pools live inside a single smart contract instance, minimizing gas usage and enabling more advanced routing and analytics.
 
-::: info
+::: info :information_source:  INFO
 We launch with the proven $x*y=k$ model as our foundation to help users get familiar with the LPM concept, with additional AMM models planned for future releases.
 :::
 
