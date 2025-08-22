@@ -1,6 +1,24 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+title: "Pennysia - Advanced AMM Protocol"
+description: "The AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, uncollateralized flashloans, and manipulation-resistant oracle."
+head:
+  - - meta
+    - property: og:title
+      content: "Pennysia - Advanced AMM Protocol"
+  - - meta
+    - property: og:description
+      content: "The AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, uncollateralized flashloans, and manipulation-resistant oracle."
+  - - meta
+    - property: og:url
+      content: "https://docs.pennysia.com"
+  - - meta
+    - name: twitter:title
+      content: "Pennysia - Advanced AMM Protocol"
+  - - meta
+    - name: twitter:description
+      content: "The AMM where LPs earn from both sides of every trade. Revolutionary DeFi innovation."
 
 hero:
   name: "Pennysia Docs"
