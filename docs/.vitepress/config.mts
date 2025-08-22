@@ -13,6 +13,9 @@ export default defineConfig({
   description: "Everything about our products and services",
   lang: 'en-US',
   lastUpdated: true,
+  markdown: {
+    math: true,
+  },
   themeConfig: {
     logo: '/favicon.svg',
     siteTitle: "Pennysia Docs",
@@ -29,23 +32,35 @@ export default defineConfig({
         text: 'Overview',
         collapsed: true,
         items: [
-          { text: 'Markdown Examples', link: '/exaaaa/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/exaaaa/api-examples' }
+          { text: 'Introduction', link: '/overview/intro' },
+          { text: 'Liquidity Prediction Market', link: '/overview/lpm' }
+        ]
+      },
+      {
+        text: 'Features',
+        collapsed: true,
+        items: [
+          { text: 'Swap', link: '/features/swap' },
+          { text: 'Provide Liquidity', link: '/features/provide' },
+          { text: 'Flashloan', link: '/features/flash' },
+          { text: 'Oracle', link: '/features/oracle' },
         ]
       },{
         text: 'Guides',
         collapsed: true,
         items: [
-          { text: 'Markdown Examples', link: '/exaaaa/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/exaaaa/api-examples' }
+          { text: 'Markdown Examples', link: '/guides/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/guides/api-examples' }
         ]
       }
       ,{
         text: 'Resources',
         collapsed: true,
         items: [
-          { text: 'Markdown Examples', link: '/exaaaa/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/exaaaa/api-examples' }
+          { text: 'Deployment Address', link: '/resources/deployment' },
+          { text: 'Backtest', link: '/resources/backtest' },
+          { text: 'Official Links', link: '/resources/links' },
+          { text: 'Formal Contact', link: '/resources/contact' },
         ]
       }
     ],
