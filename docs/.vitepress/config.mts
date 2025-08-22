@@ -17,14 +17,20 @@ export default defineConfig({
     math: true,
   },
   themeConfig: {
-    logo: '/favicon.svg',
+    logo: {
+      light: '/lightMode.svg',
+      dark: '/darkMode.svg'
+    },
     siteTitle: "Pennysia Docs",
-    search: {provider: 'local'},
-    
+    search: { provider: 'local' },
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/exaaaa/markdown-examples' }
+      { text: 'Overview', link: '/overview/intro' },
+      { text: 'Features', link: '/features/swap' },
+      { text: 'Guides', link: '/guides/how-to-swap' },
+      { text: 'Resources', link: '/resources/deployment' }
+
     ],
 
     sidebar: [
@@ -41,19 +47,21 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Swap', link: '/features/swap' },
-          { text: 'Provide Liquidity', link: '/features/provide' },
+          { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
           { text: 'Flashloan', link: '/features/flash' },
           { text: 'Oracle', link: '/features/oracle' },
         ]
-      },{
+      }, {
         text: 'Guides',
         collapsed: true,
         items: [
-          { text: 'Markdown Examples', link: '/guides/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/guides/api-examples' }
+          { text: 'How to Swap', link: '/guides/how-to-swap' },
+          { text: 'How to Add Liquidity', link: '/guides/how-to-add' },
+          { text: 'How to Withdraw Liquidity', link: '/guides/how-to-withdraw' }
+
         ]
       }
-      ,{
+      , {
         text: 'Resources',
         collapsed: true,
         items: [
@@ -66,16 +74,15 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'x', link: 'https://x.com/vuejs' },
-      { icon: 'telegram', link: 'https://telegram.com/vuejs' },
-      { icon: 'discord', link: 'https://discord.com/vuejs' },
-      { icon: 'youtube', link: 'https://youtube.com/vuejs' },
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'x', link: 'https://x.com/PennysiaLabs' },
+      { icon: 'telegram', link: 'https://t.me/pennysiaprotocol' },
+      { icon: 'discord', link: 'https://discord.com/invite/QHfJz63b3J' },
+      { icon: 'github', link: 'https://github.com/Pennysia' },
     ],
     footer: {
- message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
-      copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan You</a>'
+      message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
+      copyright: 'Copyright (c) 2025 Pennysia'
     },
-    
+
   }
 })
