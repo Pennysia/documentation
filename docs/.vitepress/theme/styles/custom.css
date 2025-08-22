@@ -97,3 +97,65 @@
 .VPFooter {
   text-align: center;
 }
+
+/* Responsive table styles */
+.vp-doc table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: table;
+}
+
+.vp-doc table td, .vp-doc table th {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 8px 12px;
+  width: auto;
+}
+
+/* Table wrapper for overflow handling */
+.vp-doc .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Handle long code blocks in tables */
+.vp-doc table code {
+  word-break: break-all;
+  white-space: pre-wrap;
+  font-size: 0.85em;
+}
+
+/* Custom table styling */
+.vp-doc table thead th {
+  background-color: rgba(14, 165, 233, 0.2);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+/* Remove alternating row colors - make all rows white */
+.vp-doc table tbody tr {
+  background-color: transparent !important;
+}
+
+.vp-doc table tbody tr:nth-child(even) {
+  background-color: transparent !important;
+}
+
+.vp-doc table tbody tr:hover {
+  background-color: rgba(14, 165, 233, 0.05) !important;
+}
+
+/* Mobile responsive table */
+@media (max-width: 768px) {
+  .vp-doc table {
+    font-size: 0.9em;
+  }
+  
+  .vp-doc table td, .vp-doc table th {
+    min-width: 100px;
+    padding: 6px 8px;
+  }
+}
