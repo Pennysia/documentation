@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@miletorix/vitepress-youtube-embed':
+        specifier: ^1.0.2
+        version: 1.0.2(vue@3.5.19)
     devDependencies:
       markdown-it-mathjax3:
         specifier: ^4.3.2
@@ -279,6 +283,11 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@miletorix/vitepress-youtube-embed@1.0.2':
+    resolution: {integrity: sha512-/tNIdEjp9+4uZ7jFm5YLnMctuWamHdp4ztzJSgbqZaD6UP4V3wKcgIJ+BTi8BB3Gwo03mbJ17p/KS7XwW7UJWA==}
+    peerDependencies:
+      vue: ^3.0.0
 
   '@rollup/rollup-android-arm-eabi@4.47.1':
     resolution: {integrity: sha512-lTahKRJip0knffA/GTNFJMrToD+CM+JJ+Qt5kjzBK/sFQ0EWqfKW3AYQSlZXN98tX0lx66083U9JYIMioMMK7g==}
@@ -1141,6 +1150,10 @@ snapshots:
   '@iconify/types@2.0.0': {}
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
+
+  '@miletorix/vitepress-youtube-embed@1.0.2(vue@3.5.19)':
+    dependencies:
+      vue: 3.5.19
 
   '@rollup/rollup-android-arm-eabi@4.47.1':
     optional: true
