@@ -39,7 +39,6 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Introduction', link: '/overview/intro' },
-          { text: 'Liquidity Prediction Market', link: '/overview/lpm' }
         ]
       },
       {
@@ -48,8 +47,11 @@ export default defineConfig({
         items: [
           { text: 'Swap', link: '/features/swap' },
           { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
+          { text: 'Liquidity Prediction Market', link: '/features/liquidity-prediction-market' },
           { text: 'Flashloan', link: '/features/flash' },
           { text: 'Oracle', link: '/features/oracle' },
+          { text: 'Fee', link: '/features/fee' },
+          { text: 'Tokenomics', link: '/features/tokenomic' },
         ]
       }, {
         text: 'Guides',
