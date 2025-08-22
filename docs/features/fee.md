@@ -35,7 +35,7 @@ A 0.3% fee is applied to each flashloan call.
 
 ## Protocol Fee
 The protocol fee is further distributed to two destinations in a 50/50 manner: Pennysia’s Decentralized Reserve and the Development Fund.
-- 50% to the [Decentralized Reserve](/tokenomic): This reserve is used to back PESIA, Pennysia’s native token.
+- 50% to the [Decentralized Reserve](./tokenomic): This reserve is used to back PESIA, Pennysia's native token.
 - 50% to the Development Fund: This fund supports the maintenance and growth of the Pennysia protocol and its related ecosystems, including team compensation, third-party services, business partnerships, marketing, R&D, and more.
 
 
