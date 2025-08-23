@@ -17,6 +17,8 @@ export default defineConfig({
     ['meta', { property: 'og:url', content: 'https://docs.pennysia.com' }],
     ['meta', { property: 'og:image', content: 'https://docs.pennysia.com/readTheDocRainbow.png' }],
     ['meta', { property: 'og:image:alt', content: 'Pennysia - AMM Protocol with Liquidity Prediction Markets' }],
+    ['meta', { property: 'og:image:width', content: '1600' }],
+    ['meta', { property: 'og:image:height', content: '900' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:site', content: '@PennysiaLabs' }],
     ['meta', { name: 'twitter:title', content: 'Pennysia Docs | Pennysia' }],
