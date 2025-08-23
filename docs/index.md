@@ -24,7 +24,7 @@ hero:
   name: "Pennysia Docs"
   text: "Everything you need to know"
   image:
-    src: /readTheDocRainbow.png
+    src: /readTheDocRainbow.avif
     alt: Pennysia AMM Protocol
   tagline: "Complete documentation for features, guides, and developer resources"
   
