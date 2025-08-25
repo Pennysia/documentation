@@ -48,7 +48,8 @@ export default defineConfig({
       { text: 'Overview', link: '/overview/intro' },
       { text: 'Features', link: '/features/swap' },
       { text: 'Guides', link: '/guides/how-to-swap' },
-      { text: 'Resources', link: '/resources/deployment' }
+      { text: 'Resources', link: '/resources/deployment' },
+      { text: 'Feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform' }
 
     ],
 
