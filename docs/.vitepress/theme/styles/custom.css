@@ -22,6 +22,26 @@
   background-color: rgba(14, 165, 233, 0.2);
 }
 
+.VPHomeHero .container {
+  gap: 24px;
+}
+
+
+@media (max-width: 960px) {
+  .VPHomeHero .main {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+.VPHomeHero .main .text {
+  color: rgb(106, 142, 156);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
 .VPHomeHero .image img {
   width: fit-content;
   border: 2px solid white;
