@@ -91,6 +91,7 @@ export default defineConfig({
           { text: 'Backtest', link: '/resources/backtest' },
           { text: 'Official Links', link: '/resources/links' },
           { text: 'Formal Contact', link: '/resources/contact' },
+          { text: 'Demo Video', link: '/resources/demo' },
         ]
       }
     ],

@@ -7,6 +7,9 @@ footer: true
 lastUpdated: true
 outline: 1
 ---
+# 9-minute explanation + demo video
+<YouTubeEmbed video-id="C8pBIXqcm2Q" />
+
 
 # Introduction
 Pennysia is an AMM protocol engineered to be its most optimized for liquidity providers' profitability.
