@@ -59,6 +59,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Introduction', link: '/overview/intro' },
+          { text: 'Demo Video', link: '/overview/demo' },
         ]
       },
       {
@@ -91,7 +92,6 @@ export default defineConfig({
           { text: 'Backtest', link: '/resources/backtest' },
           { text: 'Official Links', link: '/resources/links' },
           { text: 'Formal Contact', link: '/resources/contact' },
-          { text: 'Demo Video', link: '/resources/demo' },
         ]
       }
     ],

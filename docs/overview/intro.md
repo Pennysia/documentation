@@ -7,10 +7,18 @@ footer: true
 lastUpdated: true
 outline: 1
 ---
-# 9-minute explanation + demo video
+# Introduction
+In this video Settee, our CEO, explains what is LPM, how it works, its advantages and potential disruptions. It also showcases the MVP demo of the Pennysia project.
+
 <YouTubeEmbed video-id="C8pBIXqcm2Q" />
 
-# Introduction
+<br/>
+
+
+---
+
+
+# Overview
 Pennysia is an AMM protocol engineered to be its most optimized for liquidity providers' profitability.
 
 - **Liquidity Models**: Its modular design is capable of supporting multiple AMM models. 
