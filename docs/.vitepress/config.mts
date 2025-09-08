@@ -72,7 +72,7 @@ export default defineConfig({
           { text: 'Flashloan', link: '/features/flash' },
           { text: 'Oracle', link: '/features/oracle' },
           { text: 'Fee', link: '/features/fee' },
-          { text: 'Tokenomics', link: '/features/tokenomic' },
+          //{ text: 'Tokenomics', link: '/features/tokenomic' },
         ]
       }, {
         text: 'Guides',
@@ -80,8 +80,8 @@ export default defineConfig({
         items: [
           { text: 'How to Swap', link: '/guides/how-to-swap' },
           { text: 'How to Add Liquidity', link: '/guides/how-to-add' },
-          { text: 'How to Withdraw Liquidity', link: '/guides/how-to-withdraw' }
-
+          { text: 'How to Withdraw Liquidity', link: '/guides/how-to-withdraw' },
+          { text: 'How to Swap LP Tokens', link: '/guides/how-to-lpswap' },
         ]
       }
       , {
