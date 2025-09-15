@@ -56,7 +56,7 @@ export default defineConfig({
     sidebar: [
       {
         text: 'Overview',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'Introduction', link: '/overview/intro' },
           { text: 'Demo Video', link: '/overview/demo' },
@@ -64,7 +64,7 @@ export default defineConfig({
       },
       {
         text: 'Features',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'Swap', link: '/features/swap' },
           { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
@@ -76,7 +76,7 @@ export default defineConfig({
         ]
       }, {
         text: 'Guides',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'How to Swap', link: '/guides/how-to-swap' },
           { text: 'How to Add Liquidity', link: '/guides/how-to-add' },
@@ -86,7 +86,7 @@ export default defineConfig({
       }
       , {
         text: 'Resources',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'Deployment Address', link: '/resources/deployment' },
           { text: 'Backtest', link: '/resources/backtest' },

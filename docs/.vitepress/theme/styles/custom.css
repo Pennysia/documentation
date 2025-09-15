@@ -215,3 +215,39 @@
   }
 
 }
+
+/* Custom sidebar section headers styling */
+.VPSidebarItem.level-0 > .item {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+  padding: 2px 12px !important;
+  margin-top: 4px !important;
+  border-radius: 6px !important;
+  margin-bottom: 4px !important;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  /* color: white !important; */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+}
+
+/* .VPSidebarItem.level-0 > .item > .caret {
+  color: white !important;
+} */
+
+/* Alternative styling for dark mode */
+.dark .VPSidebarItem.level-0 > .item > .text {
+  color: white !important;
+}
+
+/* Add padding to sidebar */
+.VPSidebar .nav {
+  padding-top: 1rem !important;
+}
+
+.VPNavBar .VPNavBarTitle .title {
+  border-bottom: none !important;
+}
