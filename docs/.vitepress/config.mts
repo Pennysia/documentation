@@ -99,7 +99,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'x', link: 'https://x.com/PennysiaLabs' },
       { icon: 'telegram', link: 'https://t.me/pennysiaprotocol' },
-      { icon: 'discord', link: 'https://discord.com/invite/QHfJz63b3J' },
+      { icon: 'discord', link: 'https://discord.gg/G7rxGgZhXa' },
       { icon: 'github', link: 'https://github.com/Pennysia' },
     ],
     footer: {
