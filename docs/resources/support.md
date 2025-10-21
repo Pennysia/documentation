@@ -24,4 +24,3 @@ Pennysia offers dedicated support channels to assist users, developers, and part
 
 More communication channels will be introduced as the ecosystem expands.
 
----
