@@ -5,7 +5,7 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 4
+outline: 3
 ---
 
 # Formal Contact

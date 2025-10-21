@@ -5,12 +5,14 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 1
+outline: 2
 ---
 
 # Deployment Address
 List of our smart contract addresses across networks
 
-| Networks | Market | Router |
+COMING SOON.
+
+<!-- | Networks | Market | Router |
 | :------: | :----: | :----: |
-| Sonic Mainnet | `0xE7fc91070ceE115e4B9dfa97B90603e41D9A2176` | `0x107F61D94A9072c50727E3D6D52A44CDE6AE2f77` |
+| Sonic Mainnet | `0xE7fc91070ceE115e4B9dfa97B90603e41D9A2176` | `0x107F61D94A9072c50727E3D6D52A44CDE6AE2f77` | -->

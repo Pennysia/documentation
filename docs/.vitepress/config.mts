@@ -72,7 +72,6 @@ export default defineConfig({
           { text: 'Flashloan', link: '/features/flash' },
           { text: 'Oracle', link: '/features/oracle' },
           { text: 'Fee', link: '/features/fee' },
-          //{ text: 'Tokenomics', link: '/features/tokenomic' },
         ]
       }, {
         text: 'Guides',
@@ -88,10 +87,10 @@ export default defineConfig({
         text: 'Resources',
         collapsed: false,
         items: [
-          { text: 'Deployment Address', link: '/resources/deployment' },
-          { text: 'Backtest', link: '/resources/backtest' },
           { text: 'Official Links', link: '/resources/links' },
+          { text: 'Deployment Address', link: '/resources/deployment' },
           { text: 'Formal Contact', link: '/resources/contact' },
+          { text: 'Support', link: '/resources/support' },
         ]
       }
     ],
