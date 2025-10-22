@@ -47,7 +47,7 @@ export default defineConfig({
     nav: [
       { text: 'Overview', link: '/overview/intro' },
       { text: 'Features', link: '/features/swap' },
-      { text: 'Guides', link: '/guides/how-to-swap' },
+      { text: 'Guides', link: '/guides/trader' },
       { text: 'Resources', link: '/resources/deployment' },
       { text: 'Feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform' }
 
@@ -77,10 +77,9 @@ export default defineConfig({
         text: 'Guides',
         collapsed: false,
         items: [
-          { text: 'How to Swap', link: '/guides/how-to-swap' },
-          { text: 'How to Add Liquidity', link: '/guides/how-to-add' },
-          { text: 'How to Withdraw Liquidity', link: '/guides/how-to-withdraw' },
-          { text: 'How to Swap LP Tokens', link: '/guides/how-to-lpswap' },
+          { text: 'Trader', link: '/guides/trader' },
+          { text: 'Liquidity Provider', link: '/guides/liquidity-provider' },
+          { text: 'Pool Deployer', link: '/guides/pool-deployer' },
         ]
       }
       , {

@@ -1,14 +1,15 @@
 ---
-title: Add Liquidity
-description: This page demonstrates how to add liquidity on Pennysia user interface.
+title: Trader
+description: This page demonstrates how to trade on Pennysia.
 lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 2
+outline: 1
 ---
-
-# Add Liquidity
+# How to Swap
+COMING SOON.
+<!-- # Add Liquidity
 This page demonstrates how to add liquidity on Pennysia user interface.
 
 ## Create a New Pool
@@ -45,4 +46,4 @@ Before proceeding any below steps, make sure your wallet/account is connected.
 ::: tip :book: TIP
 You can add more liquidity to existing positions by repeating the process with the same token pair.
  :::
-
+ -->

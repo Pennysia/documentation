@@ -5,10 +5,10 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 1
+outline: 4
 ---
-
-# Swap Token
+COMING SOON.
+<!-- # Swap Token
 This page demonstrates how to swap tokens on Pennysia user interface.
 <YouTubeEmbed video-id="7o7ya0se5Y4" />
 
@@ -29,5 +29,5 @@ Before proceeding any below steps, make sure your wallet/account is connected.
 
 ::: tip :book: TIP
 If the swap fails due to price movement, click the settings icon (⚙️) to increase slippage tolerance, then try again.
- :::
+ ::: -->
 

@@ -1,14 +1,16 @@
 ---
-title: LP Swap
-description: This page demonstrates how to swap LP tokens on Pennysia user interface.
+title: Liquidity Provider
+description: This page explains how liquidity provider can interact with Pennysia protocol.
 lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 4
+outline: 2
 ---
 
-# Liquidity Swap
+# How to LP on Pennysia
+COMING SOON.
+<!-- # Liquidity Swap
 This page demonstrates how to swap LP tokens on Pennysia user interface.
 
 ## Swap LP Tokens
@@ -26,4 +28,4 @@ Before proceeding any below steps, make sure your wallet/account is connected.
 4. Execute Swap: Click the 'Swap' button to initiate the transaction.
 5. Approve Tokens (if needed): Your wallet will prompt you to approve token spending (one-time setup per token).
 6. Confirm Transaction: Your wallet will pop up asking you to sign/confirm the transaction - click 'Confirm'.
-7. Done. The swap is complete and the LP position is updated.
+7. Done. The swap is complete and the LP position is updated. -->
