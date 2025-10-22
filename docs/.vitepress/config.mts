@@ -91,6 +91,7 @@ export default defineConfig({
           { text: 'Deployment Address', link: '/resources/deployment' },
           { text: 'Formal Contact', link: '/resources/contact' },
           { text: 'Support', link: '/resources/support' },
+          { text: 'Hackathon', link: '/resources/hackathon' },
         ]
       }
     ],
