@@ -5,7 +5,7 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 3
+outline: [2,3]
 ---
 
 # Liquidity Prediction Market

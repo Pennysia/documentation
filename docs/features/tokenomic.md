@@ -5,7 +5,7 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 7
+outline: [2,3]
 ---
 
 # Tokenomics

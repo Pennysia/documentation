@@ -5,7 +5,7 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 3
+outline: [2,3]
 ---
 # Introduction
 In this video Settee, our CEO, explains what is LPM, how it works, its advantages and potential disruptions. It also showcases the MVP demo of the Pennysia project.
