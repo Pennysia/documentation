@@ -21,36 +21,44 @@ head:
       content: "The AMM where LPs earn from both sides of every trade. Revolutionary DeFi innovation."
 
 hero:
-  name: "Pennysia Docs"
-  text: "Everything you need to know"
+  # name: "All you can read. It's free"
+  text: "It's all you may read."
   image:
     src: /readTheDocRainbow.avif
     alt: Pennysia AMM Protocol
-  tagline: "Complete documentation for features, guides, and developer resources"
+  tagline: "Complete documentation for features, guides, and resources."
   
   actions:
     - theme: brand
-      text: Get Started
+      text: Get Started ->
       link: /overview/intro
     - theme: alt
       text: User Guide
       link: /guides/how-to-swap
-    - theme: alt
-      text: GitHub
-      link: https://github.com/Pennysia
+
 
 features:
   - title: Liquidity Prediction Market
-    icon: 📘
-    details: Turn volatility into profit with directional LPing. Express market bias while earning fees from both sides.
-  - title: Modular AMM Design
-    icon: 📘
-    details: Support multiple AMM models with proven x*y=k foundation and planned future expansions.
-  - title: Multi-token Flashloans  
-    icon: 📘
-    details: Borrow any amount with 0.3% fee. Multi-asset support for arbitrage, liquidations, and complex strategies.
+    details: |
+      <img src="/h1.svg" alt="lpm" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 12px 0;">
+      
+      Turn volatility into profit with directional LPing. Express market bias while earning fees from both sides.
+    link: /features/liquidity-prediction-market
+  - title: Money Market Integration
+    details: |
+      <img src="/rc1.svg" alt="Earn with Money Market" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 4px 0;">
+      
+      A new way to capital efficiency. Boost yield safely with the largest money market in DeFi.
+  - title: Weighted Dynamic Fees
+    details: |
+      <img src="/rc2.svg" alt="Voting-based dynamic fee" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 12px 0;">
+      
+      Fair pricing based on weighted averaging approach, contributed by all liquidity providers.
   - title: Cube-Root TWAP Oracle
-    icon: 📘
-    details: Manipulation-resistant pricing that combines arithmetic precision with geometric stability.
+    details: |
+      <img src="/rc3.svg" alt="cbrtTwap Oracle" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 12px 0;">
+      
+      Manipulation-resistant pricing that combines arithmetic precision with geometric stability.
+    
 ---
 

@@ -1,5 +1,5 @@
 :root {
-  --vp-c-brand-1: #0ea5e9;
+  --vp-c-brand-1: #039ce9;
   /* primary */
   --vp-c-brand-2: #0284c7;
   /* primary dark */
@@ -9,21 +9,35 @@
   --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Custom text selection/highlight colors */
+::selection {
+  background-color: var(--vp-c-brand-1);
+  color: white;
+}
+
+/* Firefox compatibility */
+::-moz-selection {
+  background-color: var(--vp-c-brand-1);
+  color: white;
+}
+
 .VPHome {
   height: fit;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 100px;
 }
 
 /* Home hero layout polishing */
 .VPHomeHero {
-  background-color: rgba(14, 165, 233, 0.2);
+  /* background-color: rgba(23, 163, 233, 0.78); */
+  background: linear-gradient(135deg, white, var(--vp-c-brand-2));
 }
 
 .VPHomeHero .container {
-  gap: 24px;
+  gap: 32px;
+  padding: 1rem 0rem;
 }
 
 
@@ -34,8 +48,8 @@
   }
 }
 .VPHomeHero .main .text {
-  color: rgb(106, 142, 156);
-  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  font-size: 2.4rem;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
@@ -44,8 +58,8 @@
 
 .VPHomeHero .image img {
   width: fit-content;
-  border: 2px solid white;
-  border-radius: 15px;
+  /* border: 2px solid white; */
+  /* border-radius: 15px; */
   max-width: 100%;
 }
 
@@ -54,15 +68,11 @@
   font-weight: 600;
 }
 
-.VPHomeHero .text {
-  font-weight: 600;
-  font-size: 2.4rem;
-  color: var(--vp-c-text-2);
-}
 
 .VPHomeHero .tagline {
   font-weight: 300;
   font-size: 1.5rem;
+  color: black;
 }
 
 .VPHome .VPHero {
@@ -70,14 +80,21 @@
 }
 
 .VPHome .VPHero .VPButton.brand {
-  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  /* background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2)); */
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 1rem;
   box-shadow: 0 6px 16px rgba(14, 165, 233, 0.35);
+  padding: 0.5rem 1.5rem;
 }
 
 .VPHome .VPHero .VPButton.alt {
   background: rgb(255, 255, 255);
   color: rgb(53, 53, 53);
   border: 1px solid var(--vp-c-divider);
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+
+
 }
 
 .VPFeatures .items {
@@ -118,7 +135,7 @@
 
 .VPHome .VPFeatures .item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(2, 8, 23, 0.08);
+  box-shadow: 0 8px 24px rgba(43, 93, 221, 0.08);
 }
 
 /* Ensure consistent card heights in 4-column layout */
@@ -200,7 +217,7 @@
 }
 
 .vp-doc table tbody tr:hover {
-  background-color: rgba(14, 165, 233, 0.05) !important;
+  background-color: rgb(14, 164, 233) !important;
 }
 
 /* Mobile responsive table */
@@ -251,3 +268,29 @@
 .VPNavBar .VPNavBarTitle .title {
   border-bottom: none !important;
 }
+
+/* Style h2 headings with blue color */
+.vp-doc h2 {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Custom styling for feature icons - specifically for showcase image */
+.VPHome .VPFeatures .item .icon img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust feature icon container size for larger images */
+.VPHome .VPFeatures .item .icon {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

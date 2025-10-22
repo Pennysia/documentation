@@ -5,7 +5,7 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: 5
+outline: [2,3]
 ---
 
 # Hackathon
@@ -18,21 +18,21 @@ This is an **archived** page referring to where Pennysia protocol started. It do
 Information below contains all the necessary links to the hackathon and our first MVP.
 
 
-## All Hackathon Winners: [Link](https://x.com/SonicWorldHQ/status/1973693977116495939)
-The announcement link to showcase all winners.
+## All Hackathon Winners
+The announcement link to showcase all winners, [link here.](https://x.com/SonicWorldHQ/status/1973693977116495939)
 
 [![Winners](/Winners.png)](https://x.com/SonicWorldHQ/status/1973693977116495939)
 
 
-## Pennysia 1st place: [Link](https://x.com/SonicWorldHQ/status/1973693995168731624)
-The separate announcement for Pennysia winning the 1st place.
+## Pennysia 1st place 
+The separate announcement for Pennysia winning the 1st place, [link here.](https://x.com/SonicWorldHQ/status/1973693995168731624)
 
 [![PennysiaWon](/PennysiaWon.png)](https://x.com/PennysiaLabs/status/1973696631813136445)
 <br/>
 [![FirstPlace](/FirstPlace.png)](https://x.com/SonicWorldHQ/status/1973693995168731624)
 
-## Project Submission: [Links](https://dorahacks.io/buidl/32575)
-Our Hackathon project submission was built on Dorahacks.
+## Project Submission
+Our Hackathon project submission was built on Dorahacks, [link here.](https://dorahacks.io/buidl/32575)
 
 [![Dorahacks](/Dorahacks.png)](https://dorahacks.io/buidl/32575)
 

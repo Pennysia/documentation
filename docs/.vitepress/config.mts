@@ -45,7 +45,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Overview', link: '/overview/intro' },
+      { text: 'Get Started', link: '/get-started/overview' },
       { text: 'Features', link: '/features/swap' },
       { text: 'Guides', link: '/guides/trader' },
       { text: 'Resources', link: '/resources/links' },
@@ -55,11 +55,13 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Overview',
+        text: 'Get Started',
         collapsed: false,
         items: [
-          { text: 'Introduction', link: '/overview/intro' },
-          { text: 'Demo Video', link: '/overview/demo' },
+          // { text: 'Introduction', link: '/get-started/intro' },
+          {text: 'Overview', link: '/get-started/overview' },
+          {text: 'Concept', link: '/get-started/concept' },
+          // { text: 'Demo Video', link: '/get-started/demo' },
         ]
       },
       {
