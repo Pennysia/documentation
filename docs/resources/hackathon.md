@@ -46,3 +46,12 @@ The video explains the overview of Pennysia's LPM, how it works, its performace,
 This video only shows the demo of how to interact with Pennysia web application.
 
 <YouTubeEmbed video-id="IKanvcRU8FM" />
+
+## Archived Backtest
+Pennysia' [backtest](https://github.com/Pennysia/backTest-2021-2024) using 4 years of historical data (2021-2024), demonstrates Pennysia's clear financial edge over Uniswap V2 and traditional XYK models. With LPM, correct predictions earn double trading fees, specifically designed to offset impermanent loss (IL). This led to substantially higher returns, especially in trending and volatile markets. Our analysis shows Pennysia can offer APRs over 100% when predictions are correct, significantly outperforming Uniswap V2's typical 71%.
+
+::: info :information_source:  INFO
+This backtest is no longer valid with the current version of LPM. This test assumes an equal amount of liquiidty on all directions.
+:::
+![pennysia_vs_uniswap_showcase](/pennysia_vs_uniswap_showcase.png)
+
