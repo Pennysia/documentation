@@ -43,22 +43,25 @@ features:
       <img src="/h1.svg" alt="lpm" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 12px 0;">
       
       Turn volatility into profit with directional LPing. Express market bias while earning fees from both sides.
-    link: /features/liquidity-prediction-market
+    link: /features/lpm
   - title: Money Market Integration
     details: |
       <img src="/rc1.svg" alt="Earn with Money Market" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 4px 0;">
       
       A new way to capital efficiency. Boost yield safely with the largest money market in DeFi.
+    link: /features/aave-integration
   - title: Weighted Dynamic Fees
     details: |
       <img src="/rc2.svg" alt="Voting-based dynamic fee" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 12px 0;">
       
       Fair pricing based on weighted averaging approach, contributed by all liquidity providers.
+    link: /features/fee
   - title: Cube-Root TWAP Oracle
     details: |
       <img src="/rc3.svg" alt="cbrtTwap Oracle" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin: 12px 0;">
       
       Manipulation-resistant pricing that combines arithmetic precision with geometric stability.
+    link: /features/oracle
     
 ---
 
