@@ -218,7 +218,9 @@
 }
 
 .vp-doc table tbody tr:hover {
-  background-color: rgb(14, 164, 233) !important;
+  background-color: rgb(138, 190, 214) !important;
+  color: white !important;
+
 }
 
 /* Mobile responsive table */

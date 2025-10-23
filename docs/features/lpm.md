@@ -9,92 +9,98 @@ outline: [2,3]
 ---
 
 # Liquidity Prediction Market
-At Pennysia, you can have long and short liquidity positions.
-We design this feature to be composable. It can be seen as an extension to all unified-liquidity AMM models in major protocols. The objective is to
-**enhance earning opportunities while reserve core functionalities in the existing AMM models.**
-
-## Limitation in regular AMM LPing
-1. **Volatility erodes returns**
-Most cryptocurrencies experience significant price swings. In a constant-product AMM, impermanent loss from volatility often outweighs the trading fees earned, leading to negative net returns for LPs over time.
-
-2. **Bias against holding emerging assets**
-In regular AMMs, providing liquidity forces LPs to hold equal amounts of both assets. This dilutes exposure to small-cap or newly launched tokens that may have higher growth potential, reducing upside from capital appreciation.
-
-3. **No way to combine yield and conviction** 
-Traditional AMMs offer no mechanism to earn swap fees while maintaining a chosen market bias. LPs must choose between:
-    - **Directional holding** to maximize capital gains (but earn no fees), or
-    - **Neutral LPing** to earn passive income (but sacrifice directional exposure).
-
-## Solution: Liquidity Prediction Market (LPM)
-LPM makes directional LPing possible. It is Pennysia’s unique liquidity provisioning mode that turns providing liquidity into a **continuous prediction market** on the direction of future trades, making volatility a potential source of profit instead of a risk to avoid.
-
-Instead of the usual single liquidity pool per side of a pair, each token’s reserve is split into two buckets:
-
-- **Long bucket** → earns more when the token is sold into the pool (token is the output).
-- **Short bucket** → earns more when the token is bought from the pool (token is the input).
-
-This structure allows liquidity providers (LPs) to express a directional bias — essentially making a live market bet on order flow.
-
-## How It Works
-![how-lpm-work](/liquidity_prediction_market_user_view.svg)
-1. **Reserves are split:**
-For a pair (Token A, Token B) we track:
-```reserveA_Long, reserveA_Short, reserveB_Long, reserveB_Short ```
-Pricing still uses total reserves:
-```reserveA_total = reserveA_Long + reserveA_Short``` , ```reserveB_total = reserveB_Long + reserveB_Short```
-Trades see the same price curve as a constant-product AMM.
-
-2. **Fee routing is directional:**
- - **Output side** (token being sent to trader): 100% of the swap fee is added to its Long bucket.
- - **Input side** (token being taken from trader): Up to the swap fee amount is shifted from Long → Short in that token.
-3. **Outcome:**
-- If your token is often the output in swaps, its Long bucket grows faster — LPs in that bucket collect more fees and face less impermanent loss (IL).
-- If your token is often the input, its Long bucket loses balance to Short — LPs in that bucket bear more IL.
-
-## Why It’s a Prediction Market
-Each bucket is a standing bet on future order flow:
-| Bucket | Bet Implied |
-| :------: | :----: |
-| Token A Long | “More traders will sell Token B to buy Token A.” |
-| Token A Short | “More traders will sell Token A to buy Token B.” |
-| Token B Long | “More traders will sell Token A to buy Token B.” |
-| Token B Short | “More traders will sell Token B to buy Token A.” |
-
-- If you guess correctly, directional fees push value into your bucket faster than IL can erode it.
-- If you guess wrong, IL is amplified until flow reverses.
-
-## Example: Directional Flow
-Initial reserves (simplified):
-
-```A_Long = 500, A_Short = 500``` , ``` B_Long = 500, B_Short = 500```
-
-A large swap buys B with A (A is input, B is output):
-- **Output side (B)**: Fee credited to B_Long.
-- **Input side (A)**: Fee shifted from A_Long → A_Short.
-
-Result after the trade:
-
-```A_Long ↓, A_Short ↑``` , ```B_Long ↑, B_Short unchanged```
-- B_Long LPs just “won” that round.
-- A_Long LPs “lost”.
+The Liquidity Prediction Market (LPM) is a fusion between Automated Market Making (AMM) and prediction market dynamics. It enables liquidity providers (LPs) to express their directional market views and earn passive yield when their predictions align with market movements — without putting principal at any extra risk.
 
 
-## Observation
-### If Price Returns Later
-If later trades reverse the price exactly, the imbalance partially unwinds — but not perfectly.
-- Fees depend on current reserves, not the original.
-- The system keeps a memory of past flow — so LPs who guessed right keep part of the edge until enough opposite flow erases it.
-### Strategic Implications
-- **Hold your bias**: If you expect more buys of Token X, provide liquidity in Token X_Long.
-- **Switch if wrong**: If flow changes direction persistently, move to the winning bucket to stop bleeding IL.
-- **Flow arbitrage**: Traders can’t directly extract your directional fees — only opposite flow can.
-### Key Takeaways
-- **More than AMM**: This isn’t just price-making — it’s flow prediction with real stakes.
-- **Path-dependent returns**: Outcomes depend on the sequence of trades, not just start/end prices.
-- **No fixed expiry**: The “market” never ends — you can enter/exit anytime.
+## **Summary**
+1. LPs deposit liquidity in the same way as Uniswap V2.
+2. LPs allocate their liquidity between two **prediction buckets**, each representing a different market stance.
+    1. **Bullish on X:** Earns trading fees when the price of token X increases (e.g., when X is being bought).
+    2. **Bullish on Y:** Earns trading fees when the price of token Y increases (e.g., when Y is being bought).
+3. For each trade, liquidity from both bucket are utilized, but only the correctly predicted side collects the fees.
+4. LPs can switch bucket anytime.
+5. LP can stay neutral by allocating equal value to both buckets.
+
+::: info :information_source:  INFO
+Note: A liquidity pool is made up of two token, assuming tokenX and tokenY.
+:::
+
+
+## Why LPM?
+
+Both users and projects are already familiar with Uniswap V2, a model widely respected for its simplicity, low-risk profile, fungible LP tokens, automatic compounding, and long-term sustainability. However, despite its elegance, it come with fundamental limitations:
+
+1. **Limited Yield Potential**
+    
+    Uniswap V2 offers relatively low returns compared to newer models like concentrated liquidity AMMs. While these newer systems can provide higher yields, they also expose LPs to significantly greater **principal and impermanent loss risks**.
+    
+2. **No Market Expression**
+    
+    LPs in Uniswap V2 cannot express **directional market views**. In reality, most participants have a bias — bullish or bearish — toward certain assets, yet there is no native mechanism to benefit from these market perspectives.
+    
+3. **Other alternatives are risky**
+    
+    Besides concentrated liquidity, another way to express a **market bias** is by **adjusting liquidity ratios** — for example, shifting from a 50/50 pool to a 60/40 or 80/20 allocation. However, as the market moves against the chosen bias, the LP’s **principal value deteriorates** due to the asymmetric reserve balance. This means such strategies cannot operate infinitely or passively, as they **require active management and constant rebalancing** to avoid capital loss.
+    
+
+LPM solves these fundamental problems by enabling **bias-driven liquidity provisioning** that preserves **principal stability.**
+
+1. LPs have the same low risk profile as in Uniswap V2.
+2. LPs can express their market bias(bullish on X or bullish on Y) and earn high yields when correct.
+3. Face **no principal loss** and **no additional impermanent loss** if their prediction is wrong
+4. Retain all the core benefits of Uniswap V2 — including simplicity, fungible LP tokens, and auto-compounding rewards.
+5. LPs can switch sides freely and can stay neutral.
+
+## How it works?
+
+Providing liquidity in Pennysia is as simple and familiar as in Uniswap V2. The only additional step is that liquidity providers (LPs) choose how to allocate their liquidity between two directional buckets — **bullish on X** and **bullish on Y**.
+
+### **Example Scenario**
+
+- **Step 1: Deposit Liquidity**
+
+    Bob provides liquidity to the **X–Y** market just like in Uniswap V2.
+    
+- **Step 2: Express Market Bias**
+
+    Since Bob is **bullish on token X** (and therefore bearish on token Y), he allocates **100% of his liquidity** to the **bullish on X** bucket.
+    
+    - When traders **buy token X** (price of X rises), Bob’s liquidity position **earns trading fees**.
+    - When traders **sell token X** (price of X falls), Bob’s position **does not earn fees** on that trade.
+
+
+- **Step 3: Adjust Strategy Dynamically**
+
+    Later, Bob may decide to balance his exposure by allocating **60% to bullish on X** and **40% to bullish on Y**. This allows him to **earn fees from both sides**, while keeping a slight bias toward token X.
+    
+- **Step 4: Stay Neutral When Uncertain**
+    
+    When Bob is uncertain about market direction, he reallocates to **50% bullish on X and 50% bullish on Y**, maintaining a **neutral stance** and earning a steady baseline of fees.
+
+
+## Reward
+
+By combining AMM mechanics with predictive allocation, LPM allows LPs to amplify yield potential without increasing exposure. When a user’s market view proves correct, their allocated bucket captures all trading fees from that direction, effectively multiplying returns compared to neutral liquidity positions.
+
+In addition, rewards are **auto-compounded in real time**, and with the [Aave integration](./aave-integration.md), LPs also **earn passive lending interest** — resulting in stacked yield streams from multiple on-chain sources.
+
+
+## Risk
+
+LPM is designed to preserve the same principal safety and risk profile as Uniswap V2. Liquidity providers never lose their initial capital due to incorrect market predictions — they simply earn fewer fees when their prediction does not align with market direction.
+
+The only risks present are those inherent to standard AMM participation, such as impermanent loss and smart contract risk.
+
+
+
+## Takeaway
+
+- LPs can adjust their allocation at any time, based on market conditions or personal outlook — with no penalties, lockups, or added risk.
+- LPM transforms liquidity provision into an intelligent, strategy-driven, and sustainable form of passive income.
+- It bridges the safety of Uniswap V2 with the earning potential of prediction markets, offering the best of both worlds in one protocol.
 
 ::: tip :book: TIP
-To reduce risk, you can split allocation between Long and Short buckets and rebalance based on market signals. Allocating 100% in one direction is highest risk, highest reward.
+You can split liquidity evenly between both buckets and rebalance later. Allocating more to one side may boost returns in trending markets, but may underperform in sideways conditions.
 :::
 
 

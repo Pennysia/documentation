@@ -9,132 +9,47 @@ outline: [2,3]
 ---
 
 # Flashloan
-Pennysia flashloans let you borrow tokens with no collateral as long as you return them (plus a 0.3% fee) within the same transaction. They’re atomic: if you don’t pay back in time, the whole transaction reverts.
+Pennysia introduces a next-generation **multi-token flashloan system**, built directly into its **singleton architecture**.
 
-## TL;DR
-- Function: ```flash(address to, address[] tokens, uint256[] amounts)```
-- **Fee**: 0.3% per token (ceiled)
-- **Multi-asset**: borrow 1..N tokens in one call
-- **Atomic**: if payback < required, tx reverts
-- Non-reentrant / no-delegatecall guarded
-- **Where fees go**: fees become excess token balances and are later swept by the protocol owner, you can visit [Fee](./fee).
+Unlike traditional flashloans that operate on isolated liquidity pools, Pennysia’s unified contract architecture allows **all tokens within the protocol** to be accessed from a **shared global balance sheet**.
 
-## When to use
-- On-chain arbitrage and liquidations
-- Collateral swaps / debt rebalancing
-- Multi-pool routing or multi-token operations in one tx
+This enables developers and traders to execute **complex multi-asset operations** within a single transaction — efficiently, securely, and gas-optimized.
 
-## How it works
-1. You call ```flash(to, tokens, amounts)``` from your contract (the “callback”).
 
-2. For each token ```i```, the contract transfers ```amounts[i]``` to ```to```.
+## Key Features
 
-3. The contract records ```balancesBefore[i]``` for each token.
+1. **Multi-Token Flashloans**
+    
+    Borrow multiple tokens simultaneously within one atomic transaction. This enables advanced on-chain strategies such as **multi-pair arbitrage**, **portfolio rebalancing**, **collateral refinancing**, or **batch liquidations** — all executed seamlessly in one call.
+    
+2. **Universal Liquidity Access**
+    
+    Because all markets reside inside a **single smart contract**, Pennysia treats every token reserve as part of a unified liquidity system. This design removes the need for per-pair pool isolation, maximizing capital utilization and reducing redundant operations.
+    
+3. **Gas Efficiency**
+    
+    The singleton model eliminates repetitive state changes across multiple pools, resulting in **significantly lower gas costs** compared to legacy AMM-based flashloan designs.
+    
+4. **Security and Atomicity**
+    
+    All flashloan operations are **fully atomic** — borrowed assets must be returned within the same transaction. If repayment fails, the entire operation reverts automatically, ensuring zero risk to the protocol and its liquidity providers.
 
-4. It computes ```payback[i] = ceil(amounts[i] * 1003 / 1000)``` (includes the 0.3% fee).
+## Use Cases
 
-5. It then calls your contract back via ```Callback.tokenCallback(...)```.
+- Cross-asset arbitrage across multiple Pennysia markets
+- On-chain liquidations and debt refinancing
+- Multi-token swaps or portfolio hedging
+- Capital-efficient composable DeFi strategies
 
-6. Inside your callback, you must ensure the Market’s real balances are **≥ balancesBefore + payback** for each token before returning (i.e., you must pay back).
 
-7. If any token is short, revert (the whole tx reverts and no tokens leave the pool).
+## Fee Structure
 
-8. On success, an event is emitted:
-```Flash(callback, to, tokens, amounts, paybackAmounts)```.
+A **flat 0.1% fee** is applied to all flashloan transactions, collected as a protocol fee and contributes directly to Pennysia’s sustainability and ecosystem development.
+
+## Access and Developer Support
+
+Flashloan is a developer-focused feature, accessible through a smart contract.
 
 ::: info :information_source:  INFO
-the flashloan function does not update pool accounting. The fee lands as real excess balance on the Market and can be swept by the owner. This intentionally separates protocol revenue from LP accounting.
+Developer documentation is launching soon, providing full implementation examples, code references, and integration guides.
 :::
-
-## Parameters & constraints
-
-- ```to```: where the borrowed tokens are sent. **Must not be the Market contract**.
-- ```tokens``` / ```amounts```: arrays must have equal length; **tokens must be unique**.
-- Available liquidity is whatever the Market actually holds for each token at the time of transfer. If a token’s balance is insufficient, the transfer will revert.
-
-## Fees
-Rate: 0.3% (30 bps) per token.
-
-## Multi-asset flash
-You can borrow multiple different tokens in a single ```flash``` call (arrays are parallel). This is ideal for complex strategies (e.g., triangular arb, hedged liquidations). Tokens must be unique.
-
-
-## Security & guarantees
-- ```nonReentrant```: prevents re-entry into flash/other state-changing functions.
-- ```noDelegateCall```: disallows delegatecall entry.
-- Atomicity: funds must be returned before ```tokenCallback``` exits.
-- Uniqueness: duplicate tokens are rejected.
-- Accounting separation: flash fees do not mutate LP reserves; they accrue as sweepable protocol revenue.
-
-## Developer Guide
-Pennysia calls your contract back via the ```Callback``` library. Your contract (the caller) must implement a function that ```Callback.tokenCallback(...)``` can reach. The effective call pattern is:
-
-```solidity
-// Pseudocode interface for your contract (the "callback")
-function tokenCallback(
-    address callback,            // == msg.sender of flash() (your contract)
-    address to,                  // where tokens were sent
-    address[] calldata tokens,   // borrowed tokens
-    uint256[] calldata balancesBefore,
-    uint256[] calldata payback   // required paybacks (incl. fee)
-) external;
-```
-> In practice, you’ll set ```to = address(this)``` so your contract actually receives the tokens and can return them.
-
-## Minimal borrower example
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.28;
-
-interface IMarket {
-    function flash(address to, address[] calldata tokens, uint256[] calldata amounts) external;
-}
-
-interface IERC20 {
-    function transfer(address to, uint256 value) external returns (bool);
-    function approve(address spender, uint256 value) external returns (bool);
-    function balanceOf(address owner) external view returns (uint256);
-}
-
-contract PennysiaFlashBorrower {
-    address public immutable market;
-
-    constructor(address _market) {
-        market = _market;
-    }
-
-    // Call this to start a flashloan
-    function executeFlash(address[] calldata tokens, uint256[] calldata amounts) external {
-        IMarket(market).flash(address(this), tokens, amounts);
-        // If we got here, flash succeeded atomically
-    }
-
-    // Called by the Market via Callback.tokenCallback(...)
-    // Do your work here, then pay back `payback[i]` for each token to the Market.
-    function tokenCallback(
-        address /* callback */,
-        address /* to */,
-        address[] calldata tokens,
-        uint256[] calldata /* balancesBefore */,
-        uint256[] calldata payback
-    ) external {
-        require(msg.sender == market, "Only Market");
-
-        // --- Your custom logic ---
-        // Example: run arbitrage, liquidation, etc.
-
-        // Pay back each token + fee to the Market
-        for (uint256 i = 0; i < tokens.length; i++) {
-            uint256 due = payback[i];
-            require(IERC20(tokens[i]).transfer(market, due), "payback failed");
-        }
-    }
-}
-```
-::: tip :book: TIP
-- Set ```to = address(this)``` unless you have a very specific reason; otherwise your callback may not control the funds.
-- If ```to``` is some other contract/wallet, it must approve or transfer back to the Market inside the callback.
-- Bundle all steps in the callback (DEX trades, liquidations, etc.), then transfer paybacks before returning.
- :::
-
-
