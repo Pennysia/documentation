@@ -17,7 +17,7 @@ In this video Settee, our CEO, explains what is LPM, how it works, its advantage
 
 ---
 
-
+<!-- 
 # Overview
 Pennysia is an AMM protocol engineered to be its most optimized for liquidity providers' profitability.
 
@@ -38,4 +38,4 @@ We launch with the proven $x*y=k$ model as our foundation to help users get fami
 
 # Unveiling Pennysia's Edge
 Pennysia' [backtest](../resources/backtest) using 4 years of historical data (2021-2024), demonstrates Pennysia's clear financial edge over Uniswap V2 and traditional XYK models Pennysia, with its innovative Liquidity Prediction Market (LPM), allows Liquidity Providers (LPs) to take directional positions. Correct predictions earn double trading fees, specifically designed to offset impermanent loss (IL). This led to substantially higher returns, especially in trending and volatile markets. Our analysis shows Pennysia can offer APRs over 100% when predictions are correct, significantly **outperforming Uniswap V2's typical 71%**, validating its potential for superior liquidity provision.
-
+ -->
