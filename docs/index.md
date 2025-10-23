@@ -2,14 +2,14 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 title: "Pennysia - AMM that people love"
-description: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, uncollateralized flashloans, and manipulation-resistant oracle."
+description: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, Money Market Integration, Weighted Dynamic Fees and Manipulation-Resistant Oracle."
 head:
   - - meta
     - property: og:title
       content: "Pennysia - AMM that people love"
   - - meta
     - property: og:description
-      content: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, uncollateralized flashloans, and manipulation-resistant oracle."
+      content: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, Money Market Integration, Weighted Dynamic Fees and Manipulation-Resistant Oracle."
   - - meta
     - property: og:url
       content: "https://docs.pennysia.com"
@@ -18,8 +18,7 @@ head:
       content: "Pennysia - AMM that people love"
   - - meta
     - name: twitter:description
-      content: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, uncollateralized flashloans, and manipulation-resistant oracle."
-
+      content: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, Money Market Integration, Weighted Dynamic Fees and Manipulation-Resistant Oracle."
 hero:
   # name: "All you can read. It's free"
   text: "It's all you may read."
