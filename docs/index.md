@@ -33,8 +33,8 @@ hero:
       text: Get Started ->
       link: /get-started/overview
     - theme: alt
-      text: User Guide
-      link: /guides/trader
+      text: Resources
+      link: /resources/links
 
 
 features:
