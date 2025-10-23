@@ -38,11 +38,11 @@ New projects often struggle with illiquidity and price discovery. Launching toke
 
 Enhancing yield while keeping risk constant:
 
-### 1.AMM + Prediction Market Fusion:
+### 1.AMM + Prediction Market Fusion
     
 By integrating prediction-market mechanics into the Uniswap V2 AMM model, users can express directional market views to boost yield. Even if their prediction is incorrect, their **principal liquidity remains intact** — no liquidation, no loss of ownership. We called this feature ‘LPM’.
     
-### 2.Integrated Passive Yield through Aave:
+### 2.Integrated Passive Yield through Aave
     
 Liquidity within the AMM is automatically delegated to Aave(if supported), allowing users to **earn dual yields** — one from trading fees and another from lending interest — without any active management or additional risk.
 
@@ -50,14 +50,14 @@ Liquidity within the AMM is automatically delegated to Aave(if supported), allow
 
 Empowering builders with sustainable liquidity tools:
 
-### 1.Battle-Tested AMM Foundation:
+### 1.Battle-Tested AMM Foundation
     
 Built on the Uniswap V2 model, Pennysia ensures **infinite price range coverage** and **predictable behavior**, eliminating liquidity depletion risks for new or volatile tokens.
     
-### 2.Revenue Sharing Program:
+### 2.Revenue Sharing Program
     
 Projects receive **up to 50% of protocol-generated revenue** from their deployed markets — distributed automatically and permissionlessly to encourage ecosystem growth.
     
-### 3.Fungible LP Tokens for Composability:
+### 3.Fungible LP Tokens for Composability
     
 All LP positions are represented by fungible tokens, enabling seamless integration into DeFi ecosystems such as staking, liquidity mining, lending, or bonding platforms.
