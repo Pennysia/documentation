@@ -31,10 +31,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started ->
-      link: /overview/intro
+      link: /get-started/overview
     - theme: alt
       text: User Guide
-      link: /guides/how-to-swap
+      link: /guides/trader
 
 
 features:
