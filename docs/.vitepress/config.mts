@@ -69,11 +69,13 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Swap', link: '/features/swap' },
-          { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
-          { text: 'Liquidity Prediction Market', link: '/features/liquidity-prediction-market' },
-          { text: 'Flashloan', link: '/features/flash' },
-          { text: 'Oracle', link: '/features/oracle' },
           { text: 'Fee', link: '/features/fee' },
+          { text: 'LPM', link: '/features/lpm' },
+          {text: 'Aave Integration', link: '/features/aave-integration' },
+          {text: 'Deployer Incentive', link: '/features/deployer-incentive' },
+          // { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
+          { text: 'Oracle', link: '/features/oracle' },
+          { text: 'Flashloan', link: '/features/flash' }
         ]
       }, {
         text: 'Guides',

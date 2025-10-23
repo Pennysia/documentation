@@ -7,7 +7,7 @@ footer: true
 lastUpdated: true
 outline: [2,3]
 ---
-
+<!-- 
 # Provide Liquidity
 Provide liquidity and earn infinite passive income, accessible to everyone.
 
@@ -40,7 +40,7 @@ Directional LPing amplifies both potential rewards and risks. The risk materiali
 
 For example, if a position is concentrated long tokenA but the price of tokenA drops below its entry price, the overall value of the position decreases. However, this risk is still impermanent—if the price of tokenA recovers, the unrealized loss will diminish over time.
 
-Even in unfavorable market conditions, LPs continue to earn auto-compounded fees from trades, helping offset some of the downside. And remember—directionality is completely optional. You can always choose a neutral setup if you want to minimize directional exposure. 
+Even in unfavorable market conditions, LPs continue to earn auto-compounded fees from trades, helping offset some of the downside. And remember—directionality is completely optional. You can always choose a neutral setup if you want to minimize directional exposure.  -->
 
 
 

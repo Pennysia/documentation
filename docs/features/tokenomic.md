@@ -7,7 +7,7 @@ footer: true
 lastUpdated: true
 outline: [2,3]
 ---
-
+<!-- 
 # Tokenomics
 The native token of the Pennysia protocol.
 
@@ -53,4 +53,4 @@ As the protocol evolves, this initial distribution may no longer accurately repr
 :::
 
 
-
+ -->
