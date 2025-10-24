@@ -25,7 +25,7 @@ The announcement link to showcase all winners, [link here.](https://x.com/SonicW
 
 
 ## Pennysia 1st place 
-The separate announcement for Pennysia winning the 1st place, [link here.](https://x.com/SonicWorldHQ/status/1973693995168731624)
+The separate announcement for Pennysia winning the 1st place, [link here.](https://x.com/PennysiaLabs/status/1973696631813136445)
 
 [![PennysiaWon](/PennysiaWon.png)](https://x.com/PennysiaLabs/status/1973696631813136445)
 <br/>
