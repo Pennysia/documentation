@@ -17,6 +17,11 @@ This is an **archived** page referring to where Pennysia protocol started. It do
 
 Information below contains all the necessary links to the hackathon and our first MVP.
 
+## MVP on Sonic Mainnet
+We have moved the MVP web application to https://mvp.pennysia.com. 
+::: warning :warning: WARNING
+The code used in hackathon MVP is fully opensource, but it is not audited by any trusted party and is not meant to be used in production. 
+:::
 
 ## All Hackathon Winners
 The announcement link to showcase all winners, [link here.](https://x.com/SonicWorldHQ/status/1973693977116495939)
