@@ -49,7 +49,7 @@ export default defineConfig({
       { text: 'Features', link: '/features/swap' },
       { text: 'Guides', link: '/guides/trader' },
       { text: 'Resources', link: '/resources/links' },
-      { text: 'Feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform' }
+      { text: 'Feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform' },
 
     ],
 
@@ -94,6 +94,7 @@ export default defineConfig({
           { text: 'Deployment Address', link: '/resources/deployment' },
           { text: 'Formal Contact', link: '/resources/contact' },
           { text: 'Support', link: '/resources/support' },
+          { text: 'FAQ', link: '/resources/faq' },
           { text: 'Hackathon', link: '/resources/hackathon' },
         ]
       }
