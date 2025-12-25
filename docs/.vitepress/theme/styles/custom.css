@@ -14,6 +14,7 @@
   
   /* Light mode background colors */
   --vp-c-bg: #ffffff;
+  --vp-c-text-1: rgb(0, 0, 0);
 }
 
 /* Dark mode background colors */
