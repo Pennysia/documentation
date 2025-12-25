@@ -375,9 +375,9 @@
 
 /* Local search button */
 .VPNavBarSearch button {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 8px 12px !important;
+  max-width: 100% !important;
+  height: auto;
+  padding: 6px 12px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
