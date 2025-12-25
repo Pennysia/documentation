@@ -47,7 +47,7 @@ export default defineConfig({
     nav: [
       { text: 'Get Started', link: '/get-started/overview' },
       { text: 'Features', link: '/features/swap' },
-      { text: 'Guides', link: '/guides/trader' },
+      // { text: 'Guides', link: '/guides/trader' },
       { text: 'Resources', link: '/resources/links' },
       { text: 'Feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform' },
 

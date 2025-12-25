@@ -8,6 +8,71 @@
   --vp-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --vp-c-brand-4: #7cd8ff;
+  
+  /* Max width configuration */
+  --vp-layout-max-width: 100%;
+  
+  /* Light mode background colors */
+  --vp-c-bg: #ffffff;
+}
+
+/* Dark mode background colors */
+.dark {
+  --vp-c-bg: #0F0F0F !important;
+  --vp-c-text-1: rgb(255, 255, 255,0.9) !important;
+  /* --vp-c-text-2: rgb(255, 255, 255,0.9) !important; */
+}
+
+
+
+
+
+/* Control max width of the content area */
+.vp-doc {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 0 !important;
+}
+
+.vp-doc .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPDoc {
+  max-width: 100% !important;
+}
+
+.VPDoc .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPDoc .content {
+  max-width: 100% !important;
+}
+
+.VPDoc .content-container {
+  max-width: 100% !important;
+}
+
+.VPContent {
+  max-width: 100% !important;
+}
+
+.VPContent .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPContent .content {
+  max-width: 100% !important;
+}
+
+/* Control max width of the home page */
+.VPHome {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* Custom text selection/highlight colors */
@@ -56,6 +121,17 @@
   text-align: center;
 }
 
+/* .dark .text {
+  color: rgb(255, 255, 255,0.9) !important;
+}
+
+.dark h3 {
+    color: rgb(255, 255, 255,0.9) !important;
+
+} */
+
+
+
 
 .VPHomeHero .image img {
   width: fit-content;
@@ -82,7 +158,7 @@
 
 .VPHome .VPHero .VPButton.brand {
   /* background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2)); */
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--vp-c-brand-2);
   font-size: 1rem;
   box-shadow: 0 6px 16px rgba(14, 165, 233, 0.35);
   padding: 0.5rem 1.5rem;
@@ -239,8 +315,8 @@
 /* Custom sidebar section headers styling */
 .VPSidebarItem.level-0 > .item {
   /* background-color: rgba(112, 210, 255, 0.379) !important; */
-  background: linear-gradient(235deg, var(--vp-c-brand-3), var(--vp-c-brand-2)) !important;
-  padding: 1px 10px !important;
+  /* background: linear-gradient(235deg, var(--vp-c-brand-3), var(--vp-c-brand-2)) !important; */
+  /* padding: 1px 10px !important; */
   margin-top: 4px !important;
   border-radius: 6px !important;
   margin-bottom: 4px !important;
@@ -249,18 +325,23 @@
 .VPSidebarItem.level-0 > .item > .text {
   font-size: 0.75rem !important;
   font-weight: 600 !important;
-  color: white !important;
+  /* color: white !important; */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.VPSidebarItem.level-0 > .item > .caret {
+/* .VPSidebarItem.level-0 > .item > .caret {
   color: white !important;
-}
+} */
 
 /* Alternative styling for dark mode */
 .dark .VPSidebarItem.level-0 > .item > .text {
   color: white !important;
+}
+
+.VPSidebar {
+  background-color: var(--vp-c-bg) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
 }
 
 /* Add padding to sidebar */
@@ -268,9 +349,49 @@
   padding-top: 1rem !important;
 }
 
+.VPNavBar   {
+  background-color: var(--vp-c-bg) !important;
+}
+
 .VPNavBar .VPNavBarTitle .title {
   border-bottom: none !important;
 }
+
+/* Make search bar wider */
+.VPNavBarSearch {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+}
+
+.VPNavBarSearch > * {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPNavBarSearch .VPNavBarSearchInput {
+  width: 100% !important;
+}
+
+/* Local search button */
+.VPNavBarSearch button {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 8px 12px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex: 1 !important;
+  box-sizing: border-box !important;
+}
+
+/* Make navbar stretch on mobile to large screens */
+  .VPNavBar .container {
+    max-width: 100% !important;
+    padding: 0 0px !important;
+  }
+  
+
 
 /* Style h2 headings with blue color */
 .vp-doc h2 {
