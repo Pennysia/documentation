@@ -64,7 +64,7 @@ To protect against unfavorable price movements, Pennysia provides two primary co
 - Example: You estimate receiving 100 Token B for 10 TokenA. With 1 % slippage tolerance, you will only receive at least 99 Token B; otherwise, the trade is canceled.
 - Setting slippage tolerance too low can cause legitimate trades to revert due to normal on-chain volatility. Conversely, setting it too high risks executing at unfavorable prices and opens you up to [sandwich attacks](https://www.coinbase.com/learn/crypto-glossary/what-are-sandwich-attacks-in-crypto).
 
-### Deadline (Transaction Expiration)**
+### Deadline (Transaction Expiration)
 - You can attach a deadline timestamp, if your transaction is not finalized by the deadline, it reverts.
 - This prevents the transaction being stuck if network congestion or volatile markets delay execution.
 

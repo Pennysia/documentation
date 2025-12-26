@@ -343,6 +343,7 @@
 .VPSidebar {
   background-color: var(--vp-c-bg) !important;
   border-right: 1px solid var(--vp-c-divider) !important;
+  
 }
 
 /* Add padding to sidebar */
