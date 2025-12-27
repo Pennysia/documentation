@@ -9,15 +9,10 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   if (typeof window !== 'undefined') {
-    window.location.href = '/get-started/overview'
+    window.location.replace('/get-started/overview')
   }
 })
 </script>
-
-<div style="text-align: center; padding: 4rem 2rem;">
-  <h1>Redirecting to Overview...</h1>
-  <p>If you are not redirected automatically, <a href="/get-started/overview">click here</a>.</p>
-</div>
 
 <!-- 
 HOMEPAGE CONTENT - SAVED FOR FUTURE USE
