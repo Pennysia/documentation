@@ -15,7 +15,7 @@
   --vp-layout-max-width: 100%;
   
   /* Light mode background colors */
-  --vp-c-bg: #ffffff;
+  --vp-c-bg: rgb(255, 255, 255);
   --vp-c-text-1: rgb(0, 0, 0);
 }
 
@@ -638,14 +638,24 @@ a:hover {
   border-color: var(--vp-c-brand-1) !important;
 }
 
-/* Table of contents (On this page) - hover shows default color */
+/* Table of contents (On this page) - hover shows black/white at 100% opacity */
 .VPDocAsideOutline .outline-link:hover {
-  color: var(--vp-c-text-1) !important;
+  color: rgb(0, 0, 0) !important;
+  opacity: 1 !important;
 }
 
-/* Table of contents (On this page) - active shows cyan */
-.VPDocAsideOutline .outline-link.active {
+.dark .VPDocAsideOutline .outline-link:hover {
+  color: rgb(255, 255, 255) !important;
+  opacity: 1 !important;
+}
+
+/* Table of contents (On this page) - active shows cyan (higher specificity to override hover) */
+.VPDocAsideOutline .outline-link.active,
+.VPDocAsideOutline .outline-link.active:hover,
+.dark .VPDocAsideOutline .outline-link.active,
+.dark .VPDocAsideOutline .outline-link.active:hover {
   color: var(--vp-c-brand-1) !important;
+  opacity: 1 !important;
 }
 
 .VPDocAsideOutline .outline-marker {
