@@ -1,10 +1,12 @@
 :root {
-  --vp-c-brand-1: #039ce9;
-  /* primary */
+  --vp-c-brand-1: rgb(0, 150, 150);
+  /* primary - fallback */
   --vp-c-brand-2: #0284c7;
   /* primary dark */
   --vp-c-brand-3: #38bdf8;
   /* primary light */
+  --vp-brand-gradient: linear-gradient(90deg, var(--vp-c-brand-1) 0%, rgb(255, 107, 53) 100%);
+  /* brand gradient cyan to orange */
   --vp-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --vp-c-brand-4: #7cd8ff;
@@ -24,15 +26,11 @@
   /* --vp-c-text-2: rgb(255, 255, 255,0.9) !important; */
 }
 
-
-
-
-
 /* Control max width of the content area */
 .vp-doc {
   max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 0 !important;
+  margin: 0 0 0 0 !important;
+  padding: 0 0 0 0 !important;
 }
 
 .vp-doc .container {
@@ -76,16 +74,27 @@
   margin: 0 auto;
 }
 
-/* Custom text selection/highlight colors */
+/* Custom text selection/highlight colors - light mode */
 ::selection {
-  background-color: var(--vp-c-brand-1);
+  background: black;
   color: white;
 }
 
-/* Firefox compatibility */
+/* Firefox compatibility - light mode */
 ::-moz-selection {
-  background-color: var(--vp-c-brand-1);
+  background: black;
   color: white;
+}
+
+/* Text selection - dark mode */
+.dark ::selection {
+  background: white;
+  color: black;
+}
+
+.dark ::-moz-selection {
+  background: white;
+  color: black;
 }
 
 .VPHome {
@@ -122,15 +131,6 @@
   text-align: center;
 }
 
-/* .dark .text {
-  color: rgb(255, 255, 255,0.9) !important;
-}
-
-.dark h3 {
-    color: rgb(255, 255, 255,0.9) !important;
-
-} */
-
 
 
 
@@ -158,11 +158,11 @@
 }
 
 .VPHome .VPHero .VPButton.brand {
-  /* background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2)); */
-  background: var(--vp-c-brand-2);
+  background: var(--vp-brand-gradient);
   font-size: 1rem;
   box-shadow: 0 6px 16px rgba(14, 165, 233, 0.35);
   padding: 0.5rem 1.5rem;
+  border: none;
 }
 
 .VPHome .VPHero .VPButton.alt {
@@ -280,7 +280,7 @@
 
 /* Custom table styling */
 .vp-doc table thead th {
-  background-color: rgba(14, 165, 233, 0.2);
+  background-color: rgba(0, 165, 165, 0.5);
   color: var(--vp-c-text-1);
   font-weight: 600;
 }
@@ -331,9 +331,27 @@
   letter-spacing: 0.5px;
 }
 
-/* .VPSidebarItem.level-0 > .item > .caret {
-  color: white !important;
-} */
+/* Hide dropdown caret/arrow */
+.VPSidebarItem.level-0 > .item > .caret {
+  display: none !important;
+}
+
+/* Disable collapse functionality - keep sections always open */
+.VPSidebarItem.level-0.is-collapsed > .items {
+  display: block !important;
+  max-height: none !important;
+}
+
+/* Remove pointer cursor from section headers */
+.VPSidebarItem.level-0 > .item {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* Re-enable pointer events for child items */
+.VPSidebarItem.level-0 .items a {
+  pointer-events: auto !important;
+}
 
 /* Alternative styling for dark mode */
 .dark .VPSidebarItem.level-0 > .item > .text {
@@ -342,8 +360,7 @@
 
 .VPSidebar {
   background-color: var(--vp-c-bg) !important;
-  border-right: 1px solid var(--vp-c-divider) !important;
-  
+  border-right: none !important;
 }
 
 /* Add padding to sidebar */
@@ -353,10 +370,54 @@
 
 .VPNavBar   {
   background-color: var(--vp-c-bg) !important;
+  border-bottom: none !important;
+  border: none !important;
+}
+
+.VPNavBar .container,
+.VPNavBar .divider,
+.VPNavBar .content,
+.VPNavBar::after {
+  border-bottom: none !important;
+  border: none !important;
 }
 
 .VPNavBar .VPNavBarTitle .title {
   border-bottom: none !important;
+}
+
+/* Prevent Pennysia logo text from changing color on hover */
+.VPNavBar .VPNavBarTitle:hover .title,
+.VPNavBar .VPNavBarTitle .title:hover {
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Hide divider line */
+.VPNavBar .divider-line {
+  display: none !important;
+}
+
+/* Override CSS variable for navbar border */
+:root {
+  --vp-nav-border-color: transparent !important;
+}
+
+/* Add "Documentation" text next to logo */
+.VPNavBarTitle .title::after {
+  content: "Documentation";
+  margin-left: 8px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--vp-c-text-1);
+  opacity: 50%;
+  height: auto;
+  display: flex;
+align-items:center;
+justify-content: center;
+}
+
+.VPNavBarTitle .title:hover::after {
+  opacity: 60%;
 }
 
 /* Make search bar wider */
@@ -372,8 +433,7 @@
 }
 
 .VPNavBarSearch .VPNavBarSearchInput {
-  width: 100% !important;
-}
+  width: 100% !important;}
 
 /* Local search button */
 .VPNavBarSearch button {
@@ -385,6 +445,7 @@
   align-items: center !important;
   flex: 1 !important;
   box-sizing: border-box !important;
+border-radius: 20px;
 }
 
 /* Make navbar stretch on mobile to large screens */
@@ -392,11 +453,235 @@
     max-width: 100% !important;
     padding: 0 0px !important;
   }
-  
+
+/* Search modal - change all blue highlights to cyan */
+.VPLocalSearchBox mark,
+.VPLocalSearchBox .match,
+.VPLocalSearchBox .highlight {
+  background-color: var(--vp-c-brand-1) !important;
+  color: white !important;
+}
+
+/* Search modal container border */
+.VPLocalSearchBox,
+.VPLocalSearchBox .shell,
+.VPLocalSearchBox .search-bar,
+#local-search {
+  border-color: var(--vp-c-brand-1) !important;
+  border-radius: 20px !important;
+  padding: 8px !important;
+}
+
+/* Search result item hover and active states */
+.VPLocalSearchBox .result-item:hover,
+.VPLocalSearchBox .result.selected,
+.VPLocalSearchBox .result:hover,
+.VPLocalSearchBox li:hover,
+.VPLocalSearchBox li.selected {
+  /* background-color: rgba(0, 197, 197, 0.1) !important; */
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+/* Search result links and text */
+.VPLocalSearchBox a:hover,
+.VPLocalSearchBox .title:hover,
+.VPLocalSearchBox li:hover a,
+.VPLocalSearchBox li.selected a,
+.VPLocalSearchBox .result:hover a,
+.VPLocalSearchBox .result.selected a,
+.VPLocalSearchBox li:hover *,
+.VPLocalSearchBox li.selected *,
+.VPLocalSearchBox .result:hover *,
+.VPLocalSearchBox .result.selected * {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Override mark/highlight text to stay white */
+.VPLocalSearchBox li:hover mark,
+.VPLocalSearchBox li.selected mark,
+.VPLocalSearchBox .result:hover mark,
+.VPLocalSearchBox .result.selected mark {
+  color: white !important;
+}
+
+/* Search input focus border */
+.VPLocalSearchBox input:focus {
+  border-color: var(--vp-c-brand-1) !important;
+  outline-color: var(--vp-c-brand-1) !important;
+}
+
+/* Navbar links - default 50% opacity */
+.VPNavBar .VPNavBarMenuLink,
+.VPNavBar .VPNavBarMenu a {
+  opacity: 0.5;
+}
+
+/* Navbar links - 100% opacity and default color on hover and active */
+.VPNavBar .VPNavBarMenuLink:hover,
+.VPNavBar .VPNavBarMenu a:hover,
+.VPNavBar .VPNavBarMenuLink.active,
+.VPNavBar .VPNavBarMenuLink:active,
+.VPNavBar .VPNavBarMenu a.active {
+  opacity: 1 !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Navbar search button and theme toggle hover */
+.VPNavBar button:hover,
+.VPNavBar .VPNavBarSearch button:hover,
+.VPNavBar .VPSwitch:hover,
+.VPNavBar .appearance:hover button,
+.VPNavBar .VPSocialLink:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  outline-color: var(--vp-c-brand-1) !important;
+}
+
+/* Search button specific */
+.VPNavBarSearch .DocSearch-Button:hover {
+  border-color: var(--vp-c-brand-1) !important;
+  box-shadow: 0 0 0 1px var(--vp-c-brand-1) !important;
+}
 
 
-/* Style h2 headings with blue color */
+/* Style h1 headings with gradient color */
+.vp-doc h1 {
+  background: var(--vp-brand-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block !important;
+  border: none !important;
+}
+
+/* Style h2 headings - light mode */
 .vp-doc h2 {
+  color: rgb(0, 0, 0) !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding-top: 0 !important;
+  margin-top: 4rem !important;
+  margin-bottom: 0rem !important;
+}
+
+/* Style h2 headings - dark mode */
+.dark .vp-doc h2 {
+  color: rgb(255, 255, 255,0.9) !important;
+}
+
+/* Remove divider line before and after h2 */
+.vp-doc h2::before,
+.vp-doc h2::after {
+  display: none !important;
+  border: none !important;
+}
+
+/* Apply solid cyan to all content links */
+.vp-doc a {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Apply solid cyan to links on hover */
+.vp-doc a:hover,
+a:hover {
+  color: var(--vp-c-brand-1) !important;
+  opacity: 0.8;
+}
+
+/* Previous/Next page navigation links - light mode default */
+.vp-doc .pager-link,
+.vp-doc .pager a,
+.VPDocFooter a,
+.VPDocFooter .pager-link,
+.pager-link .title,
+.VPDocFooter .title,
+.pager .title {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* Previous/Next page navigation links - dark mode default */
+.dark .vp-doc .pager-link,
+.dark .vp-doc .pager a,
+.dark .VPDocFooter a,
+.dark .VPDocFooter .pager-link,
+.dark .pager-link .title,
+.dark .VPDocFooter .title,
+.dark .pager .title {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Previous/Next page navigation links - hover cyan for both modes */
+.vp-doc .pager-link:hover,
+.vp-doc .pager a:hover,
+.VPDocFooter a:hover,
+.pager-link:hover .title,
+.VPDocFooter:hover .title,
+.dark .vp-doc .pager-link:hover,
+.dark .vp-doc .pager a:hover,
+.dark .VPDocFooter a:hover,
+.dark .pager-link:hover .title,
+.dark .VPDocFooter:hover .title {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Previous/Next page navigation box borders - default */
+.vp-doc .pager,
+.VPDocFooter .pager,
+.pager .pager-link,
+.VPDocFooter .pager-link {
+  border-color: var(--vp-c-divider) !important;
+}
+
+/* Previous/Next page navigation box borders - hover cyan */
+.pager .pager-link:hover,
+.VPDocFooter .pager-link:hover {
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+/* Table of contents (On this page) - hover shows default color */
+.VPDocAsideOutline .outline-link:hover {
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Table of contents (On this page) - active shows cyan */
+.VPDocAsideOutline .outline-link.active {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPDocAsideOutline .outline-marker {
+  background-color: var(--vp-c-brand-1) !important;
+}
+
+/* TOC active indicator line */
+.VPDocOutlineItem.is-active > .outline-link::before,
+.VPDocOutlineItem.active > .outline-link::before {
+  background-color: var(--vp-c-brand-1) !important;
+}
+
+/* Sidebar menu hover - light mode shows black */
+.VPSidebarItem .item:hover .link,
+.VPSidebarItem .item:hover .text,
+.VPSidebar a:hover {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* Sidebar menu hover - dark mode shows white */
+.dark .VPSidebarItem .item:hover .link,
+.dark .VPSidebarItem .item:hover .text,
+.dark .VPSidebar a:hover {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Apply solid cyan to active sidebar links - higher specificity to override hover */
+.VPSidebarItem.is-active > .item > .link,
+.VPSidebarItem.is-active > .item > .link .text,
+.VPSidebarItem.is-active .link,
+.VPSidebarItem.is-active > .item:hover > .link,
+.VPSidebarItem.is-active > .item:hover > .link .text,
+.dark .VPSidebarItem.is-active > .item > .link,
+.dark .VPSidebarItem.is-active > .item > .link .text,
+.dark .VPSidebarItem.is-active > .item:hover > .link,
+.dark .VPSidebarItem.is-active > .item:hover > .link .text {
   color: var(--vp-c-brand-1) !important;
 }
 

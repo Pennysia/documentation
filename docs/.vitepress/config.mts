@@ -40,7 +40,7 @@ export default defineConfig({
       light: '/lightMode.svg',
       dark: '/darkMode.svg'
     },
-    siteTitle: "Pennysia Docs",
+    siteTitle: "Pennysia",
     search: { provider: 'local' },
 
     // https://vitepress.dev/reference/default-theme-config

@@ -1,5 +1,27 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
+# Redirect to overview page - homepage temporarily disabled
+layout: page
+title: "Pennysia Documentation"
+---
+
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    window.location.href = '/get-started/overview'
+  }
+})
+</script>
+
+<div style="text-align: center; padding: 4rem 2rem;">
+  <h1>Redirecting to Overview...</h1>
+  <p>If you are not redirected automatically, <a href="/get-started/overview">click here</a>.</p>
+</div>
+
+<!-- 
+HOMEPAGE CONTENT - SAVED FOR FUTURE USE
+
 layout: home
 title: "Pennysia - AMM that people love"
 description: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, Money Market Integration, Weighted Dynamic Fees and Manipulation-Resistant Oracle."
@@ -20,7 +42,6 @@ head:
     - name: twitter:description
       content: "The 1st low risk and high reward AMM where LPs earn from both sides of every trade. Features Liquidity Prediction Markets, Money Market Integration, Weighted Dynamic Fees and Manipulation-Resistant Oracle."
 hero:
-  # name: "All you can read. It's free"
   text: "It's all you may read."
   image:
     src: /readTheDocRainbow.avif
@@ -34,7 +55,6 @@ hero:
     - theme: alt
       text: Resources
       link: /resources/links
-
 
 features:
   - title: Liquidity Prediction Market
@@ -61,6 +81,5 @@ features:
       
       Manipulation-resistant pricing that combines arithmetic precision with geometric stability.
     link: /features/oracle
-    
----
+-->
 
