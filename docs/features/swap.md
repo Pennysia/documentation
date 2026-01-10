@@ -59,7 +59,7 @@ Price impact is a deterministic result of your trade size vs. pool liquidity.
 Slippage includes that impact plus any additional changes that occur between quote and block inclusion.
 :::
 
-## 5.Protection Parameter
+## Protection Parameter
 To protect against unfavorable price movements, Pennysia provides two primary controls:
 ### Slippage Tolerance
 - When you initiate a swap, you can set a percentage (e.g., 0.5 %).

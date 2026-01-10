@@ -55,7 +55,7 @@ By integrating prediction-market mechanics into the Uniswap V2 AMM model, users 
     
 Liquidity within the AMM is automatically delegated to Aave(if supported), allowing users to **earn dual yields** — one from trading fees and another from lending interest — without any active management or additional risk.
 
-## **Solution For Projects**
+## Solution For Projects
 
 Empowering builders with sustainable liquidity tools:
 
