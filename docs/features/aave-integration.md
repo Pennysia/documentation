@@ -10,21 +10,18 @@ outline: [2,3]
 
 # Aave Integration
 
-When liquidity providers (LPs) deposit tokens into Pennysia, the protocol automatically checks whether one or both of those tokens are supported by [Aave](https://aave.com).
-
-If supported, Pennysia **forwards the deposits to Aave**, enabling LPs to **earn yield from both platforms simultaneously**. This dual-yield mechanism maximizes passive income while maintaining full composability within DeFi.
-
-During swaps, Pennysia temporarily withdraws the required liquidity from Aave, executes the trade, and re-deposits the updated reserves back into Aave — all in a single transaction, fully automated and gas-optimized.
+When liquidity providers (LPs) deposit tokens into Pennysia, the protocol automatically checks whether one or both of those tokens are supported by [Aave](https://aave.com). If supported, Pennysia **forwards the deposits to Aave**, enabling LPs to **earn yield from both platforms simultaneously**. This dual-yield mechanism maximizes passive income while maintaining full composability within DeFi.
+> During swaps, Pennysia atomically withdraws the required liquidity from Aave, fills the trade, and re-deposits the updated reserves back into Aave — all in a single transaction, fully automated and gas-optimized.
 
 
 
 ## Why Money Market?
 
-Our goal is to deliver **higher yields without higher risk**.
+Our goal is to deliver **higher yields without higher risk.** [See a post.](https://x.com/SetteeCh/status/2003017063460454508?s=20)
 
-Unlike concentrated-liquidity AMMs that amplify exposure through leverage, Pennysia achieves **capital efficiency** by integrating with **money markets** — allowing idle reserves to earn lending interest safely and continuously.
+Unlike concentrated-liquidity AMMs that amplify exposure through leverage, Pennysia achieves extra **capital efficiency** by integrating with **money markets** — allowing idle reserves to earn lending interest safely and continuously. 
 
-This approach increases total protocol yield while keeping the **principal fully collateralized and accessible** for trading operations.
+This approach increases total protocol yield while keeping the **principal fully collateralized and accessible** for trading operations, and it works seamlessly with LPM and it is executed automatically under the hood.
 
 
 
@@ -39,9 +36,9 @@ By integrating with Aave, Pennysia ensures that LPs’ assets enjoy **institutio
 
 ## Rewards
 
-LPs benefit from **dual earning streams** — accruing trading fees from the AMM layer and lending interest from Aave simultaneously.
+LPs benefit from **dual earning streams** — accruing trading fees from the AMM layer through LPM and lending interest from Aave simultaneously.
 
-All returns are **auto-compounded in real time**, allowing positions to grow continuously without manual reinvestment or additional gas costs.
+All returns are **auto-compounded in real time**, allowing positions to grow continuously without manual reinvestment and additional gas costs.
 
 
 ## Risk

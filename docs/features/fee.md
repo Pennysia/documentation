@@ -14,7 +14,7 @@ A small set of fees is applied within the Pennysia ecosystem to ensure long-term
 The information on this page is not finalized and is subject to change at any time. This version is provided to give readers a glimpse of the proposed fee structure.
 ::: -->
 
-## 1.Swap Fee
+## Swap Fee
 
 A swap fee is charged on every token trade executed through a Pennysia market.
 
@@ -35,7 +35,7 @@ Each bucket defines its own fee rate. For example, in a **BTC/USDT** pool:
 - **20%** is retained as a protocol fee.
 
 
-## 2.Liquidity Fee
+## Liquidity Fee
 A liquidity fee is applied whenever an LP switches buckets (reallocates market bias) or withdraws liquidity.
 
 The rate and calculation follow the same rule as the swap fee — determined by weighted LP voting, with optional user adjustment.
@@ -45,10 +45,10 @@ The rate and calculation follow the same rule as the swap fee — determined by 
     - Example: if a user withdraws from the **bullish on BTC** bucket in a BTC/USDT pool, the fee is distributed proportionally to all LPs still in that same bucket.
 - **20%** is retained as a protocol fee.
 
-## 3.Flashloan Fee
+## Flashloan Fee
 A **fixed 0.1% fee** is applied as a protocol fee.
 
-## 4.Protocol Fee
+## Protocol Fee
 The protocol fee serves as the foundation for maintaining and expanding the Pennysia ecosystem. It supports:
 
 - Core team compensation and long-term sustainability

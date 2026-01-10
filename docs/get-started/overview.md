@@ -46,7 +46,7 @@ To support new project launches, we share up to 50% of protocol revenue, execute
     
 All trading fees and yield earnings from Pennysia markets are **automatically compounded** back into each LP’s principal position in **real time**, maximizing capital growth without manual reinvestment or gas overhead.
     
-### 2.Fungible LP Tokens (ERC-6909 Standard)
+### 2.Fungible LP Tokens
     
  Liquidity positions are represented as **ERC-6909 fungible tokens**, ensuring broad interoperability. These tokens can be easily integrated into other DeFi protocols to enable higher composability and utility.
     

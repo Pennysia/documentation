@@ -13,7 +13,7 @@ Official links to our sites, socials, and communities.
 
 | Title | Url |
 | :------: | :----: |
-| Web Application | [https://pennysia.com](https://pennysia.com) |
+| Website | [https://pennysia.com](https://pennysia.com) |
 | Documentation | [https://docs.pennysia.com](https://docs.pennysia.com) |
 | Github | [https://github.com/Pennysia](https://github.com/Pennysia) |
 | X/Twitter | [https://x.com/PennysiaLabs](https://x.com/PennysiaLabs) |

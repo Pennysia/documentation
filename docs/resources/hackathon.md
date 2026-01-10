@@ -9,19 +9,13 @@ outline: [2,3]
 ---
 
 # Hackathon
-We won the 1st place in [Sonic S-tier Global Hackathon (August-September 2025)](https://dorahacks.io/hackathon/sonic-s-tier/detail).
+We won the 1st place in [Sonic S-tier Global Hackathon (August-September 2025)](https://dorahacks.io/hackathon/sonic-s-tier/detail). The content below lists all the necessary information about the hackathon and previous MVP.
+
 
 ::: info :information_source:  INFO
 This is an **archived** page referring to where Pennysia protocol started. It does not represent the current protocol development, but only display as a mark of history.
 :::
 
-Information below contains all the necessary links to the hackathon and our first MVP.
-
-## MVP on Sonic Mainnet
-We have moved the MVP web application to https://mvp.pennysia.com. 
-::: warning :warning: WARNING
-The code used in hackathon MVP is fully opensource, but it is not audited by any trusted party and is not meant to be used in production. 
-:::
 
 ## All Hackathon Winners
 The announcement link to showcase all winners, [link here.](https://x.com/SonicWorldHQ/status/1973693977116495939)
@@ -59,4 +53,10 @@ Pennysia' [backtest](https://github.com/Pennysia/backTest-2021-2024) using 4 yea
 This backtest is no longer valid with the current version of LPM. This test assumes an equal amount of liquiidty on all directions.
 :::
 ![pennysia_vs_uniswap_showcase](/pennysia_vs_uniswap_showcase.png)
+
+## MVP on Sonic Mainnet
+We have moved the MVP web application to https://mvp.pennysia.com.
+::: warning :warning: WARNING
+The code used in hackathon MVP is fully opensource, but it is not audited by any trusted party and is not meant to be used in production. 
+:::
 

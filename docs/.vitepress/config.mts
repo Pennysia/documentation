@@ -7,7 +7,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700;800;900&display=swap' }],
     ['meta', { name: 'author', content: 'Pennysia Labs' }],
     ['meta', { name: 'keywords', content: 'Pennysia, AMM, DeFi, Liquidity Prediction Market, Flashloans, Cube-Root TWAP, Oracle, Ethereum, Blockchain' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -45,10 +45,10 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Get Started', link: '/get-started/overview' },
-      { text: 'Features', link: '/features/swap' },
+      // { text: 'Get Started', link: '/get-started/overview' },
+      // { text: 'Features', link: '/features/swap' },
       // { text: 'Guides', link: '/guides/trader' },
-      { text: 'Resources', link: '/resources/links' },
+      // { text: 'Resources', link: '/resources/links' },
       { text: 'Feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform' },
 
     ],
@@ -77,15 +77,16 @@ export default defineConfig({
           { text: 'Oracle', link: '/features/oracle' },
           { text: 'Flashloan', link: '/features/flash' }
         ]
-      }, {
-        text: 'Guides',
-        collapsed: false,
-        items: [
-          { text: 'Trader', link: '/guides/trader' },
-          { text: 'Liquidity Provider', link: '/guides/liquidity-provider' },
-          { text: 'Pool Deployer', link: '/guides/pool-deployer' },
-        ]
       }
+      // , {
+      //   text: 'Guides',
+      //   collapsed: false,
+      //   items: [
+      //     { text: 'Trader', link: '/guides/trader' },
+      //     { text: 'Liquidity Provider', link: '/guides/liquidity-provider' },
+      //     { text: 'Pool Deployer', link: '/guides/pool-deployer' },
+      //   ]
+      // }
       , {
         text: 'Resources',
         collapsed: false,

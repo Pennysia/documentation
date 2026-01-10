@@ -9,30 +9,26 @@ outline: [2,3]
 ---
 
 # Flashloan
-Pennysia introduces a next-generation **multi-token flashloan system**, built directly into its **singleton architecture**.
-
-Unlike traditional flashloans that operate on isolated liquidity pools, Pennysia’s unified contract architecture allows **all tokens within the protocol** to be accessed from a **shared global balance sheet**.
-
-This enables developers and traders to execute **complex multi-asset operations** within a single transaction — efficiently, securely, and gas-optimized.
+Pennysia introduces a next-generation **multi-token flashloan system**, built directly into its **singleton architecture**. Unlike traditional flashloans that operate on isolated liquidity pools, Pennysia’s unified contract architecture allows **all tokens within the protocol** to be accessed from a **shared global balance sheet**. This enables complex, atomic multi-asset operations efficiently and gas-optimized.
 
 
 ## Key Features
 
-1. **Multi-Token Flashloans**
+### Multi-Token Flashloans
     
-    Borrow multiple tokens simultaneously within one atomic transaction. This enables advanced on-chain strategies such as **multi-pair arbitrage**, **portfolio rebalancing**, **collateral refinancing**, or **batch liquidations** — all executed seamlessly in one call.
+Borrow multiple tokens simultaneously within one atomic transaction. This enables advanced on-chain strategies such as **multi-pair arbitrage**, **portfolio rebalancing**, **collateral refinancing**, or **batch liquidations** — all executed seamlessly in one call.
     
-2. **Universal Liquidity Access**
+### Universal Liquidity Access
     
-    Because all markets reside inside a **single smart contract**, Pennysia treats every token reserve as part of a unified liquidity system. This design removes the need for per-pair pool isolation, maximizing capital utilization and reducing redundant operations.
+Because all markets reside inside a **single smart contract**, Pennysia treats every token reserve as part of a unified liquidity system. This design removes the need for per-pair pool isolation, maximizing capital utilization and reducing redundant operations.
     
-3. **Gas Efficiency**
+### Gas Efficiency
     
-    The singleton model eliminates repetitive state changes across multiple pools, resulting in **significantly lower gas costs** compared to legacy AMM-based flashloan designs.
+The singleton model eliminates repetitive state changes across multiple pools, resulting in **significantly lower gas costs** compared to legacy AMM-based flashloan designs.
     
-4. **Security and Atomicity**
+### Security and Atomicity
     
-    All flashloan operations are **fully atomic** — borrowed assets must be returned within the same transaction. If repayment fails, the entire operation reverts automatically, ensuring zero risk to the protocol and its liquidity providers.
+All flashloan operations are **fully atomic** — borrowed assets must be returned within the same transaction. If repayment fails, the entire operation reverts automatically, ensuring zero risk to the protocol and its liquidity providers.
 
 ## Use Cases
 
@@ -48,7 +44,7 @@ A **flat 0.1% fee** is applied to all flashloan transactions, collected as a pro
 
 ## Access and Developer Support
 
-Flashloan is a developer-focused feature, accessible through a smart contract.
+Flashloan is a developer-focused feature, publicly accessible through a smart contract.
 
 ::: info :information_source:  INFO
 Developer documentation is launching soon, providing full implementation examples, code references, and integration guides.

@@ -11,11 +11,14 @@ outline: [2,3]
 # Swap
 Swaps on Pennysia enable direct ERC-20 token exchanges. To execute a swap, select the token you hold (Token A), select the token you wish to acquire (Token B), and specify the amount of Token A to spend. Pennysia’s smart contracts then compute the corresponding Token B output (after fees). 
 
+> Swaps here are different from traditional order book trades in that they are not executed against discrete orders on a first-in-first-out basis — rather, swaps execute against a passive, permissionless pool of liquidity, with liquidity providers earning [fees](fee.md) proportional to their capital committed.
+
 ::: tip :book: TIP
-Swaps here are different from traditional order book trades in that they are not executed against discrete orders on a first-in-first-out basis — rather, swaps execute against a passive, permissionless pool of liquidity, with liquidity providers earning fees proportional to their capital committed
+Pennysia's interface already handles both single-hop and multi-hop swaps automatically, so end users don't need to worry about the settings.
 :::
 
-## 1.Single Hop
+
+## Single Hop
 ![single_hop](/pennysia_single_hop.svg)
 
 A single hop swap on Pennysia refers to exchanging Token A for Token B through a direct liquidity pool that contains both assets. In other words, the trade path consists of exactly one pool:
@@ -30,7 +33,7 @@ A single hop swap on Pennysia refers to exchanging Token A for Token B through a
 - **Predictability**: There is only one source of price and liquidity, so price quotes are straightforward.
 
 
-## 2.Multi Hop
+## Multi Hop
 A multi hop swap on Pennysia occurs when there is no direct pool for Token A ↔ Token B, or when routing through intermediate assets yields a better execution price. A multi-hop path involves two or more pools:
 
 ![multi_hop](/pennysia_multi_hop.svg)
@@ -41,14 +44,14 @@ A multi hop swap on Pennysia occurs when there is no direct pool for Token A ↔
 3. The swap is executed as a single transaction, sequentially passing through each intermediate pool.
 
 ### Benefits
-- **Access to Liquidity**: Even if there’s no single A↔B pool, you can trade by routing through more liquid pairs (e.g., A↔X and X↔B).
+- **Access to Deeper Liquidity**: Even if there’s no single A↔B pool, you can trade by routing through more liquid pairs (e.g., A↔X and X↔B).
 - **Potentially Lower Price Impact**: Splitting volume across multiple pools with deeper reserves can reduce overall price impact compared to a small direct pool.
 
 
-## 3.Price impact 
+## Price impact 
 Price impact measures how much a trade shifts the on-chain price relative to the pool’s spot price. In other words, it’s the difference between the spot price before your trade and the execution price. Larger trades (relative to pool reserves) cause bigger price impact, because they move reserves more dramatically—whereas small trades in deep pools yield minimal price impact.
 
-## 4.Slippage 
+## Slippage 
 Slippage is the gap between the on-chain quote you see when you submit your transaction and the actual execution price, which arises from interim price impact (including other transactions that modify reserves before yours is mined). In practice:
 
 ::: tip :book: TIP
