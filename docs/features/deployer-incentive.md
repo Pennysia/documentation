@@ -12,6 +12,9 @@ outline: [2,3]
 
 The Deployer Incentive Program empowers builders and project teams to launch new markets on Pennysia with **automatic revenue sharing** and long-term sustainability.
 
+<img src="/deployer.svg" alt="deployer incentive">
+
+
 ## Purpose
 This incentive aligns Pennysia’s growth with the success of its ecosystem partners. It encourages:
 - Developers to create and maintain active markets.

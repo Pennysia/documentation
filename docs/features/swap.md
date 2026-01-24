@@ -19,9 +19,11 @@ Pennysia's interface already handles both single-hop and multi-hop swaps automat
 
 
 ## Single Hop
-![single_hop](/pennysia_single_hop.svg)
 
-A single hop swap on Pennysia refers to exchanging Token A for Token B through a direct liquidity pool that contains both assets. In other words, the trade path consists of exactly one pool:
+A single hop swap on Pennysia refers to exchanging Token A for Token B through a direct liquidity pool that contains both assets. In other words, the trade path consists of exactly one pool.
+
+<img src="/single_hop_light.svg" alt="single hop" class="light-only">
+<img src="/single_hop_dark.svg" alt="single hop" class="dark-only">
 
 ### How it works:
 1. The user specifies an amount of Token A to sell.
@@ -36,7 +38,8 @@ A single hop swap on Pennysia refers to exchanging Token A for Token B through a
 ## Multi Hop
 A multi hop swap on Pennysia occurs when there is no direct pool for Token A ↔ Token B, or when routing through intermediate assets yields a better execution price. A multi-hop path involves two or more pools:
 
-![multi_hop](/pennysia_multi_hop.svg)
+<img src="/multi_hop_light.svg" alt="multi hop" class="light-only">
+<img src="/multi_hop_dark.svg" alt="multi hop" class="dark-only">
 
 ### How it works:
 1. The user wants to swap Token A for Token B.

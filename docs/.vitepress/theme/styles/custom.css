@@ -731,5 +731,18 @@ a:hover {
   align-items: center;
 }
 
+/* Theme-specific image visibility */
+.dark-only {
+  display: none;
+}
+
+.dark .dark-only {
+  display: block;
+}
+
+.dark .light-only {
+  display: none;
+}
+
 
 

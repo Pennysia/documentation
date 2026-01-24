@@ -14,6 +14,9 @@ When liquidity providers (LPs) deposit tokens into Pennysia, the protocol automa
 > During swaps, Pennysia atomically withdraws the required liquidity from Aave, fills the trade, and re-deposits the updated reserves back into Aave — all in a single transaction, fully automated and gas-optimized.
 
 
+<img src="/aave_light.svg" alt="aave integration" class="light-only">
+<img src="/aave_dark.svg" alt="aave integration" class="dark-only">
+
 
 ## Why Money Market?
 

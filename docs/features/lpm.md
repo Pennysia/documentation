@@ -11,6 +11,9 @@ outline: [2,3]
 # Liquidity Prediction Market
 The Liquidity Prediction Market (LPM) is a fusion between Automated Market Making (AMM) and prediction market dynamics. It enables liquidity providers (LPs) to express their directional market views and earn passive yield when their predictions align with market movements — without putting principal at any extra risk.
 
+<img src="/LPM_light.svg" alt="liquidity prediction market" class="light-only">
+<img src="/LPM_dark.svg" alt="liquidity prediction market" class="dark-only">
+
 
 ## **TL;DR**
 1. LPs deposit liquidity in the same way as Uniswap V2.
@@ -71,10 +74,8 @@ Since Bob is **bullish on token X** (and therefore bearish on token Y), he alloc
 ### Step 3: Adjust Strategy Dynamically
 
 Later, Bob may decide to balance his exposure by allocating **60% to bullish on X** and **40% to bullish on Y**. This allows him to **earn fees from both sides**, while keeping a slight bias toward token X.
+> When Bob is uncertain about market direction, he reallocates to **50% bullish on X and 50% bullish on Y**, maintaining a **neutral stance** and earning a steady baseline of fees.
     
-### Step 4: Stay Neutral When Uncertain
-    
-When Bob is uncertain about market direction, he reallocates to **50% bullish on X and 50% bullish on Y**, maintaining a **neutral stance** and earning a steady baseline of fees.
 
 
 ## Reward
