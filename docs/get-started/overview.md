@@ -13,9 +13,7 @@ outline: [2,3]
 Pennysia is an Automated Market Maker (AMM) protocol designed to deliver low-risk, high-reward liquidity provisioning through a suite of novel mechanisms.
 
 
-::: warning :warning: WARNING
-There is no token at the moment. Do not fall for scams.
-:::
+![overvoew_img](/overviewImg.png)
 
 
 ## Key Innovations
