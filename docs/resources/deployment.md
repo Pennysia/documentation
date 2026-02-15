@@ -32,10 +32,11 @@ The current state of development is on testnets. As we continue testing and impr
         <td>11155111</td>
         <td>
           <code>0xe3F36b644ebA9562c735762642f5932DB6Cf462d</code>
-          <button class="copy-btn" @click="copyToClipboard('0xe3F36b644ebA9562c735762642f5932DB6Cf462d', 'sonic-2')" aria-label="Copy address" title="Copy address">
+          <button class="copy-btn" @click="copyToClipboard('0xe3F36b644ebA9562c735762642f5932DB6Cf462d', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
             <FontAwesomeIcon :icon="['far', 'copy']" />
           </button>
-          <span v-if="copiedKey === 'sonic-2'" class="copy-status">Copied!</span>
+          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xe3F36b644ebA9562c735762642f5932DB6Cf462d" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
         </td>
       </tr>
       <tr>
@@ -43,10 +44,11 @@ The current state of development is on testnets. As we continue testing and impr
         <td>14601</td>
         <td>
           <code>0xe3F36b644ebA9562c735762642f5932DB6Cf462d</code>
-          <button class="copy-btn" @click="copyToClipboard('0xe3F36b644ebA9562c735762642f5932DB6Cf462d', 'sonic-1')" aria-label="Copy address" title="Copy address">
+          <button class="copy-btn" @click="copyToClipboard('0xe3F36b644ebA9562c735762642f5932DB6Cf462d', 'Sonic-Testnet')" aria-label="Copy address" title="Copy address">
             <FontAwesomeIcon :icon="['far', 'copy']" />
           </button>
-          <span v-if="copiedKey === 'sonic-1'" class="copy-status">Copied!</span>
+          <a class="external-link-btn" href="https://testnet.sonicscan.org/address/0xe3F36b644ebA9562c735762642f5932DB6Cf462d" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <span v-if="copiedKey === 'Sonic-Testnet'" class="copy-status">Copied!</span>
         </td>
       </tr>
     </tbody>
@@ -123,7 +125,15 @@ const copyToClipboard = async (text, key) => {
   background: transparent;
   cursor: pointer;
   padding: 0;
+  color: var(--vp-c-brand-1);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.external-link-btn {
+  margin-left: 0.35rem;
   color: inherit;
+  text-decoration: none;
   font-size: 0.9rem;
   line-height: 1;
 }
