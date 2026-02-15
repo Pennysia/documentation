@@ -23,7 +23,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:site', content: '@PennysiaLabs' }],
     ['meta', { name: 'twitter:title', content: 'Pennysia Docs | Pennysia' }],
     ['meta', { name: 'twitter:description', content: 'Complete documentation for Pennysia AMM protocol. Learn about Liquidity Prediction Markets, uncollateralized flashloans, and cube-root TWAP oracle technology.' }],
-    ['meta', { name: 'twitter:image', content: 'https://docs.pennysia.com/socialCard' }],
+    ['meta', { name: 'twitter:image', content: 'https://docs.pennysia.com/socialCard.jpg' }],
     ['meta', { property: 'twitter:domain', content: 'docs.pennysia.com' }],
     ['meta', { property: 'twitter:url', content: 'https://docs.pennysia.com' }],
   ],
