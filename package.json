@@ -9,6 +9,9 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@miletorix/vitepress-youtube-embed": "^1.0.2"
   }
 }

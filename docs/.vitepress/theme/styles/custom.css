@@ -295,8 +295,8 @@
 }
 
 .vp-doc table tbody tr:hover {
-  background-color: rgb(138, 190, 214) !important;
-  color: white !important;
+  background-color: rgba(182, 216, 235, 0.25) !important;
+  /* color: white !important; */
 
 }
 
