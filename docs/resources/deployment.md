@@ -15,39 +15,58 @@ List of our smart contract addresses across networks
 The current state of development is on testnets. As we continue testing and improving and/or auditing the code, new deployments may occur at any time. Please check the addresses regularly.
 :::
 
+<!-- | Networks | Pool | Router |
+| :------: | :-----: | :----- |
+| Ethereum Sepolia (11155111) | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d |
+| Sonic Testnet (14601) | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d| -->
+
 
 
 <div class="table-scroll">
   <table class="deployment-table">
     <thead>
       <tr>
-        <th>Testnets</th>
-        <th>Chain ID</th>
-        <th>Market</th>
+        <th>Networks</th>
+        <th>Pool</th>
+        <th>Router</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Ethereum Sepolia</td>
-        <td>11155111</td>
+        <td>Ethereum Sepolia <br>(11155111)</td>
         <td>
-          <code>0xe3F36b644ebA9562c735762642f5932DB6Cf462d</code>
-          <button class="copy-btn" @click="copyToClipboard('0xe3F36b644ebA9562c735762642f5932DB6Cf462d', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
+          <code>0x51f14862721793223726c97658641A25b3D1EB48</code>
+          <button class="copy-btn" @click="copyToClipboard('0x51f14862721793223726c97658641A25b3D1EB48', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
             <FontAwesomeIcon :icon="['far', 'copy']" />
           </button>
-          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xe3F36b644ebA9562c735762642f5932DB6Cf462d" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x51f14862721793223726c97658641A25b3D1EB48" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
+        </td>
+        <td>
+          <code>0x03f310Be0926bdF429d342780286D35769a55B53</code>
+          <button class="copy-btn" @click="copyToClipboard('0x03f310Be0926bdF429d342780286D35769a55B53', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
+            <FontAwesomeIcon :icon="['far', 'copy']" />
+          </button>
+          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x03f310Be0926bdF429d342780286D35769a55B53" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
           <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
         </td>
       </tr>
       <tr>
-        <td>Sonic Testnet</td>
-        <td>14601</td>
+        <td>Sonic Testnet <br>(14601)</td>
         <td>
-          <code>0xe3F36b644ebA9562c735762642f5932DB6Cf462d</code>
-          <button class="copy-btn" @click="copyToClipboard('0xe3F36b644ebA9562c735762642f5932DB6Cf462d', 'Sonic-Testnet')" aria-label="Copy address" title="Copy address">
+          <code>0x51f14862721793223726c97658641A25b3D1EB48</code>
+          <button class="copy-btn" @click="copyToClipboard('0x51f14862721793223726c97658641A25b3D1EB48', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
             <FontAwesomeIcon :icon="['far', 'copy']" />
           </button>
-          <a class="external-link-btn" href="https://testnet.sonicscan.org/address/0xe3F36b644ebA9562c735762642f5932DB6Cf462d" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x51f14862721793223726c97658641A25b3D1EB48" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
+        </td>
+        <td>
+          <code>0x03f310Be0926bdF429d342780286D35769a55B53</code>
+          <button class="copy-btn" @click="copyToClipboard('0x03f310Be0926bdF429d342780286D35769a55B53', 'Sonic-Testnet')" aria-label="Copy address" title="Copy address">
+            <FontAwesomeIcon :icon="['far', 'copy']" />
+          </button>
+          <a class="external-link-btn" href="https://testnet.sonicscan.org/address/0x03f310Be0926bdF429d342780286D35769a55B53" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
           <span v-if="copiedKey === 'Sonic-Testnet'" class="copy-status">Copied!</span>
         </td>
       </tr>
@@ -87,7 +106,7 @@ const copyToClipboard = async (text, key) => {
 
 .deployment-table {
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
   min-width: 760px;
 }
 
@@ -97,27 +116,6 @@ const copyToClipboard = async (text, key) => {
   }
 }
 
-.deployment-table th:nth-child(1),
-.deployment-table td:nth-child(1) {
-  width: 25%;
-  white-space: nowrap;
-}
-
-.deployment-table th:nth-child(2),
-.deployment-table td:nth-child(2) {
-  width: 15%;
-  white-space: nowrap;
-}
-
-.deployment-table th:nth-child(3),
-.deployment-table td:nth-child(3) {
-  width: 60%;
-  white-space: nowrap;
-}
-
-.deployment-table td:nth-child(3) code {
-  white-space: nowrap;
-}
 
 .copy-btn {
   margin-left: 0.4rem;
