@@ -26,7 +26,7 @@ The current state of development is on testnets. As we continue testing and impr
   <table class="deployment-table">
     <thead>
       <tr>
-        <th>Networks</th>
+        <th>Network</th>
         <th>Pool</th>
         <th>Router</th>
       </tr>
@@ -35,41 +35,22 @@ The current state of development is on testnets. As we continue testing and impr
       <tr>
         <td>Ethereum Sepolia <br>(11155111)</td>
         <td>
-          <code>0x51f14862721793223726c97658641A25b3D1EB48</code>
-          <button class="copy-btn" @click="copyToClipboard('0x51f14862721793223726c97658641A25b3D1EB48', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
+          <code>0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B</code>
+          <button class="copy-btn" @click="copyToClipboard('0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
             <FontAwesomeIcon :icon="['far', 'copy']" />
           </button>
-          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x51f14862721793223726c97658641A25b3D1EB48" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
           <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
         </td>
         <td>
-          <code>0x03f310Be0926bdF429d342780286D35769a55B53</code>
-          <button class="copy-btn" @click="copyToClipboard('0x03f310Be0926bdF429d342780286D35769a55B53', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
+          <code>0xDDfb78839F586B1b6535196FB3Ae213A67448741</code>
+          <button class="copy-btn" @click="copyToClipboard('0xDDfb78839F586B1b6535196FB3Ae213A67448741', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
             <FontAwesomeIcon :icon="['far', 'copy']" />
           </button>
-          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x03f310Be0926bdF429d342780286D35769a55B53" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xDDfb78839F586B1b6535196FB3Ae213A67448741" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
           <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
         </td>
-      </tr>
-      <tr>
-        <td>Sonic Testnet <br>(14601)</td>
-        <td>
-          <code>0x51f14862721793223726c97658641A25b3D1EB48</code>
-          <button class="copy-btn" @click="copyToClipboard('0x51f14862721793223726c97658641A25b3D1EB48', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
-            <FontAwesomeIcon :icon="['far', 'copy']" />
-          </button>
-          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x51f14862721793223726c97658641A25b3D1EB48" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
-          <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
-        </td>
-        <td>
-          <code>0x03f310Be0926bdF429d342780286D35769a55B53</code>
-          <button class="copy-btn" @click="copyToClipboard('0x03f310Be0926bdF429d342780286D35769a55B53', 'Sonic-Testnet')" aria-label="Copy address" title="Copy address">
-            <FontAwesomeIcon :icon="['far', 'copy']" />
-          </button>
-          <a class="external-link-btn" href="https://testnet.sonicscan.org/address/0x03f310Be0926bdF429d342780286D35769a55B53" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
-          <span v-if="copiedKey === 'Sonic-Testnet'" class="copy-status">Copied!</span>
-        </td>
-      </tr>
+      </tr>     
     </tbody>
   </table>
 </div>
