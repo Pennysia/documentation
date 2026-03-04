@@ -5,22 +5,16 @@ lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: [2,3]
+outline: [2, 3]
 ---
 
 # Deployment Address
+
 List of our smart contract addresses across networks
 
 ::: info :book: NOTE
 The current state of development is on testnets. As we continue testing and improving and/or auditing the code, new deployments may occur at any time. Please check the addresses regularly.
 :::
-
-<!-- | Networks | Pool | Router |
-| :------: | :-----: | :----- |
-| Ethereum Sepolia (11155111) | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d |
-| Sonic Testnet (14601) | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d | 0xe3F36b644ebA9562c735762642f5932DB6Cf462d| -->
-
-
 
 <div class="table-scroll">
   <table class="deployment-table">
@@ -35,26 +29,31 @@ The current state of development is on testnets. As we continue testing and impr
       <tr>
         <td>Ethereum Sepolia <br>(11155111)</td>
         <td>
-          <code>0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B</code>
-          <button class="copy-btn" @click="copyToClipboard('0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
-            <FontAwesomeIcon :icon="['far', 'copy']" />
-          </button>
-          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
-          <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
+          <div class="address-container">
+            <code>0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B</code>
+            <button class="copy-btn" @click="copyToClipboard('0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B', 'Eth-Sepolia-Pool')" aria-label="Copy address" title="Copy address">
+              <FontAwesomeIcon :icon="['far', 'copy']" />
+            </button>
+            <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          </div>
         </td>
         <td>
-          <code>0xDDfb78839F586B1b6535196FB3Ae213A67448741</code>
-          <button class="copy-btn" @click="copyToClipboard('0xDDfb78839F586B1b6535196FB3Ae213A67448741', 'Eth-Sepolia')" aria-label="Copy address" title="Copy address">
-            <FontAwesomeIcon :icon="['far', 'copy']" />
-          </button>
-          <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xDDfb78839F586B1b6535196FB3Ae213A67448741" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
-          <span v-if="copiedKey === 'Eth-Sepolia'" class="copy-status">Copied!</span>
+          <div class="address-container">
+            <code>0xDDfb78839F586B1b6535196FB3Ae213A67448741</code>
+            <button class="copy-btn" @click="copyToClipboard('0xDDfb78839F586B1b6535196FB3Ae213A67448741', 'Eth-Sepolia-Router')" aria-label="Copy address" title="Copy address">
+              <FontAwesomeIcon :icon="['far', 'copy']" />
+            </button>
+            <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xDDfb78839F586B1b6535196FB3Ae213A67448741" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          </div>
         </td>
       </tr>     
     </tbody>
   </table>
 </div>
 
+<div v-if="copiedKey" class="copy-notification">
+  <span>✓ Copied to clipboard!</span>
+</div>
 
 <script setup>
 import { ref } from "vue";
@@ -91,15 +90,26 @@ const copyToClipboard = async (text, key) => {
   min-width: 760px;
 }
 
+.deployment-table th:first-child,
+.deployment-table td:first-child {
+  width: 180px;
+  min-width: 150px;
+  max-width: 150px;
+}
+
 @media (max-width: 768px) {
   .deployment-table {
     table-layout: auto;
   }
 }
 
+.address-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 .copy-btn {
-  margin-left: 0.4rem;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -110,17 +120,36 @@ const copyToClipboard = async (text, key) => {
 }
 
 .external-link-btn {
-  margin-left: 0.35rem;
   color: inherit;
   text-decoration: none;
   font-size: 0.9rem;
   line-height: 1;
 }
 
-.copy-status {
-  margin-left: 0.35rem;
-  color: #16a34a;
-  font-size: 0.8rem;
+.copy-notification {
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  background: #ecffefff;
+  border: 1px solid #4dcd84ff;
+  color: black;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 40;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 </style>
