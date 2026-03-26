@@ -30,20 +30,20 @@ The current state of development is on testnets. As we continue testing and impr
         <td>Ethereum Sepolia <br>(11155111)</td>
         <td>
           <div class="address-container">
-            <code>0xD459e42255557FBbc284dF41a1f81D06b50947d3</code>
-            <button class="copy-btn" @click="copyToClipboard('0xD459e42255557FBbc284dF41a1f81D06b50947d3', 'Eth-Sepolia-Pool')" aria-label="Copy address" title="Copy address">
+            <code>0xD7D781fB69Be7B1c3837f4093950D565335baCB2</code>
+            <button class="copy-btn" @click="copyToClipboard('0xD7D781fB69Be7B1c3837f4093950D565335baCB2', 'Eth-Sepolia-Pool')" aria-label="Copy address" title="Copy address">
               <FontAwesomeIcon :icon="['far', 'copy']" />
             </button>
-            <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xD459e42255557FBbc284dF41a1f81D06b50947d3" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+            <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xD7D781fB69Be7B1c3837f4093950D565335baCB2" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
           </div>
         </td>
         <td>
           <div class="address-container">
-            <code>0xAdE35E6926a4765110CEaa04C9AF67e3886d721e</code>
-            <button class="copy-btn" @click="copyToClipboard('0xAdE35E6926a4765110CEaa04C9AF67e3886d721e', 'Eth-Sepolia-Router')" aria-label="Copy address" title="Copy address">
+            <code>0xCd9eda136B36BEF73df502063f4Bd804EF61E72b</code>
+            <button class="copy-btn" @click="copyToClipboard('0xCd9eda136B36BEF73df502063f4Bd804EF61E72b', 'Eth-Sepolia-Router')" aria-label="Copy address" title="Copy address">
               <FontAwesomeIcon :icon="['far', 'copy']" />
             </button>
-            <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xAdE35E6926a4765110CEaa04C9AF67e3886d721e" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+            <a class="external-link-btn" href="https://sepolia.etherscan.io/address/0xCd9eda136B36BEF73df502063f4Bd804EF61E72b" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
           </div>
         </td>
       </tr>     
