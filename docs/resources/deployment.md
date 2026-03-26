@@ -47,6 +47,27 @@ The current state of development is on testnets. As we continue testing and impr
           </div>
         </td>
       </tr>     
+      <tr>
+        <td>Sonic Testnet <br>(14601)</td>
+        <td>
+          <div class="address-container">
+            <code>0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B</code>
+            <button class="copy-btn" @click="copyToClipboard('0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B', 'Eth-Sepolia-Pool')" aria-label="Copy address" title="Copy address">
+              <FontAwesomeIcon :icon="['far', 'copy']" />
+            </button>
+            <a class="external-link-btn" href="https://testnet.sonicscan.org/address/0x23843Dc286e1A9509c4855f0aAf881aF59F38f7B" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          </div>
+        </td>
+        <td>
+          <div class="address-container">
+            <code>0xDDfb78839F586B1b6535196FB3Ae213A67448741</code>
+            <button class="copy-btn" @click="copyToClipboard('0xDDfb78839F586B1b6535196FB3Ae213A67448741', 'Eth-Sepolia-Router')" aria-label="Copy address" title="Copy address">
+              <FontAwesomeIcon :icon="['far', 'copy']" />
+            </button>
+            <a class="external-link-btn" href="https://testnet.sonicscan.org/address/0xDDfb78839F586B1b6535196FB3Ae213A67448741" target="_blank" rel="noopener noreferrer" aria-label="Open external link" title="Open external link">↗</a>
+          </div>
+        </td>
+      </tr>     
     </tbody>
   </table>
 </div>
