@@ -14,9 +14,9 @@ Pennysia offers dedicated support channels to assist users, developers, and part
 
 ## Support Channels
 
-- **Email:** For formal communication, partnership inquiries, or documentation requests. See [email list below](#formal-contact).
-- **Discord:** For real-time community support, developer discussions, and faster responses. Link [here](https://discord.gg/G7rxGgZhXa).
-- **Request Form:** If you want to add suggestion or feedback, let us know [here](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform).
+- [Email:](#formal-contact) for formal communication, partnership inquiries, or important matters.
+- [Discord:](https://discord.gg/G7rxGgZhXa) for real-time community support, developer discussions, and faster responses.
+- [Request Form:](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform) to submit feedback, feature requests, or suggestions.
 
 ## Formal Contact
 
