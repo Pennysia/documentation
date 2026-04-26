@@ -1,5 +1,5 @@
 :root {
-  --vp-c-brand-1: rgb(16, 160, 190);
+  --vp-c-brand-1: rgb(16, 173, 190);
   /* primary - fallback */
   --vp-c-brand-2: #0284c7;
   /* primary dark */
@@ -61,7 +61,7 @@
 /* Dark mode background colors */
 .dark {
   --vp-c-bg: #0F0F0F !important;
-  --vp-c-text-1: rgb(255, 255, 255) !important;
+  --vp-c-text-1: rgb(255, 255, 255,0.8) !important;
   /* --vp-c-text-2: rgb(255, 255, 255) !important; */
 }
 
@@ -380,6 +380,21 @@
   font-size: 0.9rem !important;
 }
 
+/* Roadmap status icons */
+.status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  color: white;
+  font-size: 9px;
+  margin-right: 6px;
+  vertical-align: 2px;
+}
+
 .VPNavBar   {
   background-color: var(--vp-c-bg) !important;
   border-bottom: none !important;
@@ -613,7 +628,7 @@ border-radius: 15px;
 
 /* Style h2 headings - dark mode */
 .dark .vp-doc h2 {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(255, 255, 255, 0.9) !important;
 }
 
 /* Style h3 headings with Poppins font */
@@ -634,7 +649,7 @@ border-radius: 15px;
 .vp-doc p {
   font-family: "Inter", sans-serif !important;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Reduce font size for tips, notes, and info blocks */
@@ -651,7 +666,8 @@ border-radius: 15px;
 }
 
 .vp-doc li {
-  font-weight: 300;
+  font-weight: 400;
+  font-size:0.9rem;
 }
 
 /* Apply solid cyan to links on hover */
@@ -680,7 +696,7 @@ a:hover {
 .dark .pager-link .title,
 .dark .VPDocFooter .title,
 .dark .pager .title {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(255, 255, 255, 0.9) !important;
 }
 
 /* Previous/Next page navigation links - hover cyan for both modes */
@@ -723,7 +739,7 @@ a:hover {
 }
 
 .dark .VPDocAsideOutline .outline-link:hover {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(255, 255, 255, 0.9) !important;
   opacity: 1 !important;
 }
 
