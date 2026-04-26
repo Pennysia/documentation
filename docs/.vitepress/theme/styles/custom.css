@@ -331,7 +331,7 @@
 }
 
 .VPSidebarItem.level-0 > .item > .text {
-  font-size: 0.85rem !important;
+  font-size: 0.75rem !important;
   font-weight: 500 !important;
   /* color: white !important; */
   text-transform: uppercase;
