@@ -10,68 +10,59 @@
   --vp-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --vp-c-brand-4: #7cd8ff;
-  
+
   /* Max width configuration */
   --vp-layout-max-width: 100%;
-  
-  /* Light mode background colors */
-  --vp-c-bg: rgb(255, 255, 255);
-  --vp-c-text-1: rgb(0, 0, 0);
+
+  /* Increase content width */
+  --vp-doc-max-width: 900px;
+}
+
+/* Apply max-width to doc content - override all VitePress defaults */
+.VPDoc .content-container,
+.VPDoc.has-aside .content-container,
+.VPDoc.has-sidebar .content-container {
+  max-width: var(--vp-doc-max-width) !important;
+}
+
+.vp-doc {
+  max-width: var(--vp-doc-max-width) !important;
+}
+
+/* Override parent container constraints */
+.VPDoc {
+  max-width: none !important;
+}
+
+.VPDoc .container {
+  max-width: none !important;
+}
+
+.VPContent {
+  max-width: none !important;
+}
+
+/* Reduce sidebar width to allow more content space */
+.VPSidebar {
+  width: 220px !important;
+}
+
+/* Reduce aside (TOC) width */
+.VPDocAside {
+  width: 180px !important;
+  max-width: 180px !important;
+}
+
+/* Ensure main content takes available space */
+.VPDoc .main {
+  flex: 1 !important;
 }
 
 /* Dark mode background colors */
 .dark {
   --vp-c-bg: #0F0F0F !important;
-  --vp-c-text-1: rgb(255, 255, 255,0.9) !important;
-  /* --vp-c-text-2: rgb(255, 255, 255,0.9) !important; */
-}
-
-/* Control max width of the content area */
-.vp-doc {
-  max-width: 100% !important;
-  margin: 0 0 0 0 !important;
-  padding: 0 0 0 0 !important;
-}
-
-.vp-doc .container {
-  max-width: 100% !important;
-  margin: 0 !important;
-}
-
-.VPDoc {
-  max-width: 100% !important;
-}
-
-.VPDoc .container {
-  max-width: 100% !important;
-  margin: 0 !important;
-}
-
-.VPDoc .content {
-  max-width: 100% !important;
-}
-
-.VPDoc .content-container {
-  max-width: 100% !important;
-}
-
-.VPContent {
-  max-width: 100% !important;
-}
-
-.VPContent .container {
-  max-width: 100% !important;
-  margin: 0 !important;
-}
-
-.VPContent .content {
-  max-width: 100% !important;
-}
-
-/* Control max width of the home page */
-.VPHome {
-  max-width: 100%;
-  margin: 0 auto;
+  --vp-c-text-1: rgb(255, 255, 255) !important;
+  /* --vp-c-text-2: rgb(255, 255, 255) !important; */
 }
 
 /* Custom text selection/highlight colors - light mode */
@@ -123,6 +114,7 @@
     margin-bottom: 24px;
   }
 }
+
 .VPHomeHero .main .text {
   color: rgb(0, 0, 0);
   font-size: 2.4rem;
@@ -131,9 +123,6 @@
   text-align: center;
 }
 
-
-
-
 .VPHomeHero .image img {
   width: fit-content;
   /* border: 2px solid white; */
@@ -141,11 +130,9 @@
   max-width: 100%;
 }
 
-
 .VPHomeHero .name {
   font-weight: 600;
 }
-
 
 .VPHomeHero .tagline {
   font-weight: 300;
@@ -294,23 +281,43 @@
   background-color: transparent !important;
 }
 
-.vp-doc table tbody tr:hover {
-  background-color: rgba(182, 216, 235, 0.25) !important;
-  /* color: white !important; */
-
-}
 
 /* Mobile responsive table */
 @media (max-width: 768px) {
   .vp-doc table {
     font-size: 0.9em;
   }
-  
+
   .vp-doc table td, .vp-doc table th {
     min-width: 100px;
     padding: 6px 8px;
   }
 
+}
+
+/* Table border radius */
+.vp-doc table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  overflow: hidden;
+}
+
+.vp-doc table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.vp-doc table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.vp-doc table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.vp-doc table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
 }
 
 /* Custom sidebar section headers styling */
@@ -324,11 +331,11 @@
 }
 
 .VPSidebarItem.level-0 > .item > .text {
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
   /* color: white !important; */
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Hide dropdown caret/arrow */
@@ -366,6 +373,11 @@
 /* Add padding to sidebar */
 .VPSidebar .nav {
   padding-top: 1rem !important;
+}
+
+/* Sidebar menu font size */
+.VPSidebar .link {
+  font-size: 0.9rem !important;
 }
 
 .VPNavBar   {
@@ -467,14 +479,42 @@ border-radius: 15px;
   color: white !important;
 }
 
+/* Search modal backdrop blur overlay */
+.VPLocalSearchBox {
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+.dark .VPLocalSearchBox {
+  background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
 /* Search modal container border */
-.VPLocalSearchBox,
 .VPLocalSearchBox .shell,
 .VPLocalSearchBox .search-bar,
 #local-search {
   border-color: var(--vp-c-brand-1) !important;
   border-radius: 20px !important;
   padding: 8px !important;
+}
+
+/* Limit search modal height on mobile and pin to bottom */
+@media (max-width: 768px) {
+  .VPLocalSearchBox .shell {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    max-height: 75vh !important;
+    overflow-y: auto !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
 }
 
 /* Search result item hover and active states */
@@ -551,8 +591,8 @@ border-radius: 15px;
 /* Style h1 headings with gradient color and Poppins font */
 .vp-doc h1 {
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 2rem !important;
+  font-weight: 400 !important;
+  font-size: 1.75rem !important;
   background: var(--vp-brand-gradient) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -564,39 +604,54 @@ border-radius: 15px;
 /* Style h2 headings - light mode with Poppins font */
 .vp-doc h2 {
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 1.75rem !important;
+  font-weight: 400 !important;
+  font-size: 1.5rem !important;
   color: rgb(0, 0, 0) !important;
-  border: none !important;
-  border-top: none !important;
-  border-bottom: none !important;
-  padding-top: 0 !important;
-  margin-top: 4rem !important;
+  margin-top: 2rem !important;
   margin-bottom: 0rem !important;
 }
 
 /* Style h2 headings - dark mode */
 .dark .vp-doc h2 {
-  color: rgb(255, 255, 255,0.9) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 /* Style h3 headings with Poppins font */
 .vp-doc h3 {
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  font-size: 1.2rem !important;
 }
 
-/* Remove divider line before and after h2 */
-.vp-doc h2::before,
-.vp-doc h2::after {
-  display: none !important;
-  border: none !important;
-}
 
 /* Apply solid cyan to all content links */
 .vp-doc a {
+  font-family: "Inter", sans-serif !important;
   color: var(--vp-c-brand-1) !important;
+}
+
+
+.vp-doc p {
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* Reduce font size for tips, notes, and info blocks */
+.vp-doc .custom-block {
+  font-size: 0.85rem !important;
+}
+
+.vp-doc .custom-block p {
+  font-size: 0.85rem !important;
+}
+
+.vp-doc .custom-block .custom-block-title {
+  font-weight: 400 !important;
+}
+
+.vp-doc li {
+  font-weight: 300;
 }
 
 /* Apply solid cyan to links on hover */
@@ -654,6 +709,11 @@ a:hover {
 .pager .pager-link:hover,
 .VPDocFooter .pager-link:hover {
   border-color: var(--vp-c-brand-1) !important;
+}
+
+/* Table of contents font size */
+.VPDocAsideOutline .outline-link {
+  font-size: 0.9rem;
 }
 
 /* Table of contents (On this page) - hover shows black/white at 100% opacity */
