@@ -1,5 +1,5 @@
 ---
-title: Deployment Address
+title: Deployments
 description: List of our smart contract addresses across networks
 lang: en-US
 layout: doc
@@ -8,7 +8,7 @@ lastUpdated: true
 outline: [2, 3]
 ---
 
-# Deployment Address
+# Deployments
 
 List of our smart contract addresses across networks
 
