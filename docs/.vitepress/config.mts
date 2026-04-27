@@ -128,15 +128,14 @@ export default defineConfig({
           { text: "Deployer Incentive", link: "/features/deployer-incentive" },
         ],
       },
-      // , {
-      //   text: 'Guides',
-      //   collapsed: false,
-      //   items: [
-      //     { text: 'Trader', link: '/guides/trader' },
-      //     { text: 'Liquidity Provider', link: '/guides/liquidity-provider' },
-      //     { text: 'Pool Deployer', link: '/guides/pool-deployer' },
-      //   ]
-      // }
+      {
+        text: "Guides",
+        collapsed: false,
+        items: [
+          { text: "Provide Liquidity", link: "/guides/provide-liquidity" },
+          { text: "Swap Token", link: "/guides/swap-token" },
+        ],
+      },
       {
         text: "Resources",
         collapsed: false,
