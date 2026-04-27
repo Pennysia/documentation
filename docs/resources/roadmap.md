@@ -57,6 +57,6 @@ Targeting to scale the user base and expand the product features.
 We expect to complete each stage within the following timeframe:
 
 - Ideation: Completed
-- Production: July - September 2026
+- Production: May - September 2026
 - GTM: October - December 2026
 - Growth: TBD
