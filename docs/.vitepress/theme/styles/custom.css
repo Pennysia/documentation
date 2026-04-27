@@ -58,6 +58,11 @@
   flex: 1 !important;
 }
 
+/* Reduce top padding so content starts higher */
+.VPDoc {
+  padding-top: 24px !important;
+}
+
 /* Dark mode background colors */
 .dark {
   --vp-c-bg: #0F0F0F !important;
@@ -372,12 +377,26 @@
 
 /* Add padding to sidebar */
 .VPSidebar .nav {
-  padding-top: 1rem !important;
+  padding-top: 0rem !important;
 }
 
 /* Sidebar menu font size */
-.VPSidebar .link {
-  font-size: 0.9rem !important;
+.VPSidebar .link,
+.VPSidebar .link .text,
+.VPSidebarItem.level-1 .link,
+.VPSidebarItem.level-1 .link .text,
+.VPSidebarItem.level-2 .link,
+.VPSidebarItem.level-2 .link .text {
+  font-size: 0.85rem !important;
+  line-height: 2.25;
+  padding: 0px;
+}
+
+/* Sidebar menu item vertical padding */
+.VPSidebarItem.level-1 > .item {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin: 0px !important;
 }
 
 /* Roadmap status icons */
@@ -728,8 +747,14 @@ a:hover {
 }
 
 /* Table of contents font size */
+.VPDocAsideOutline .outline-title {
+  font-size: 0.8rem !important;
+  line-height: 2.5;
+}
+
 .VPDocAsideOutline .outline-link {
-  font-size: 0.9rem;
+  font-size: 0.8rem !important;
+  line-height: 2.5;
 }
 
 /* Table of contents (On this page) - hover shows black/white at 100% opacity */
