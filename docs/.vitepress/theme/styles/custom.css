@@ -820,5 +820,12 @@ a:hover {
   display: none;
 }
 
+/* ============================================
+   BLOCKQUOTE STYLING
+   ============================================ */
 
+.vp-doc blockquote,
+.vp-doc blockquote p {
+  font-size: 0.9rem !important;
+}
 
