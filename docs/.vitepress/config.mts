@@ -1,4 +1,29 @@
 import { defineConfig } from "vitepress";
+import fs from "node:fs";
+import path from "node:path";
+
+function copyMarkdownFiles(srcDir: string, outDir: string) {
+  const mdDir = path.join(outDir, "md");
+  function walk(dir: string) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (
+        entry.isDirectory() &&
+        !entry.name.startsWith(".") &&
+        entry.name !== "node_modules" &&
+        entry.name !== "public"
+      ) {
+        walk(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith(".md")) {
+        const rel = path.relative(srcDir, fullPath);
+        const dest = path.join(mdDir, rel);
+        fs.mkdirSync(path.dirname(dest), { recursive: true });
+        fs.copyFileSync(fullPath, dest);
+      }
+    }
+  }
+  walk(srcDir);
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -84,6 +109,33 @@ export default defineConfig({
   markdown: {
     math: true,
   },
+  vite: {
+    plugins: [
+      {
+        name: "serve-raw-md",
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url?.startsWith("/md/") && req.url.endsWith(".md")) {
+              const mdPath = path.join(
+                __dirname,
+                "..",
+                req.url.replace("/md/", ""),
+              );
+              if (fs.existsSync(mdPath)) {
+                res.setHeader("Content-Type", "text/plain; charset=utf-8");
+                res.end(fs.readFileSync(mdPath, "utf-8"));
+                return;
+              }
+            }
+            next();
+          });
+        },
+      },
+    ],
+  },
+  async buildEnd(siteConfig) {
+    copyMarkdownFiles(siteConfig.srcDir, siteConfig.outDir);
+  },
   themeConfig: {
     logo: {
       light: "/lightMode.svg",
@@ -106,30 +158,30 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Get Started",
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Get Started',
         collapsed: false,
         items: [
           // { text: 'Introduction', link: '/get-started/intro' },
           { text: "Overview", link: "/get-started/overview" },
-          { text: "Concept", link: "/get-started/concept" },
+          { text: "Problem & Solution", link: "/get-started/problem-solution" },
           // { text: 'Demo Video', link: '/get-started/demo' },
         ],
       },
       {
-        text: "Features",
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Features',
         collapsed: false,
         items: [
-          { text: "Liquidity", link: "/features/liquidity" },
-          { text: "Trade", link: "/features/trade" },
+          { text: "AMM", link: "/features/amm" },
+          { text: "Exchange", link: "/features/exchange" },
           // { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
           { text: "Flashloan", link: "/features/flash" },
-          { text: "Fee", link: "/features/fee" },
           { text: "Oracle", link: "/features/oracle" },
+          { text: "Fee", link: "/features/fee" },
           { text: "Deployer Incentive", link: "/features/deployer-incentive" },
         ],
       },
       {
-        text: "Guides",
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Guides',
         collapsed: false,
         items: [
           { text: "Provide Liquidity", link: "/guides/provide-liquidity" },
@@ -137,7 +189,7 @@ export default defineConfig({
         ],
       },
       {
-        text: "Resources",
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Resources',
         collapsed: false,
         items: [
           { text: "Deployments", link: "/resources/deployments" },
