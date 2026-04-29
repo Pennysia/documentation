@@ -1,5 +1,5 @@
 ---
-title: Liquidity
+title: AMM
 description: One LP position, 4 revenue streams. Trading fees, liquidity fees, lending interest — all auto-compounded.
 lang: en-US
 layout: doc
@@ -8,7 +8,7 @@ lastUpdated: true
 outline: [2, 3]
 ---
 
-# Liquidity
+# Automated Market Maker (AMM)
 
 **One position, 4 revenue streams** — Earn from trading fees, liquidity movements, and Aave lending interest simultaneously. All auto-compounded in real-time. Same safety as Uniswap V2.
 

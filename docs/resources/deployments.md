@@ -13,7 +13,7 @@ outline: [2, 3]
 List of our smart contract addresses across networks
 
 ::: info :book: NOTE
-The current state of development is on testnets. As we continue testing and improving and/or auditing the code, new deployments may occur at any time. Please check the addresses regularly.
+Currently delpoyed on testnets. Addresses may change as development progresses.
 :::
 
 <div class="table-scroll">

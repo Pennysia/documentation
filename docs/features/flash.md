@@ -30,10 +30,6 @@ Unlike traditional AMM designs, Pennysia's **singleton architecture** enables fl
 - **Rebalancing** — Portfolio adjustments without upfront capital
 - **Refinancing** — Debt optimization across protocols
 
-## Fee
-
-**Flat 0.1%** per flashloan transaction — goes to protocol treasury.
-
 ## Getting Started
 
 Flashloans are accessible via smart contract interface.

@@ -10,11 +10,30 @@ outline: [2, 3]
 
 # Overview
 
-Pennysia is an Automated Market Maker (AMM) protocol designed to deliver low-risk, high-reward liquidity provisioning through a suite of novel mechanisms.
+**Low risk. High reward. Fully passive.**
 
-<img src="/socialCard.jpg" alt="overview_img" style="border: 1px solid black; border-radius: 20px;" />
+Pennysia is an Automated Market Maker(AMM) protocol on Ethereum that specifically designed for passive liquidity provision. It aims to provide the best passive yield for liquidity providers with the least possible amount of effort and risk.
 
-## Key Innovations
+## Our strategy is simple
+
+- One deposit and it's always active, earning 24/7.
+- Increase the yields for LP through multiple utility channels.
+- No leverage, No liquidation, No lockup.
+- Keep the risk profile as low as constant product AMM.
+- No need to actively manage, but allow users to do so if they want.
+- No principal loss on wrong adjustments, just less yield.
+- Real-time auto-compounding.
+- Your liquidity is accessible to all Dex aggregators worldwide, not limited to Pennysia.
+
+## Decentralized liquidity is Passive liquidity
+
+- The world wants decentralized liquidity.
+- Majority of LPs want passive yield, not management hassle.
+- Pennysia optimizes for it.
+
+<!-- <img src="/socialCard.jpg" alt="overview_img" style="border: 1px solid black; border-radius: 20px;" /> -->
+
+<!-- ## Key Innovations
 
 ### 1.Liquidity Prediction Market (LPM)
 
@@ -56,4 +75,4 @@ With all token reserves unified under one contract, Pennysia introduces a **univ
 
 ### 5.Native Token Support
 
-Pennysia natively supports network’s native token, allowing projects and users to **create markets and trade directly with their native tokens**—no wrapping, no intermediaries.
+Pennysia natively supports network’s native token, allowing projects and users to **create markets and trade directly with their native tokens**—no wrapping, no intermediaries. -->

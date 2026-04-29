@@ -11,8 +11,10 @@ outline: [2, 3]
 # Swap Tokens
 
 ::: info :information_source: INFO
-Make sure your wallet is connected before proceeding.
-:::
+
+- Currently available on private testnet only
+- Make sure your wallet is connected before proceeding.
+  :::
 
 ## Step 1 — Select Tokens
 

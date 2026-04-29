@@ -1,5 +1,5 @@
 ---
-title: Trade
+title: Exchange
 description: Trade any token onchain directly through Pennysia's liquidity pools.
 lang: en-US
 layout: doc
@@ -8,17 +8,28 @@ lastUpdated: true
 outline: [2, 3]
 ---
 
-# Trade
+# Exchange
 
 **Trade any token onchain** — Select tokens, enter an amount, and execute. Pennysia calculates the output and routes the trade automatically.
 
 Every swap generates [trading fees](./fee.md) distributed to liquidity providers and the protocol treasury.
 
+## DEX Aggregator Integration
+
+::: info :information_source: INFO
+The full list of integrated DEX aggregators will be announced at mainnet launch.
+:::
+To ensure our liquidity is optimally utilized, we aim to integrate with major DEX aggregators. This means:
+
+- **Best price, always** — Aggregators route trades through the deepest liquidity, including ours, giving traders the best execution price regardless of trade size
+- **Wider reach** — Our liquidity is accessible to users across other protocols and platforms, not just Pennysia directly
+- **Better capital efficiency** — More volume through our pools means more fees earned by LPs
+
+## Routing
+
 ::: tip :book: TIP
 The interface handles routing automatically. You don't need to think about single-hop or multi-hop — just pick your tokens and swap.
 :::
-
-## Routing
 
 ### Single Hop
 
@@ -39,18 +50,6 @@ When no direct A↔B pool exists, Pennysia routes through intermediate tokens: A
 
 - Access to any token pair
 - Better price by routing through deeper liquidity
-
-## DEX Aggregator Integration
-
-To ensure our liquidity is optimally utilized, we aim to integrate with major DEX aggregators. This means:
-
-- **Best price, always** — Aggregators route trades through the deepest liquidity, including ours, giving traders the best execution price regardless of trade size
-- **Wider reach** — Our liquidity is accessible to users across other protocols and platforms, not just Pennysia directly
-- **Better capital efficiency** — More volume through our pools means more fees earned by LPs
-
-::: info :information_source: INFO
-The full list of integrated DEX aggregators will be announced at mainnet launch.
-:::
 
 ## Price Impact & Slippage
 

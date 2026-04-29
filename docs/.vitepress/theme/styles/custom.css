@@ -854,6 +854,71 @@ a:hover {
   font-size: 0.9rem !important;
 }
 
+/* Replace ⌘K with / in search button */
+.VPNavBarSearch .DocSearch-Button-Keys,
+.VPNavBarSearch button .vp-nbd,
+button.DocSearch-Button kbd {
+  display: none !important;
+}
+
+.VPNavBarSearch button::after,
+.DocSearch-Button::after {
+  content: "/";
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--vp-font-family-base);
+  background-color: var(--vp-c-default-soft);
+  border-radius: 6px;
+  padding: 0px 10px;
+  color: var(--vp-c-text-3);
+  margin-left: 8px;
+}
+
+/* Mobile: hide / badge and push search to far right */
+@media (max-width: 768px) {
+  .VPNavBarSearch button::after,
+  .DocSearch-Button::after {
+    display: none !important;
+  }
+
+  .VPNav .VPNavBar .content {
+    flex-grow: 1 !important;
+  }
+
+  .VPNav .VPNavBar .content .content-body {
+    flex-grow: 1 !important;
+    justify-content: flex-end !important;
+  }
+
+  .VPNav .VPNavBar .content .content-body .search {
+    flex-grow: 1 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    padding-left: 0 !important;
+  }
+}
+
+/* Hide the extra menu (3 dots) in navbar */
+.VPNavBarExtra {
+  display: none !important;
+}
+
+/* Swap social icons and theme toggle in navbar */
+.VPNavBar .VPNavBarExtra,
+.VPNavBar > .wrapper > .container > .content > .content-body > .actions {
+  display: flex;
+}
+
+.VPNavBar .VPNavBarAppearance,
+.VPNavBar .appearance {
+  order: 2;
+}
+
+.VPNavBar .VPSocialLinks,
+.VPNavBar .VPNavBarSocialLinks {
+  order: 1;
+}
+
 /* Copy page dropdown - invert AI logos in dark mode */
 .dark .dropdown-item img {
   filter: invert(1) !important;
