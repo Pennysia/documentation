@@ -20,9 +20,15 @@ importers:
       '@fortawesome/vue-fontawesome':
         specifier: ^3.0.8
         version: 3.1.3(@fortawesome/fontawesome-svg-core@6.7.2)(vue@3.5.24)
+      '@lottiefiles/dotlottie-web':
+        specifier: ^0.71.0
+        version: 0.71.0
       '@miletorix/vitepress-youtube-embed':
         specifier: ^1.0.2
         version: 1.0.2(vue@3.5.24)
+      lottie-web:
+        specifier: ^5.13.0
+        version: 5.13.0
     devDependencies:
       markdown-it-mathjax3:
         specifier: ^4.3.2
@@ -321,6 +327,9 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@lottiefiles/dotlottie-web@0.71.0':
+    resolution: {integrity: sha512-CliQttL0Rk0or/aDQkqUJXnC9Cm5TxzNdOqy/YlzKlU6mu+XgTMwyt5/HpPiltlMeaqBmM9mOzfevpyP4QmudQ==}
 
   '@miletorix/vitepress-youtube-embed@1.0.2':
     resolution: {integrity: sha512-/tNIdEjp9+4uZ7jFm5YLnMctuWamHdp4ztzJSgbqZaD6UP4V3wKcgIJ+BTi8BB3Gwo03mbJ17p/KS7XwW7UJWA==}
@@ -726,6 +735,9 @@ packages:
     resolution: {integrity: sha512-FLzurJrx5Iv1e7CfBSZH68dC04EEvXvvVvPYB7Vx1WAuhCp1ZPIMtqxc+WTWxVkpTIC2Ach/GAv0rQbtGf6YMA==}
     engines: {node: '>=10.0.0'}
     hasBin: true
+
+  lottie-web@5.13.0:
+    resolution: {integrity: sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -1221,6 +1233,8 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
+  '@lottiefiles/dotlottie-web@0.71.0': {}
+
   '@miletorix/vitepress-youtube-embed@1.0.2(vue@3.5.24)':
     dependencies:
       vue: 3.5.24
@@ -1651,6 +1665,8 @@ snapshots:
       web-resource-inliner: 6.0.1
     transitivePeerDependencies:
       - encoding
+
+  lottie-web@5.13.0: {}
 
   magic-string@0.30.21:
     dependencies:
