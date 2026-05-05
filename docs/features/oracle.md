@@ -12,9 +12,9 @@ outline: [2, 3]
 
 **Cube-Root TWAP (cbrtTWAP)** — An innovative variant of [TWAP](https://en.wikipedia.org/wiki/Time-weighted_average_price) oracle that balances arithmetic and geometric means.
 
-## The Problem
+## Design Trade-off
 
-Traditional oracles force a trade-off:
+Traditional TWAP oracles force a trade-off:
 
 | Approach       | Pros                            | Cons                              |
 | -------------- | ------------------------------- | --------------------------------- |
@@ -23,13 +23,13 @@ Traditional oracles force a trade-off:
 
 As highlighted in [research by Delphi Digital](https://members.delphidigital.io/reports/arithmetic-or-geometric-mean-twap-which-one-to-use), choosing between these approaches involves significant trade-offs.
 
-## Our Solution
+## Introduce cbrtTWAP Oracle
 
-cbrtTWAP uses cube-root transformation to achieve:
+Our AMM invents cbrtTWAP. It utilizes cube-root transformation to achieve:
 
-- **Responsive** — Captures immediate market changes
-- **Stable** — Follows broader trends, not noise
-- **Resistant** — Harder to manipulate
+- **Responsive** — Captures immediate market changes better than Geometric TWAP
+- **Resistant** — Harder to manipulate than Arithmetic TWAP
+- **Stable** — Follows broader trends, not noise.
 
 ## How It Works
 

@@ -12,9 +12,10 @@ outline: [2, 3]
 
 **Borrow tokens without collateral** — Execute complex multi-token strategies in a single atomic transaction.
 
-Unlike traditional AMM designs, Pennysia's **singleton architecture** enables flashloans across all protocol tokens from a unified liquidity pool.
+## Better Flashloan Experience
 
-## Why Use Flashloans?
+Unlike traditional AMM designs, Pennysia's **singleton architecture** enables flashloans across all protocol tokens from a unified liquidity pool.
+It offers several unique advantages:
 
 | Feature              | Benefit                                             |
 | -------------------- | --------------------------------------------------- |
@@ -30,7 +31,7 @@ Unlike traditional AMM designs, Pennysia's **singleton architecture** enables fl
 - **Rebalancing** — Portfolio adjustments without upfront capital
 - **Refinancing** — Debt optimization across protocols
 
-## Getting Started
+## Guideline
 
 Flashloans are accessible via smart contract interface.
 
