@@ -304,25 +304,24 @@
 .vp-doc table {
   border-collapse: separate;
   border-spacing: 0;
-  border-radius: 12px;
-  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .vp-doc table thead th:first-child {
-  border-top-left-radius: 12px;
+  border-top-left-radius: 8px;
 }
 
 .vp-doc table thead th:last-child {
-  border-top-right-radius: 12px;
+  border-top-right-radius: 8px;
 }
 
 .vp-doc table tbody tr:last-child td:first-child {
-  border-bottom-left-radius: 12px;
+  border-bottom-left-radius: 8px;
 }
 
 .vp-doc table tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 12px;
+  border-bottom-right-radius: 8px;
 }
 
 /* Custom sidebar section headers styling */

@@ -146,10 +146,6 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      // { text: 'Get Started', link: '/get-started/overview' },
-      // { text: 'Features', link: '/features/swap' },
-      // { text: 'Guides', link: '/guides/trader' },
-      // { text: 'Resources', link: '/resources/links' },
       {
         text: "Feedback",
         link: "https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform",
@@ -160,23 +156,38 @@ export default defineConfig({
       {
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Get Started',
         collapsed: false,
+        items: [{ text: "Overview", link: "/get-started/overview" }],
+      },
+      {
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Products',
+        collapsed: false,
         items: [
-          // { text: 'Introduction', link: '/get-started/intro' },
-          { text: "Overview", link: "/get-started/overview" },
-          { text: "Problem & Solution", link: "/get-started/problem-solution" },
-          // { text: 'Demo Video', link: '/get-started/demo' },
+          {
+            text: "Exchange",
+            base: "/products/exchange/",
+            items: [
+              { text: "Background", link: "background" },
+              { text: "Concept", link: "concept" },
+            ],
+          },
+          {
+            text: "AMM",
+            base: "/products/amm/",
+            items: [
+              { text: "Background", link: "background" },
+              { text: "Concept", link: "concept" },
+            ],
+          },
         ],
       },
       {
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Features',
         collapsed: false,
         items: [
-          { text: "AMM", link: "/features/amm" },
-          { text: "Exchange", link: "/features/exchange" },
-          // { text: 'Provide Liquidity', link: '/features/provide-liquidity' },
+          { text: "Trade", link: "/features/trade" },
+          { text: "Liquidity", link: "/features/liquidity" },
           { text: "Flashloan", link: "/features/flash" },
           { text: "Oracle", link: "/features/oracle" },
-          { text: "Fee", link: "/features/fee" },
           { text: "Deployer Incentive", link: "/features/deployer-incentive" },
         ],
       },
@@ -184,14 +195,15 @@ export default defineConfig({
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Guides',
         collapsed: false,
         items: [
-          { text: "Provide Liquidity", link: "/guides/provide-liquidity" },
           { text: "Swap Token", link: "/guides/swap-token" },
+          { text: "Provide Liquidity", link: "/guides/provide-liquidity" },
         ],
       },
       {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Resources',
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>Resources',
         collapsed: false,
         items: [
+          { text: "Fee", link: "/resources/fee" },
           { text: "Deployments", link: "/resources/deployments" },
           { text: "Official Links", link: "/resources/links" },
           { text: "Roadmap", link: "/resources/roadmap" },

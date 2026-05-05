@@ -9,6 +9,8 @@ import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import DocLayout from "./DocLayout.vue";
+import LottiePlayer from "./components/LottiePlayer.vue";
+import TokenPair from "./components/TokenPair.vue";
 
 library.add(faCopy as any, faCheck as any);
 
@@ -18,5 +20,7 @@ export default {
   enhanceApp(ctx: EnhanceAppContext) {
     ctx.app.component("YouTubeEmbed", YouTubeEmbed);
     ctx.app.component("FontAwesomeIcon", FontAwesomeIcon);
+    ctx.app.component("LottiePlayer", LottiePlayer);
+    ctx.app.component("TokenPair", TokenPair);
   },
 };
