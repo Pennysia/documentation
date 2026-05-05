@@ -76,5 +76,5 @@ The 20% AMM protocol fee supports:
 - Marketing and operations
 
 ::: info :book: NOTE
-**50% of protocol fees** go to the [Deployer Incentive Program](./deployer-incentive), rewarding projects that launch markets on Pennysia.
+**50% of protocol fees** go to the [Deployer Incentive Program](../features/deployer-incentive.md), rewarding projects that launch markets on Pennysia.
 :::
