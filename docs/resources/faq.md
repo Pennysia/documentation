@@ -1,31 +1,46 @@
 ---
 title: FAQ
-description: frequently asked questions about Pennysia protocol.
+description: Frequently asked questions about Pennysia protocol.
 lang: en-US
 layout: doc
 footer: true
 lastUpdated: true
-outline: [2,3]
+outline: [2, 3]
 ---
 
 # Frequently Asked Questions
-
 
 ## General Questions
 
 **What is Pennysia?**
 
-> Pennysia is a low-risk, high-reward AMM (Automated Market Maker) that combines Uniswap V2 mechanics with prediction market features, allowing liquidity providers to earn from both sides of every trade while expressing market bias.
+> Pennysia is a DeFi protocol with two products: **Exchange** — a best-rate swap engine powered by the Aggregator of Aggregators (AoA) Protocol — and **AMM** — a passive liquidity AMM that lets LPs earn from directional market views without leverage or active management.
 
 **When was Pennysia created?**
 
-> Pennysia began at the Sonic S-Tier Hackathon in August 2025, won 1st place, and was officially published on October 2, 2025.
+> Pennysia began at the Sonic S-Tier Hackathon in August 2025, won 1st place, and has been in development since.
 
-**What makes Pennysia different from other AMMs?**
+**What are Pennysia's two products?**
 
-> Pennysia offers 5 key innovations: Liquidity Prediction Markets (LPM), Weighted Dynamic Fees, Aave Integration for dual yield, Cube-Root TWAP Oracle, and Deployer Incentive Program.
+> **Exchange (AoA Protocol)** — Queries all major DEX aggregators simultaneously and executes the best available route on every swap. No aggregator selection needed. **AMM** — A passive liquidity AMM with directional earning, 4 revenue streams, and Aave integration. No active management required.
 
+## Exchange (AoA Protocol)
 
+**How does the Exchange work?**
+
+> Pennysia Exchange is an Aggregator of Aggregators (AoA). When you swap, it broadcasts your request to all major DEX aggregators simultaneously, compares every quote, applies a final optimization pass, and executes the best path — automatically, on every trade.
+
+**Why is this better than using a single aggregator?**
+
+> No single aggregator consistently delivers the best rate across all trade sizes and token pairs. The aggregator that wins for a 1,000 ETH swap may rank last for a 100 ETH swap at the same moment. AoA makes all of them compete on your behalf — you always get the best result available at that moment.
+
+**Does Pennysia Exchange charge a fee?**
+
+> No. The AoA Protocol currently charges no fee. You pay only the underlying aggregator's execution cost (embedded in the quoted rate) and gas. A protocol fee will be introduced in the future and will be lower than major exchanges and aggregators.
+
+**Can I try the Exchange before mainnet launch?**
+
+> Yes. A live prototype is available at [aoa.pennysia.com](https://aoa.pennysia.com) on Ethereum Mainnet, where you can see real-time rate comparisons across aggregators.
 
 ## Liquidity Prediction Market (LPM)
 
@@ -49,26 +64,31 @@ outline: [2,3]
 
 > You can allocate 50/50 to both buckets to maintain a neutral stance and earn steady baseline fees from both directions.
 
-
-
 ## Fees and Rewards
 
-**How are trading fees structured?**
+**Does the Exchange charge a swap fee?**
 
-> Each directional bucket sets its own fee rate. 80% of collected swap fees go to LPs (auto-compounded), and 20% is retained as protocol fee.
+> No. The AoA Protocol is currently free to use. You pay the aggregator's embedded execution cost and gas only — no Pennysia markup.
 
-**What is the liquidity fee?**
+**How are AMM trading fees structured?**
 
-> A small fee charged when withdrawing liquidity, with 80% distributed to remaining LPs in the same bucket and 20% as protocol fee.
+> Each directional bucket sets its own taker fee rate (0.1%–0.5%, default 0.3%). 80% goes to LPs (auto-compounded), 20% to the protocol treasury.
+
+**What is the maker fee?**
+
+> A small fee charged when withdrawing liquidity from the AMM. Same rate structure as the taker fee — 80% to LPs, 20% to treasury.
+
+**What is the liquidity swap fee?**
+
+> A fee charged when switching between directional buckets. Same distribution as other AMM fees.
 
 **How much is the flashloan fee?**
 
 > Flashloans have a fixed 0.1% protocol fee.
 
-**Are rewards automatically compounded?**
-> Yes, all trading fees and yield earnings are automatically compounded back into your principal position in real time without gas overhead.
+**Are AMM rewards automatically compounded?**
 
-
+> Yes, all trading fees and Aave lending interest are automatically compounded back into your position in real time without manual intervention.
 
 ## Aave Integration
 
@@ -88,8 +108,6 @@ outline: [2,3]
 
 > Yes, liquidity remains instantly retrievable for swaps and withdrawals without disrupting trading operations.
 
-
-
 ## Oracle and Pricing
 
 **What is the Cube-Root TWAP Oracle?**
@@ -99,8 +117,6 @@ outline: [2,3]
 **How does it prevent manipulation?**
 
 > By applying cube-root transformation to price observations before time-weighted averaging, it balances the precision of arithmetic means with the stability of geometric means.
-
-
 
 ## Technical Features
 
@@ -120,27 +136,23 @@ outline: [2,3]
 
 > The ability to borrow multiple tokens simultaneously within one atomic transaction, enabling advanced strategies like multi-asset arbitrage and portfolio rebalancing.
 
-
-
 ## Trading
 
-**How do swaps work on Pennysia?**
+**How do swaps work on Pennysia Exchange?**
 
-> Pennysia supports both single-hop (direct A↔B) and multi-hop (A→X→B) swaps, automatically finding optimal routing based on liquidity depth and price.
+> Pennysia Exchange queries all major DEX aggregators simultaneously, selects the best route, and executes it. You don't pick an aggregator — the protocol does it automatically on every swap.
 
 **What is price impact?**
 
-> The difference between spot price before your trade and execution price, caused by how much your trade shifts the pool's reserves.
+> The difference between the spot price before your trade and the execution price, caused by how much your trade shifts liquidity reserves.
 
 **What is slippage?**
 
-> The gap between the quoted price when you submit a transaction and the actual execution price, including price impact plus any interim changes from other transactions.
+> The gap between the quoted price when you submit a transaction and the actual execution price — includes price impact plus any price changes from transactions that settle before yours.
 
 **What protection parameters are available?**
 
-> Slippage tolerance settings and transaction deadlines to protect against unfavorable price movements.
-
-
+> Slippage tolerance (maximum acceptable deviation before the transaction reverts) and a deadline (cancels the transaction if not confirmed in time, preventing execution at stale prices).
 
 ## Deployer Incentive Program
 
@@ -156,23 +168,19 @@ outline: [2,3]
 
 > A built-in mechanism that can temporarily pause the Deployer Incentive Program and redirect fees to the protocol treasury if needed for development, operations, or security.
 
-
-
 ## Getting Started
 
 **How do I start trading on Pennysia?**
 
-> Connect your wallet to the Pennysia interface and swap tokens directly. Detailed trading guides are coming soon.
+> Connect your wallet, select tokens, enter an amount, and confirm. The Exchange handles routing automatically. See the [Trade](../features/trade.md) page for details, or try the live prototype at [aoa.pennysia.com](https://aoa.pennysia.com).
 
 **How do I provide liquidity?**
 
-> Deposit equal values of two tokens, choose your directional allocation between buckets, and start earning fees. Detailed LP guides are coming soon.
+> Deposit a token pair, choose your directional bucket (bullish on X, bullish on Y, or 50/50), and confirm. See the [Liquidity](../features/liquidity.md) page or follow the [step-by-step guide](../guides/provide-liquidity.md).
 
 **How do I deploy a new market?**
 
-> Use the pool deployment interface to create new trading pairs. Deployers automatically become eligible for the revenue-sharing program.
-
-
+> Use the pool deployment interface to create new trading pairs. Deployers are automatically eligible for the Deployer Incentive Program — up to 50% of protocol fees.
 
 ## Risks and Safety
 
@@ -187,8 +195,6 @@ outline: [2,3]
 **What happens in extreme market conditions?**
 
 > The protocol is built on battle-tested Uniswap V2 mechanics with infinite price range coverage, eliminating liquidity depletion risks for volatile tokens.
-
-
 
 ## Support and Community
 
