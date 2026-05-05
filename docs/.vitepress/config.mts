@@ -58,7 +58,7 @@ export default defineConfig({
       {
         property: "og:description",
         content:
-          "Complete documentation for Pennysia AMM protocol, the AMM that people love.",
+          "Pennysia — best rate for traders, best yield for liquidity providers.",
       },
     ],
     ["meta", { property: "og:site_name", content: "Pennysia Documentation" }],
@@ -74,7 +74,8 @@ export default defineConfig({
       "meta",
       {
         property: "og:image:alt",
-        content: "Pennysia - the AMM that people love",
+        content:
+          "Pennysia — best rate for traders, best yield for liquidity providers.",
       },
     ],
     ["meta", { property: "og:image:width", content: "1600" }],
@@ -87,7 +88,7 @@ export default defineConfig({
       {
         name: "twitter:description",
         content:
-          "Complete documentation for Pennysia AMM protocol. Learn about Liquidity Prediction Markets, uncollateralized flashloans, and cube-root TWAP oracle technology.",
+          "Pennysia — best rate for traders, best yield for liquidity providers.",
       },
     ],
     [
@@ -102,7 +103,7 @@ export default defineConfig({
   ],
   title: "Pennysia Docs",
   description:
-    "Complete documentation for Pennysia AMM protocol. Learn about Liquidity Prediction Markets, uncollateralized flashloans, and cube-root TWAP oracle technology.",
+    "Pennysia — best rate for traders, best yield for liquidity providers.",
   base: "/",
   lang: "en-US",
   lastUpdated: true,
