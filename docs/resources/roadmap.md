@@ -12,7 +12,7 @@ outline: [2, 3]
 
 Where we are heading to and what's next for Pennysia.
 
-## We divide project development into 4 stages:
+## Four Development Stages
 
 <img src="/roadmapDark.png" alt="roadmap" class="dark-only">
 <img src="/roadmapLight.png" alt="roadmap" class="light-only">
@@ -23,7 +23,7 @@ This stage focused on validating the core concept and building the foundational 
 
 - October 2025: We competed [Sonic hackathon](./hackathon.md) and won the 1st place, to 1st validate our idea.
 - November 2025: We then improved our model and prepared for production.
-- December 2025: We made proof or concept and backtest to showcase the potential.
+- December 2025: We made proof of concept and backtest to showcase the potential.
 - January 2026: We developed, tested, and deployed smart contracts on Ethereum Sepolia testnet and Sonic testnet.
 - February 2026: We built the web application interface to facilitate user interaction.
 - April 2026: We did private launch of the app on Ethereum testnet to family, friends, and early interested users to gather feedback around the build and user experience.
@@ -44,7 +44,7 @@ This step include the following orders:
 - Branding, Marketing, and Community initialization
 - Mainnet launch preparation
 
-### 3. GTM
+### 3. Go-To-Market (GTM)
 
 Targeting to launch on mainnet and start user acquisition.
 
