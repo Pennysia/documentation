@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import fs from "node:fs";
 import path from "node:path";
+import type { IncomingMessage, ServerResponse } from "node:http";
 
 function copyMarkdownFiles(srcDir: string, outDir: string) {
   const mdDir = path.join(outDir, "md");
@@ -115,21 +116,23 @@ export default defineConfig({
       {
         name: "serve-raw-md",
         configureServer(server) {
-          server.middlewares.use((req, res, next) => {
-            if (req.url?.startsWith("/md/") && req.url.endsWith(".md")) {
-              const mdPath = path.join(
-                __dirname,
-                "..",
-                req.url.replace("/md/", ""),
-              );
-              if (fs.existsSync(mdPath)) {
-                res.setHeader("Content-Type", "text/plain; charset=utf-8");
-                res.end(fs.readFileSync(mdPath, "utf-8"));
-                return;
+          server.middlewares.use(
+            (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+              if (req.url?.startsWith("/md/") && req.url.endsWith(".md")) {
+                const mdPath = path.join(
+                  __dirname,
+                  "..",
+                  req.url.replace("/md/", ""),
+                );
+                if (fs.existsSync(mdPath)) {
+                  res.setHeader("Content-Type", "text/plain; charset=utf-8");
+                  res.end(fs.readFileSync(mdPath, "utf-8"));
+                  return;
+                }
               }
-            }
-            next();
-          });
+              next();
+            },
+          );
         },
       },
     ],
