@@ -68,7 +68,7 @@ export default defineConfig({
       "meta",
       {
         property: "og:image",
-        content: "https://docs.pennysia.com/socialCard.jpg",
+        content: "https://docs.pennysia.com/SocialBanner2.jpg",
       },
     ],
     [
@@ -96,7 +96,7 @@ export default defineConfig({
       "meta",
       {
         name: "twitter:image",
-        content: "https://docs.pennysia.com/socialCard.jpg",
+        content: "https://docs.pennysia.com/SocialBanner2.jpg",
       },
     ],
     ["meta", { property: "twitter:domain", content: "docs.pennysia.com" }],
