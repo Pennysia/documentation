@@ -14,9 +14,13 @@ Welcome to Pennysia's official documentation. Here you'll find everything about 
 
 ## Intro
 
-Pennysia is a DeFi protocol that builds provable exceptional products to solve liquidity problems based on research, market data and user behavior. Our goal is a unified global liquidity layer — sustainable, performant, and open to everyone.
+Pennysia is a DeFi infrastructure protocol building a unified liquidity layer for global markets.
 
-To understand the problems we solve by each product, please refer to the [Products](../products/exchange/background.md) section.
+By abstracting fragmented execution and liquidity systems into a single optimized infrastructure, Pennysia enables better pricing, deeper liquidity access, and more sustainable passive liquidity provision across DeFi.
+
+Our products are designed through protocol research, market structure analysis, and real-world user behavior.
+
+Learn more about each product and the problems they address in the [Products](../products/exchange/background.md) section.
 
 ## Products
 

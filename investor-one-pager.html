@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pennysia Investor One-Pager</title>
+    <style>
+      @page {
+        size: Letter;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f2f2f2;
+        color: #111111;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      .page {
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #ffffff;
+        position: relative;
+        padding: 0.34in 0.48in 0.3in;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand-name {
+        font-size: 23px;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      .tag {
+        padding: 7px 12px;
+        border: 1px solid #111111;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #111111;
+        font-size: 11px;
+        font-weight: 760;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.16fr 0.84fr;
+        gap: 22px;
+        align-items: center;
+        padding-bottom: 15px;
+        border-bottom: 0;
+      }
+
+      h1 {
+        margin: 0;
+        color: #111111;
+        font-size: 34px;
+        line-height: 1.04;
+        letter-spacing: 0;
+      }
+
+      .subhead {
+        margin: 10px 0 0;
+        color: #2f2f2f;
+        font-size: 13.4px;
+        line-height: 1.42;
+        max-width: 478px;
+      }
+
+      .hero-card {
+        border: 1px solid #d1d1d1;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 13px 15px;
+        box-shadow: none;
+      }
+
+      .hero-card-title {
+        margin-bottom: 7px;
+        color: #111111;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .stat {
+        display: grid;
+        grid-template-columns: 62px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 7px 0;
+        border-top: 1px solid #d8d8d8;
+      }
+
+      .stat:first-of-type {
+        border-top: 0;
+      }
+
+      .stat strong {
+        color: #111111;
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      .stat span {
+        color: #333333;
+        font-size: 10.8px;
+        line-height: 1.35;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 11px;
+        margin-top: 13px;
+      }
+
+      .section {
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 11px 13px;
+      }
+
+      .section h2 {
+        margin: 0 0 8px;
+        color: #111111;
+        font-size: 12.2px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .section p {
+        margin: 0;
+        color: #252525;
+        font-size: 10.7px;
+        line-height: 1.34;
+      }
+
+      .bullets {
+        display: grid;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .bullets li {
+        color: #252525;
+        font-size: 10.7px;
+        line-height: 1.32;
+        padding-left: 14px;
+        position: relative;
+      }
+
+      .bullets li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.54em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #111111;
+      }
+
+      .wide {
+        grid-column: 1 / -1;
+      }
+
+      .section.unframed {
+        border: 0;
+        padding: 0;
+      }
+
+      .columns-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .mini {
+        min-height: 76px;
+        padding: 10px;
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .mini strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #111111;
+        font-size: 11.6px;
+      }
+
+      .mini span {
+        color: #2d2d2d;
+        font-size: 9.9px;
+        line-height: 1.28;
+      }
+
+      .traction {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      .traction .mini {
+        min-height: 70px;
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 11px;
+        margin-top: 9px;
+      }
+
+      .team {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 10px;
+        padding-top: 9px;
+        border-top: 1px solid #d5d5d5;
+      }
+
+      .team-title {
+        color: #111111;
+        font-size: 10.6px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .team-members {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 13px;
+      }
+
+      .member {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #111111;
+        font-size: 9.4px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .member img {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #111111;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid #e0e0e0;
+        color: #222222;
+        font-size: 9.7px;
+      }
+
+      .contact strong {
+        color: #111111;
+      }
+
+      .link-list {
+        display: grid;
+        gap: 1px;
+        margin: 0;
+        padding-left: 14px;
+      }
+
+      .ask {
+        color: #111111;
+        font-weight: 760;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <img src="docs/public/lightMode.svg" alt="Pennysia logo" />
+          <div class="brand-name">Pennysia</div>
+        </div>
+        <div class="tag">Investor intro one-pager</div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Unified Liquidity Infrastructure for DeFi</h1>
+          <p class="subhead">
+            A unified liquidity layer with two products:
+            an Aggregator of Aggregators exchange for optimal swap execution, and
+            a passive AMM that lets LPs earn directional yield without leverage,
+            liquidation risk, or active position management.
+          </p>
+        </div>
+        <aside class="hero-card">
+          <div class="hero-card-title">Current snapshot</div>
+          <div class="stat">
+            <strong>2</strong>
+            <span>Core products: Exchange and passive liquidity AMM.</span>
+          </div>
+          <div class="stat">
+            <strong>1st</strong>
+            <span>Place winner at the Sonic S-Tier Global Hackathon.</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <div class="section">
+          <h2>Why now</h2>
+          <ul class="bullets">
+            <li>DEX liquidity is fragmented; no single aggregator consistently wins across trade sizes and pairs.</li>
+            <li>Passive AMM liquidity remains in demand, but standard V2 yields are often too low.</li>
+            <li>Concentrated liquidity favors active professionals and adds operational complexity for everyday LPs.</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>What Pennysia does</h2>
+          <ul class="bullets">
+            <li><strong>Exchange:</strong> queries major DEX aggregators in parallel, compares net execution quality, then routes the best path.</li>
+            <li><strong>AMM:</strong> keeps V2-style passive liquidity while adding directional fee earning through bucket-based LP positions.</li>
+            <li><strong>Infrastructure:</strong> singleton architecture, multi-token flashloans, ERC-6909 LP tokens, and cbrtTWAP oracle design.</li>
+          </ul>
+        </div>
+
+        <div class="section wide unframed">
+          <h2>Product edge</h2>
+          <div class="columns-3">
+            <div class="mini">
+              <strong>Aggregator of Aggregators</strong>
+              <span>Broadcasts swap requests to aggregators simultaneously and optimizes for output, gas, and execution reliability.</span>
+            </div>
+            <div class="mini">
+              <strong>Liquidity Prediction Market</strong>
+              <span>LPs choose bullish X, bullish Y, or neutral. Correct directional flow earns taker fees; wrong bias means fewer fees, not added principal loss.</span>
+            </div>
+            <div class="mini">
+              <strong>Passive capital efficiency</strong>
+              <span>AMM positions auto-compound across trading fees, withdrawal fees, bucket-switch fees, and Aave lending interest.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section wide unframed">
+          <h2>Traction and validation</h2>
+          <div class="traction">
+            <div class="mini">
+              <strong>Hackathon winner</strong>
+              <span>Won 1st place at the Sonic S-Tier Global Hackathon.</span>
+            </div>
+            <div class="mini">
+              <strong>Working prototype</strong>
+              <span>AoA prototype available on Ethereum Mainnet for real-time rate comparisons.</span>
+            </div>
+            <div class="mini">
+              <strong>Private testnet</strong>
+              <span>App tested with early users for product and UX feedback.</span>
+            </div>
+            <div class="mini">
+              <strong>Testnet contracts</strong>
+              <span>Deployed on Ethereum Sepolia and Sonic testnet.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom">
+        <div class="section">
+          <h2>Business model</h2>
+          <p>
+            Pennysia monetizes AMM activity through protocol fees, with 20% of AMM
+            taker, maker, and liquidity-switch fees allocated to treasury. The
+            Exchange is currently free, with a future swap fee planned below major
+            exchanges and aggregators. Pool deployers can receive up to 50% of
+            protocol fees from markets they bootstrap.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Roadmap</h2>
+          <p>
+            Production stage runs May to September 2026: public testnet, audit,
+            UX refinement, scalable infrastructure, brand/community launch, and
+            mainnet preparation. GTM is targeted for October to December 2026.
+          </p>
+        </div>
+      </section>
+
+      <section class="team" aria-label="Team">
+        <div class="team-title">Team</div>
+        <div class="team-members">
+          <a class="member" href="https://x.com/SetteeCh">
+            <img src="assets/investor-team/SetteeCh.png" alt="SetteeCh" />
+            <span>@SetteeCh</span>
+          </a>
+          <a class="member" href="https://x.com/ThanapolJao">
+            <img src="assets/investor-team/ThanapolJao.png" alt="ThanapolJao" />
+            <span>@ThanapolJao</span>
+          </a>
+          <a class="member" href="https://x.com/SrpSutach">
+            <img src="assets/investor-team/SrpSutach.png" alt="SrpSutach" />
+            <span>@SrpSutach</span>
+          </a>
+          <a class="member" href="https://x.com/ImmuTiaras">
+            <img src="assets/investor-team/ImmuTiaras.png" alt="ImmuTiaras" />
+            <span>@ImmuTiaras</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="contact">
+        <ul class="link-list">
+          <li><strong>Website:</strong> pennysia.com</li>
+          <li><strong>Docs:</strong> docs.pennysia.com</li>
+          <li><strong>Prototype:</strong> aoa.pennysia.com</li>
+        </ul>
+        <div class="ask">Raising strategic support for audit, public testnet, infrastructure, and GTM.</div>
+      </footer>
+    </main>
+  </body>
+</html>
