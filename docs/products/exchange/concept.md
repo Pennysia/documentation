@@ -10,7 +10,7 @@ outline: [2, 3]
 
 # The True Best Rate Engine
 
-Most swap interfaces route through one aggregator and call it the best rate. Pennysia Exchange routes through all of them — and lets them compete to deliver the best rate.
+Most swap interfaces route through one aggregator and call it the best rate. Pennysia Exchange routes through all of them — and outperforms every DEX and aggregator on Ethereum. It is the only exchange that guarantees the true best rate at any given time.
 
 <div style="display:flex;flex-direction:column;align-items:center;">
   <LottiePlayer srcLight="/SwapLightMode.lottie" srcDark="/SwapDarkMode.lottie" :aspectRatio="450/600" maxWidth="650px"/>
@@ -64,4 +64,9 @@ There is no need to compare platforms, monitor aggregators, or know which one is
   <div style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">🔗 AoA Prototype — Ethereum Mainnet</div>
   <div style="font-size:0.95rem;color:var(--vp-c-text-2);margin-bottom:1rem;">We built a working prototype of the AoA Protocol to demonstrate real-time rate performance. Enter any swap and see how the AoA result compares against individual aggregators. No wallet connection required.</div>
   <a href="https://aoa.pennysia.com" target="_blank" style="display:inline-block;background:transparent;color:var(--vp-c-brand);border:1.5px solid var(--vp-c-brand);padding:0.5rem 1.25rem;border-radius:8px;font-weight:600;text-decoration:none;width:fit-content;">Open Prototype →</a>
+</div>
+
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:1.5rem;">
+  <img src="/bestRate.jpg" alt="AoA best rate performance showcase" style="border-radius:12px;max-width:100%;" />
+  <p style="font-size:0.85rem;color:var(--vp-c-text-2);margin-top:0.5rem;">Pennysia Exchange outperforming all DEXes and aggregators on Ethereum — the only swap engine that guarantees the true best rate on every trade.</p>
 </div>
