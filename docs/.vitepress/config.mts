@@ -59,7 +59,7 @@ export default defineConfig({
       {
         property: "og:description",
         content:
-          "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
+          "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
       },
     ],
     ["meta", { property: "og:site_name", content: "Pennysia Documentation" }],
@@ -76,7 +76,7 @@ export default defineConfig({
       {
         property: "og:image:alt",
         content:
-          "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
+          "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
       },
     ],
     ["meta", { property: "og:image:width", content: "1600" }],
@@ -89,7 +89,7 @@ export default defineConfig({
       {
         name: "twitter:description",
         content:
-          "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
+          "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
       },
     ],
     [
@@ -104,7 +104,7 @@ export default defineConfig({
   ],
   title: "Pennysia Docs",
   description:
-    "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
+    "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
   base: "/",
   lang: "en-US",
   lastUpdated: true,

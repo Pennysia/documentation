@@ -1,20 +1,20 @@
 ---
 layout: page
 title: "Pennysia Documentation"
-description: "Pennysia finds the best swap rate across 24 exchanges on Ethereum."
+description: "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now."
 head:
   - - meta
     - property: og:title
       content: "Pennysia Documentation"
   - - meta
     - property: og:description
-      content: "Pennysia finds the best swap rate across 24 exchanges on Ethereum."
+      content: "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now."
   - - meta
     - name: twitter:title
       content: "Pennysia Documentation"
   - - meta
     - name: twitter:description
-      content: "Pennysia finds the best swap rate across 24 exchanges on Ethereum."
+      content: "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now."
 ---
 
 <script setup>

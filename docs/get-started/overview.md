@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Pennysia is the open marketplace for crypto swaps — best rates, superior security, seamless UX.
+description: The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.
 lang: en-US
 layout: doc
 footer: true
