@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: Frequently asked questions about Pennysia protocol.
+description: Frequently asked questions about swapping on Pennysia.
 lang: en-US
 layout: doc
 footer: true
@@ -10,202 +10,100 @@ outline: [2, 3]
 
 # Frequently Asked Questions
 
-## General Questions
+## General
 
 **What is Pennysia?**
 
-> Pennysia is a DeFi protocol with two products: **Exchange** — a best-rate swap engine powered by the Aggregator of Aggregators (AoA) Protocol — and **AMM** — a passive liquidity AMM that lets LPs earn from directional market views without leverage or active management.
+> An open marketplace for crypto swaps on Ethereum — like OpenRouter, but for exchanges. Pennysia queries **24+ leading exchanges** in parallel and executes the best quote for you.
 
-**When was Pennysia created?**
+**How is Pennysia different from other swap apps?**
 
-> Pennysia began at the Sonic S-Tier Hackathon in August 2025, won 1st place, and has been in development since.
+> Most swap sites route through one aggregator. Pennysia is an open marketplace: every connected exchange competes on price, and the best rate wins after gas and fees. You also get Pennysia's zero-trust security layer and a simple wallet flow. See [Overview](../get-started/overview.md).
 
-**What are Pennysia's two products?**
+**Where can I use Pennysia?**
 
-> **Exchange (AoA Protocol)** — Queries all major DEX aggregators simultaneously and executes the best available route on every swap. No aggregator selection needed. **AMM** — A passive liquidity AMM with directional earning, 4 revenue streams, and Aave integration. No active management required.
+> [app.pennysia.com](https://app.pennysia.com) on Ethereum Mainnet. Official links: [Contact](./contact.md#official-links).
 
-## Exchange (AoA Protocol)
+**Do I need an account?**
 
-**How does the Exchange work?**
+> No. Connect your wallet and swap. Your tokens stay in your wallet until the trade executes.
 
-> Pennysia Exchange is an Aggregator of Aggregators (AoA). When you swap, it broadcasts your request to all major DEX aggregators simultaneously, compares every quote, applies a final optimization pass, and executes the best path — automatically, on every trade.
+## Swapping
 
-**Why is this better than using a single aggregator?**
+**How does a swap work?**
 
-> No single aggregator consistently delivers the best rate across all trade sizes and token pairs. The aggregator that wins for a 1,000 ETH swap may rank last for a 100 ETH swap at the same moment. AoA makes all of them compete on your behalf — you always get the best result available at that moment.
+> Enter tokens and amount. Pennysia queries all exchanges, ranks quotes, and executes the best route when you confirm.
 
-**Does Pennysia Exchange charge a fee?**
+**How many exchanges are connected?**
 
-> No. The AoA Protocol currently charges no fee. You pay only the underlying aggregator's execution cost (embedded in the quoted rate) and gas. A protocol fee will be introduced in the future and will be lower than major exchanges and aggregators.
+> **24+** with access to thousands of liquidity sources and **12,000+ tokens**. See [Tokens and Liquidity](./tokens-and-liquidity.md#liquidity-sources).
 
-**Can I try the Exchange before mainnet launch?**
+**Do I need to pick an exchange?**
 
-> Yes. A live prototype is available at [aoa.pennysia.com](https://aoa.pennysia.com) on Ethereum Mainnet, where you can see real-time rate comparisons across aggregators.
+> No. Pennysia picks for you. Disable specific sources in settings if you want.
 
-## Liquidity Prediction Market (LPM)
+**What fees does Pennysia charge?**
 
-**What is the Liquidity Prediction Market (LPM)?**
+> **Surplus fee** when execution beats your quote (capped at 10% of output), plus a possible **small gas markup** in native ETH. Exchange fees are set by the winning venue and shown in your quote. See [Fees](./fee.md).
 
-> LPM allows liquidity providers to express market bias by allocating liquidity between two directional buckets (bullish on Token X or Token Y) while maintaining the same risk profile as Uniswap V2.
+**What is auto-fallback?**
 
-**How does LPM work?**
+> If a route fails Pennysia's security or performance checks, the next best route is tried in the **same transaction**. No manual retry. If all routes fail, your tokens are returned.
 
-> LPs deposit liquidity like Uniswap V2, then choose how to allocate between "bullish on X" and "bullish on Y" buckets. When traders buy the token you're bullish on, you earn trading fees. When they trade against your prediction, you don't earn fees from that trade.
+**What is Worst Acceptable Price (WAP)?**
 
-**What happens if my prediction is wrong?**
+> Your floor price. Execution worse than your WAP reverts. See [How It Works](../how-it-works/how-it-works.md#trade-features).
 
-> You simply earn fewer fees but never lose your principal capital. There's no liquidation or additional impermanent loss beyond standard AMM risks.
+**Can I swap native ETH?**
 
-**Can I change my allocation after depositing?**
+> Yes. No need to wrap ETH yourself.
 
-> Yes, you can switch between buckets anytime with no penalties, lockups, or added risk.
+**What wallets are supported?**
 
-**What if I'm uncertain about market direction?**
+> Any WalletConnect-compatible wallet (MetaMask, Rabby, Coinbase Wallet, and others).
 
-> You can allocate 50/50 to both buckets to maintain a neutral stance and earn steady baseline fees from both directions.
-
-## Fees and Rewards
-
-**Does the Exchange charge a swap fee?**
-
-> No. The AoA Protocol is currently free to use. You pay the aggregator's embedded execution cost and gas only — no Pennysia markup.
-
-**How are AMM trading fees structured?**
-
-> Each directional bucket sets its own taker fee rate (0.1%–0.5%, default 0.3%). 80% goes to LPs (auto-compounded), 20% to the protocol treasury.
-
-**What is the maker fee?**
-
-> A small fee charged when withdrawing liquidity from the AMM. Same rate structure as the taker fee — 80% to LPs, 20% to treasury.
-
-**What is the liquidity swap fee?**
-
-> A fee charged when switching between directional buckets. Same distribution as other AMM fees.
-
-**How much is the flashloan fee?**
-
-> Flashloans have a fixed 0.1% protocol fee.
-
-**Are AMM rewards automatically compounded?**
-
-> Yes, all trading fees and Aave lending interest are automatically compounded back into your position in real time without manual intervention.
-
-## Aave Integration
-
-**How does Aave integration work?**
-
-> Instead of storing tokens in the AMM, liquidity is automatically delegated to Aave, allowing LPs to earn dual yields from both Pennysia trading fees and Aave lending interest.
-
-**Why Aave specifically?**
-
-> Aave is the most established and battle-tested money market protocol in DeFi with institutional-grade security, large insurance funds, and proven resilience through major market events.
-
-**What are the risks of Aave integration?**
-
-> While designed for safety, it introduces external protocol dependency. Risks are mitigated by Aave's proven track record, extensive audits, and robust risk management mechanisms.
-
-**Can I still withdraw my liquidity instantly?**
-
-> Yes, liquidity remains instantly retrievable for swaps and withdrawals without disrupting trading operations.
-
-## Oracle and Pricing
-
-**What is the Cube-Root TWAP Oracle?**
-
-> An innovative oracle that combines arithmetic and geometric means using cube-root transformation to provide manipulation-resistant pricing that's both responsive to market changes and stable against manipulation attempts.
-
-**How does it prevent manipulation?**
-
-> By applying cube-root transformation to price observations before time-weighted averaging, it balances the precision of arithmetic means with the stability of geometric means.
-
-## Technical Features
-
-**What is the singleton architecture?**
-
-> All markets exist within a single smart contract, minimizing deployment costs, improving gas efficiency, and enabling advanced features like multi-token flashloans.
-
-**What are fungible LP tokens?**
-
-> LP positions are represented as [ERC-6909](https://eips.ethereum.org/EIPS/eip-6909) fungible tokens, ensuring broad interoperability with other DeFi protocols for higher composability.
-
-**Does Pennysia support native tokens?**
-
-> Yes, Pennysia natively supports network native tokens, allowing direct trading without wrapping or intermediaries.
-
-**What are multi-token flashloans?**
-
-> The ability to borrow multiple tokens simultaneously within one atomic transaction, enabling advanced strategies like multi-asset arbitrage and portfolio rebalancing.
-
-## Trading
-
-**How do swaps work on Pennysia Exchange?**
-
-> Pennysia Exchange queries all major DEX aggregators simultaneously, selects the best route, and executes it. You don't pick an aggregator — the protocol does it automatically on every swap.
+## Price and slippage
 
 **What is price impact?**
 
-> The difference between the spot price before your trade and the execution price, caused by how much your trade shifts liquidity reserves.
+> How much your trade moves the pool price. Shown before you confirm.
 
 **What is slippage?**
 
-> The gap between the quoted price when you submit a transaction and the actual execution price — includes price impact plus any price changes from transactions that settle before yours.
+> The gap between quoted and fill price. WAP protects you from excessive slippage.
 
-**What protection parameters are available?**
+**What if the price moves before my swap confirms?**
 
-> Slippage tolerance (maximum acceptable deviation before the transaction reverts) and a deadline (cancels the transaction if not confirmed in time, preventing execution at stale prices).
+> With Auto Fallback on, Pennysia tries the next route. If the price breaches your WAP, the transaction reverts and your tokens are returned.
 
-## Deployer Incentive Program
+## Security
 
-**What is the Deployer Incentive Program?**
+**Is Pennysia safe?**
 
-> New projects receive up to 50% of protocol fees generated by their deployed markets, distributed automatically and permissionlessly.
+> Pennysia is non-custodial. You get the **same security from each exchange** as on its own frontend, plus Pennysia's **zero-trust layer** on top. See [Security](../get-started/security.md).
 
-**How does the revenue sharing work?**
+**What is unified token approval?**
 
-> Initially, deployers can receive the full 50% if they own 100% of the pool. As more LPs join, their share adjusts proportionally to their ownership percentage.
+> You approve **Settlement once** for ERC-20 sells instead of each exchange separately. That limits exposure to untrusted venues or per-exchange approval exploits.
 
-**What is the Fee Switch?**
+**What is atomic re-routing?**
 
-> A built-in mechanism that can temporarily pause the Deployer Incentive Program and redirect fees to the protocol treasury if needed for development, operations, or security.
-
-## Getting Started
-
-**How do I start trading on Pennysia?**
-
-> Connect your wallet, select tokens, enter an amount, and confirm. The Exchange handles routing automatically. See the [Trade](../features/trade.md) page for details, or try the live prototype at [aoa.pennysia.com](https://aoa.pennysia.com).
-
-**How do I provide liquidity?**
-
-> Deposit a token pair, choose your directional bucket (bullish on X, bullish on Y, or 50/50), and confirm. See the [Liquidity](../features/liquidity.md) page or follow the [step-by-step guide](../guides/provide-liquidity.md).
-
-**How do I deploy a new market?**
-
-> Use the pool deployment interface to create new trading pairs. Deployers are automatically eligible for the Deployer Incentive Program — up to 50% of protocol fees.
-
-## Risks and Safety
-
-**What are the main risks?**
-
-> Standard AMM risks include impermanent loss and smart contract risk. LPM adds no additional principal risk - wrong predictions only result in fewer fees, not capital loss.
+> A failed route is cancelled and your order moves to the next best option in the **same transaction** — no second signature or manual retry.
 
 **Is Pennysia audited?**
 
-> The protocol follows security best practices. Specific audit information will be available in the security documentation.
+> The Settlement contract is open source, tested, and audited. See [Security](../get-started/security.md) for reports.
 
-**What happens in extreme market conditions?**
+**What are the main risks?**
 
-> The protocol is built on battle-tested Uniswap V2 mechanics with infinite price range coverage, eliminating liquidity depletion risks for volatile tokens.
+> Standard DeFi risks: smart contract bugs, network congestion, and price movement. Pennysia adds WAP, deadline checks, auto-fallback, and its security gate.
 
-## Support and Community
+## Support
 
 **Where can I get help?**
 
-> The quickest way is to join the official [Discord](https://discord.com/invite/G7rxGgZhXa), or submit feedback through the official form.
-
-**Where can I find official social links?**
-
-> Visit [Official Links](/resources/links) for all official websites, social media, and community channels.
+> [Discord](https://discord.com/invite/G7rxGgZhXa), [hello@pennysia.com](mailto:hello@pennysia.com), or the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform). See [Contact](./contact.md).
 
 **Is there developer documentation?**
 
-> Developer documentation for flashloans and integrations is launching soon with full implementation examples and integration guides.
+> Yes. Start at the [Developer Guide](../protocol/developer-guide.md).

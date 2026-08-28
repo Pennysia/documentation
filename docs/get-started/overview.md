@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Pennysia is a DeFi protocol offering the best-rate DEX swap engine and a passive liquidity AMM. Open, permissionless, and built for everyone.
+description: Pennysia is the open marketplace for crypto swaps — best rates, superior security, seamless UX.
 lang: en-US
 layout: doc
 footer: true
@@ -10,34 +10,68 @@ outline: [2, 3]
 
 # Overview
 
-Welcome to Pennysia's official documentation. Here you'll find everything about our products.
+Pennysia aims to be the **open marketplace** that brings crypto exchanges together on one platform — like OpenRouter, but for crypto swaps.
 
-## Intro
+We have integrated **24+ of the world's leading exchanges**. You enter a trade, review the quote, and confirm. Pennysia picks the winning exchange for you.
 
-Pennysia is a DeFi infrastructure protocol building a unified liquidity layer for global markets.
+## Best rate swaps
 
-By abstracting fragmented execution and liquidity systems into a single optimized infrastructure, Pennysia enables better pricing, deeper liquidity access, and more sustainable passive liquidity provision across DeFi.
+Every swap queries **24+ leading exchanges in parallel** — the deepest liquidity network in the industry. Pennysia ranks quotes by what you actually receive after gas and fees, so the best rate wins, not just the best headline number.
 
-Our products are designed through protocol research, market structure analysis, and real-world user behavior.
+- **12,000+ tokens** on the curated list
+- **Gas-aware ranking** — high gas can drop an otherwise good quote
+- **Auto-fallback** — failed routes retry in the same transaction
 
-Learn more about each product and the problems they address in the [Products](../products/exchange/background.md) section.
+[How It Works](../how-it-works/how-it-works.md) · [Tokens and Liquidity](../resources/tokens-and-liquidity.md)
 
-## Products
+## Superior security
 
-**1. Decentralized exchange(DEX)** - The true best rate execution engine.
+You get the **same protection from each exchange** that you would on its own frontend. Pennysia adds a **zero-trust layer** on top — every order passes Pennysia's security gate before it executes.
 
-> Best price across all aggregators, World's deepest liquidity access, Reliable, Low latency
+- **Unified token approval** — approve Settlement once, not every exchange
+- **Atomic re-routing** — bad routes are replaced in the same transaction, no manual retry
+- **Open-source Settlement** — audited contract, public source code
 
-**2. Automated Market Maker(AMM)** - AMM optimized for passive liquidity provision.
+[Security](./security.md)
 
-> Low-risk & high-reward, No leverage, No liquidation, Active 24/7, 4 Yield sources, Auto-compound
+## Seamless, simple UX
 
-## Chain Support
+Swap like any app you already use. Connect your wallet, pick tokens, confirm. No need to compare exchanges yourself or learn a new workflow.
 
-Pennysia is currently available on the following chains:
+1. Enter tokens and amount
+2. Pennysia fetches the best quote
+3. Sign in your wallet
+4. Done
 
-- <img src="/ethereum-eth.svg" width="18" height="18" style="display:inline-block;vertical-align:-3px;margin-right:4px" /> Ethereum
+**Worst Acceptable Price (WAP)** lets you set a floor so bad fills revert. If every route fails, the transaction reverts and your tokens stay with you.
 
-::: tip :book: TIP
-Looking to add Pennysia to your network? [Reach out](../resources/contact.md) to our team for integration support.
-:::
+[Swap Guide](./swap-guide.md)
+
+## Chain support
+
+<div style="display:flex;align-items:center;gap:8px;margin-top:1.25rem;">
+  <img src="/ethereum-eth.svg" alt="Ethereum" width="20" height="20" style="flex-shrink:0;display:block;" />
+  <span><strong>Ethereum</strong> Mainnet only. Swap at <a href="https://app.pennysia.com">app.pennysia.com</a>.</span>
+</div>
+
+## Glossary
+
+**Auto-fallback:** Tries the next best route in the same transaction when the first fails.
+
+**WAP:** Minimum output you accept. Worse execution reverts.
+
+**Double-layer security:** Exchange protections plus Pennysia's zero-trust last layer on every order.
+
+**Security gate:** Pennysia validates every route before execution, regardless of which exchange won the quote.
+
+**Surplus fee:** Pennysia keeps quote improvement above your rate, capped at 10% of output. Zero if execution matches or is below the quote.
+
+**Exchange fee:** Set by the winning exchange, shown in your quote (tokens or native ETH).
+
+**Gas markup:** Small extra native ETH Pennysia may charge above network gas.
+
+**Settlement:** On-chain router that executes most swaps. [Details](../protocol/settlement.md).
+
+**SYNC route:** Same-transaction swap through a DEX or aggregator.
+
+**SODAX route:** Cross-chain intent; fill happens asynchronously on the hub chain.

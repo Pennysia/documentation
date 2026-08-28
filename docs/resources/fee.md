@@ -1,6 +1,6 @@
 ---
 title: Fees
-description: Fee structures for all Pennysia's products
+description: Exchange fees, gas, and how Pennysia earns on swaps.
 lang: en-US
 layout: doc
 footer: true
@@ -10,71 +10,43 @@ outline: [2, 3]
 
 # Fees
 
-Pennysia has two products with separate fee structures: the **AMM** and the **Exchange (AoA Protocol)**.
+All fees are shown before you confirm. No hidden charges after you sign.
 
-## Exchange
+## What you pay
 
-::: info :sparkles: Currently free
-The AoA Protocol currently charges **no fee** on swaps. You pay only the underlying aggregator's execution cost and gas.
+### Exchange fees
 
-A protocol fee will be introduced in the future — and will be **lower than major exchanges and aggregators**. It will be announced in advance before taking effect.
-:::
+Set by the **winning exchange**, not Pennysia. Charged from your trade tokens or as native ETH, depending on the route. Already included in the quoted output.
 
-When routing through aggregators, users pay:
+### Network gas
 
-- **Aggregator fees** — embedded in the quoted rate by each aggregator (not an additional charge)
-- **Gas** — network cost to execute the on-chain transaction
+Paid in ETH to publish the transaction. Pennysia may add a **small extra native ETH** above the network estimate (gas markup).
 
-There is no Pennysia markup on top of these at this time.
+**Example:** ~$0.50 network gas → ~$0.60 total. Varies by network conditions and route.
 
-## AMM
+### Other costs
 
-### Taker Fee
+- **Reverted swaps** still cost gas
+- **ERC-20 approvals** are a separate one-time gas transaction
 
-Charged on every trade through Pennysia's AMM pools. Each pool bucket sets its own rate — in a BTC/USDT pool, buying BTC applies the fee set by the bullish-on-BTC bucket, and vice versa. Rate is set by liquidity providers through weighted voting.
+## How Pennysia earns
 
-| Setting | Value                         |
-| ------- | ----------------------------- |
-| Range   | 0.1% – 0.5%                   |
-| Default | 0.3%                          |
-| Voting  | Optional — adjustable anytime |
+No subscription or listing fee for traders.
 
-**Distribution:**
+### Surplus fee (SYNC routes)
 
-- **80%** → Liquidity providers (auto-compounded)
-- **20%** → Protocol treasury
+When execution beats your quote, Pennysia keeps the improvement — **100% of surplus, capped at 10% of output**. Zero fee if execution matches or is below the quote.
 
-### Maker Fee
+**Example:** Quoted 1,000 USDC, executed 1,030 USDC → surplus is 30 USDC. You receive the 1,000 you were quoted.
 
-Applied when withdrawing liquidity. Same rate structure as the taker fee.
+Does not apply to SODAX intent opens.
 
-**Distribution:**
+### Gas markup
 
-- **80%** → LPs in the affected bucket (auto-compounded)
-- **20%** → Protocol treasury
+Small portion of native ETH above network gas. See [Network gas](#network-gas).
 
-### Liquidity Swap Fee
+## For exchanges
 
-Applied when switching buckets. Same rate structure as the taker fee.
+Integration is **free**. No listing fees. When flow routes to your exchange, you earn what you would on your own frontend. Pennysia revenue comes from the trader side.
 
-**Distribution:**
-
-- **80%** → LPs in the affected bucket (auto-compounded)
-- **20%** → Protocol treasury
-
-### Flashloan Fee
-
-**Fixed 0.1%** — goes entirely to protocol treasury.
-
-## Protocol Fee Usage
-
-The 20% AMM protocol fee supports:
-
-- Core team and long-term sustainability
-- Security audits and services
-- Partner integrations
-- Marketing and operations
-
-::: info :book: NOTE
-**50% of protocol fees** go to the [Deployer Incentive Program](../features/deployer-incentive.md), rewarding projects that launch markets on Pennysia.
-:::
+On-chain surplus logic: [Settlement](../protocol/settlement.md#execution-flow).

@@ -49,7 +49,7 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "Pennysia, AMM, DeFi, Liquidity Prediction Market, Flashloans, Cube-Root TWAP, Oracle, Ethereum, Blockchain",
+          "Pennysia, swap, aggregator, DeFi, Settlement, Ethereum, SODAX, liquidity",
       },
     ],
     ["meta", { property: "og:type", content: "website" }],
@@ -59,7 +59,7 @@ export default defineConfig({
       {
         property: "og:description",
         content:
-          "Pennysia — best rate for traders, best yield for liquidity providers.",
+          "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
       },
     ],
     ["meta", { property: "og:site_name", content: "Pennysia Documentation" }],
@@ -76,7 +76,7 @@ export default defineConfig({
       {
         property: "og:image:alt",
         content:
-          "Pennysia — best rate for traders, best yield for liquidity providers.",
+          "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
       },
     ],
     ["meta", { property: "og:image:width", content: "1600" }],
@@ -89,7 +89,7 @@ export default defineConfig({
       {
         name: "twitter:description",
         content:
-          "Pennysia — best rate for traders, best yield for liquidity providers.",
+          "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
       },
     ],
     [
@@ -104,7 +104,7 @@ export default defineConfig({
   ],
   title: "Pennysia Docs",
   description:
-    "Pennysia — best rate for traders, best yield for liquidity providers.",
+    "Pennysia finds the best swap rate across 24 exchanges on Ethereum.",
   base: "/",
   lang: "en-US",
   lastUpdated: true,
@@ -145,11 +145,12 @@ export default defineConfig({
       light: "/lightMode.svg",
       dark: "/darkMode.svg",
     },
-    siteTitle: "Pennysia",
+    siteTitle: "Docs",
     search: { provider: "local" },
 
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
+      { text: "App", link: "https://app.pennysia.com" },
+      { text: "Website", link: "https://pennysia.com" },
       {
         text: "Feedback",
         link: "https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform",
@@ -160,59 +161,32 @@ export default defineConfig({
       {
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Get Started',
         collapsed: false,
-        items: [{ text: "Overview", link: "/get-started/overview" }],
-      },
-      {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Products',
-        collapsed: false,
         items: [
-          {
-            text: "Exchange",
-            base: "/products/exchange/",
-            items: [
-              { text: "Background", link: "background" },
-              { text: "Concept", link: "concept" },
-            ],
-          },
-          {
-            text: "AMM",
-            base: "/products/amm/",
-            items: [
-              { text: "Background", link: "background" },
-              { text: "Concept", link: "concept" },
-            ],
-          },
+          { text: "Overview", link: "/get-started/overview" },
+          { text: "How It Works", link: "/how-it-works/how-it-works" },
+          { text: "Security", link: "/get-started/security" },
+          { text: "Swap Guide", link: "/get-started/swap-guide" },
         ],
       },
       {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Features',
+        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>Protocol',
         collapsed: false,
         items: [
-          { text: "Trade", link: "/features/trade" },
-          { text: "Liquidity", link: "/features/liquidity" },
-          { text: "Flashloan", link: "/features/flash" },
-          { text: "Oracle", link: "/features/oracle" },
-          { text: "Deployer Incentive", link: "/features/deployer-incentive" },
-        ],
-      },
-      {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Guides',
-        collapsed: false,
-        items: [
-          { text: "Swap Token", link: "/guides/swap-token" },
-          { text: "Provide Liquidity", link: "/guides/provide-liquidity" },
+          { text: "Developer Guide", link: "/protocol/developer-guide" },
+          { text: "SDK Reference", link: "/protocol/sdk-reference" },
+          { text: "Settlement", link: "/protocol/settlement" },
+          { text: "Exchange Integration", link: "/protocol/exchange-integration" },
+          { text: "Deployments", link: "/protocol/deployments" },
         ],
       },
       {
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>Resources',
         collapsed: false,
         items: [
-          { text: "Fee", link: "/resources/fee" },
-          { text: "Deployments", link: "/resources/deployments" },
-          { text: "Official Links", link: "/resources/links" },
-          { text: "Roadmap", link: "/resources/roadmap" },
-          { text: "Hackathon", link: "/resources/hackathon" },
+          { text: "About", link: "/resources/about" },
           { text: "Contact", link: "/resources/contact" },
+          { text: "Fees", link: "/resources/fee" },
+          { text: "Tokens and Liquidity", link: "/resources/tokens-and-liquidity" },
           { text: "FAQ", link: "/resources/faq" },
         ],
       },
@@ -226,8 +200,8 @@ export default defineConfig({
     ],
     footer: {
       message:
-        'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
-      copyright: "Copyright (c) 2025 Pennysia",
+        '<a href="https://app.pennysia.com">App</a> · <a href="https://pennysia.com">Website</a> · <a href="https://github.com/Pennysia">GitHub</a>',
+      copyright: "Copyright © 2026 Pennysia",
     },
   },
 });

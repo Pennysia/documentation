@@ -1,0 +1,3 @@
+---
+redirect: /protocol/exchange-integration
+---

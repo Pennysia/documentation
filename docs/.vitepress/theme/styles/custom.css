@@ -447,24 +447,6 @@
   --vp-nav-border-color: transparent !important;
 }
 
-/* Add "Documentation" text next to logo */
-.VPNavBarTitle .title::after {
-  content: "Documentation";
-  margin-left: 8px;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--vp-c-text-1);
-  opacity: 50%;
-  height: auto;
-  display: flex;
-align-items:center;
-justify-content: center;
-}
-
-.VPNavBarTitle .title:hover::after {
-  opacity: 60%;
-}
-
 /* Make search bar wider */
 .VPNavBarSearch {
   width: 100% !important;

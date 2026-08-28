@@ -1,6 +1,6 @@
 ---
 title: Contact
-description: Get support via Discord, request forms, or reach out through formal email channels.
+description: Official Pennysia links, support channels, and team.
 lang: en-US
 layout: doc
 footer: true
@@ -10,28 +10,36 @@ outline: [2, 3]
 
 # Contact
 
-Pennysia offers dedicated support channels to assist users, developers, and partners with any inquiries or technical issues.
+## Official links
 
-## Channels
+| Title | Url |
+| --- | --- |
+| Web App | [app.pennysia.com](https://app.pennysia.com) |
+| Website | [pennysia.com](https://pennysia.com) |
+| Documentation | [docs.pennysia.com](https://docs.pennysia.com) |
+| Github | [github.com/Pennysia](https://github.com/Pennysia) |
+| X/Twitter | [x.com/PennysiaLabs](https://x.com/PennysiaLabs) |
+| Telegram | [t.me/pennysiaprotocol](https://t.me/pennysiaprotocol) |
+| Discord | [discord.gg/G7rxGgZhXa](https://discord.gg/G7rxGgZhXa) |
+| Youtube | [youtube.com/@PennysiaLabs](https://www.youtube.com/channel/UCUKtUUwPZ9WOdiNvQAtJDdg/) |
+| Request Form | [Feedback form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform) |
 
-- [Email:](#inquiry) for formal communication, partnership inquiries, or important matters.
-- [Discord:](https://discord.gg/G7rxGgZhXa) for real-time community support, developer discussions, and faster responses.
-- [Request Form:](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform) to submit feedback, feature requests, or suggestions.
+## Support
+
+- **Email** — formal inquiries and partnerships ([inbox below](#inquiry))
+- **Discord** — community support and developer chat
+- **Request form** — feedback and feature requests
 
 ## Inquiry
 
-For an efficient workflow, please direct your inquiry to one of the email addresses below according to its purpose.
-
-|    Context    |                        Email                        |
-| :-----------: | :-------------------------------------------------: |
-|    General    |   [hello@pennysia.com](mailto:hello@pennysia.com)   |
-| Dev/Technical |     [dev@pennysia.com](mailto:dev@pennysia.com)     |
-|    Finance    | [finance@pennysia.com](mailto:finance@pennysia.com) |
-|     Legal     |   [legal@pennysia.com](mailto:legal@pennysia.com)   |
+| Context | Email |
+| --- | --- |
+| General | [hello@pennysia.com](mailto:hello@pennysia.com) |
+| Dev/Technical | [dev@pennysia.com](mailto:dev@pennysia.com) |
+| Finance | [finance@pennysia.com](mailto:finance@pennysia.com) |
+| Legal | [legal@pennysia.com](mailto:legal@pennysia.com) |
 
 ## Team
-
-Meet the people behind Pennysia.
 
 <div class="team-grid">
   <a href="https://x.com/SetteeCh" target="_blank" rel="noopener noreferrer" class="team-card">
@@ -42,9 +50,9 @@ Meet the people behind Pennysia.
     <img src="https://unavatar.io/x/ThanapolJao" alt="ThanapolJao" class="team-avatar" />
     <span class="team-handle">@ThanapolJao</span>
   </a>
-  <a href="https://x.com/SrpSutach" target="_blank" rel="noopener noreferrer" class="team-card">
-    <img src="https://unavatar.io/x/SrpSutach" alt="SrpSutach" class="team-avatar" />
-    <span class="team-handle">@SrpSutach</span>
+  <a href="https://x.com/Sutach_Pennysia" target="_blank" rel="noopener noreferrer" class="team-card">
+    <img src="https://unavatar.io/x/Sutach_Pennysia" alt="Sutach_Pennysia" class="team-avatar" />
+    <span class="team-handle">@Sutach_Pennysia</span>
   </a>
   <a href="https://x.com/ImmuTiaras" target="_blank" rel="noopener noreferrer" class="team-card">
     <img src="https://unavatar.io/x/ImmuTiaras" alt="ImmuTiaras" class="team-avatar" />
