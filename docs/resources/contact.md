@@ -17,6 +17,7 @@ outline: [2, 3]
 | Web App | [app.pennysia.com](https://app.pennysia.com) |
 | Website | [pennysia.com](https://pennysia.com) |
 | Documentation | [docs.pennysia.com](https://docs.pennysia.com) |
+| Status | [status.pennysia.com](https://status.pennysia.com) |
 | Github | [github.com/Pennysia](https://github.com/Pennysia) |
 | X/Twitter | [x.com/PennysiaLabs](https://x.com/PennysiaLabs) |
 | Telegram | [t.me/pennysiaprotocol](https://t.me/pennysiaprotocol) |

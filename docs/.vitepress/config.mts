@@ -151,6 +151,7 @@ export default defineConfig({
     nav: [
       { text: "App", link: "https://app.pennysia.com" },
       { text: "Website", link: "https://pennysia.com" },
+      { text: "Status", link: "https://status.pennysia.com" },
       {
         text: "Feedback",
         link: "https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform",
@@ -200,7 +201,7 @@ export default defineConfig({
     ],
     footer: {
       message:
-        '<a href="https://app.pennysia.com">App</a> · <a href="https://pennysia.com">Website</a> · <a href="https://github.com/Pennysia">GitHub</a>',
+        '<a href="https://app.pennysia.com">App</a> · <a href="https://pennysia.com">Website</a> · <a href="https://status.pennysia.com">Status</a> · <a href="https://github.com/Pennysia">GitHub</a>',
       copyright: "Copyright © 2026 Pennysia",
     },
   },

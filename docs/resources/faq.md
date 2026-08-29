@@ -102,7 +102,7 @@ outline: [2, 3]
 
 **Where can I get help?**
 
-> [Discord](https://discord.com/invite/G7rxGgZhXa), [hello@pennysia.com](mailto:hello@pennysia.com), or the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform). See [Contact](./contact.md).
+> [Discord](https://discord.com/invite/G7rxGgZhXa), [hello@pennysia.com](mailto:hello@pennysia.com), or the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform). For live service health, see [status.pennysia.com](https://status.pennysia.com). See [Contact](./contact.md).
 
 **Is there developer documentation?**
 
