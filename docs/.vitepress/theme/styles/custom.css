@@ -778,7 +778,7 @@ border-radius: 15px;
   position: relative;
 }
 
-/* Style h1 headings with Poppins font; leave room for Copy page on the same row */
+/* Style h1 headings with Poppins font; Copy page sits on the section-tag row above */
 .vp-doc h1 {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 400 !important;
@@ -786,16 +786,10 @@ border-radius: 15px;
   color: rgb(0, 0, 0) !important;
   border: none !important;
   margin-bottom: 0.75rem !important;
-  padding-right: 9.5rem;
+  padding-right: 0;
   line-height: 1.25 !important;
-}
-
-/* sm */
-@media (max-width: 640px) {
-  .vp-doc h1 {
-    padding-right: 0;
-    margin-bottom: 2.5rem !important;
-  }
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .dark .vp-doc h1 {

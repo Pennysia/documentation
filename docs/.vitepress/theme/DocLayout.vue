@@ -6,9 +6,11 @@
     </template>
 
     <template #doc-before>
-      <SectionTag />
-      <div class="copy-page-container">
-        <CopyPageButton />
+      <div class="doc-title-bar">
+        <SectionTag />
+        <div class="copy-page-container">
+          <CopyPageButton />
+        </div>
       </div>
     </template>
   </Layout>
@@ -117,15 +119,22 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.doc-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin: 0 0 0.65rem;
+  min-width: 0;
+}
+
 .copy-page-container {
-  position: absolute;
-  /* Sit on the h1 row, below the section tag */
-  top: 1.55rem;
-  right: 0;
+  position: static;
   z-index: 2;
   display: flex;
   align-items: center;
-  margin: 0;
+  flex-shrink: 0;
+  margin: 0 0 0 auto;
 }
 
 .sidebar-search-slot,

@@ -59,7 +59,7 @@ const label = computed(() => {
 
 <style scoped>
 .doc-section-tag {
-  margin: 0 0 0.65rem;
+  margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
@@ -68,5 +68,6 @@ const label = computed(() => {
   text-transform: uppercase;
   color: var(--vp-c-brand-1);
   line-height: 1.2;
+  min-width: 0;
 }
 </style>
