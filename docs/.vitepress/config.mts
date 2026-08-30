@@ -198,6 +198,7 @@ export default defineConfig({
       { icon: "telegram", link: "https://t.me/pennysiaprotocol" },
       { icon: "discord", link: "https://discord.gg/G7rxGgZhXa" },
       { icon: "github", link: "https://github.com/Pennysia" },
+      { icon: "youtube", link: "https://www.youtube.com/@PennysiaLabs" },
     ],
     footer: {
       message:

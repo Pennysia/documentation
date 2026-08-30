@@ -1,3 +1,14 @@
+/*
+ * Canonical breakpoints (VitePress-aligned). Use these literals only —
+ * CSS cannot reference custom properties inside @media without PostCSS.
+ *
+ *   sm    640px   content (h1, 2-col features)
+ *   md    768px   search sheet / table density
+ *   lg    960px   layout + nav: compact (<960 / max 959) vs desktop (≥960)
+ *   xl   1280px   reserved (outline / appearance — VitePress)
+ *   2xl  1440px   reserved (wide layout — VitePress)
+ */
+
 :root {
   --vp-c-brand-1: rgb(16, 173, 190);
   /* primary - fallback */
@@ -11,11 +22,18 @@
   --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --vp-c-brand-4: #7cd8ff;
 
+  /* Content text — slightly more solid than VitePress defaults */
+  --vp-c-text-1: rgba(24, 24, 27, 0.96);
+  --vp-c-text-2: rgba(24, 24, 27, 0.78);
+
   /* Max width configuration */
   --vp-layout-max-width: 100%;
 
   /* Increase content width */
   --vp-doc-max-width: 900px;
+
+  /* Sidebar width (keep in sync with .VPSidebar so content gap matches) */
+  --vp-sidebar-width: 280px;
 }
 
 /* Apply max-width to doc content - override all VitePress defaults */
@@ -42,9 +60,30 @@
   max-width: none !important;
 }
 
-/* Reduce sidebar width to allow more content space */
+/* Sidebar width — override VitePress defaults at every layout breakpoint */
 .VPSidebar {
-  width: 220px !important;
+  width: var(--vp-sidebar-width) !important;
+  max-width: var(--vp-sidebar-width) !important;
+}
+
+@media (min-width: 960px) {
+  .VPSidebar {
+    width: var(--vp-sidebar-width) !important;
+    max-width: var(--vp-sidebar-width) !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPSidebar {
+    width: var(--vp-sidebar-width) !important;
+    max-width: var(--vp-sidebar-width) !important;
+    padding-left: 32px !important;
+  }
+}
+
+/* Hide VitePress sticky curtain — shows as a grey bar above sidebar search when scrolling */
+.VPSidebar .curtain {
+  display: none !important;
 }
 
 /* Reduce aside (TOC) width */
@@ -66,8 +105,9 @@
 /* Dark mode background colors */
 .dark {
   --vp-c-bg: #0F0F0F !important;
-  --vp-c-text-1: rgb(255, 255, 255,0.8) !important;
-  /* --vp-c-text-2: rgb(255, 255, 255) !important; */
+  /* Content text — a bit whiter / more solid than before */
+  --vp-c-text-1: rgba(255, 255, 255, 0.94) !important;
+  --vp-c-text-2: rgba(255, 255, 255, 0.72) !important;
 }
 
 /* Custom text selection/highlight colors - light mode */
@@ -113,7 +153,8 @@
 }
 
 
-@media (max-width: 960px) {
+/* lg compact */
+@media (max-width: 959px) {
   .VPHomeHero .main {
     margin-right: 0;
     margin-bottom: 24px;
@@ -173,22 +214,22 @@
   gap: 16px;
 }
 
+/* sm */
 @media (min-width: 640px) {
   .VPFeatures .items {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
-  .VPFeatures .items {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
+/* lg */
+@media (min-width: 960px) {
   .VPFeatures .items {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+  }
+
+  .VPHome .VPFeatures .item {
+    min-height: 200px;
   }
 }
 
@@ -206,13 +247,6 @@
 .VPHome .VPFeatures .item:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(43, 93, 221, 0.08);
-}
-
-/* Ensure consistent card heights in 4-column layout */
-@media (min-width: 1024px) {
-  .VPHome .VPFeatures .item {
-    min-height: 200px;
-  }
 }
 
 /* Feature icon styling */
@@ -287,7 +321,7 @@
 }
 
 
-/* Mobile responsive table */
+/* md */
 @media (max-width: 768px) {
   .vp-doc table {
     font-size: 0.9em;
@@ -431,6 +465,20 @@
   border-bottom: none !important;
 }
 
+/* Vertical | between logo mark and "Docs" */
+.VPNavBar .VPNavBarTitle .logo {
+  margin-right: 0 !important;
+}
+
+.VPNavBar .VPNavBarTitle .title > span::before {
+  content: "|";
+  display: inline-block;
+  margin: 0 10px 0 10px;
+  font-weight: 400;
+  color: var(--vp-c-divider);
+  opacity: 0.9;
+}
+
 /* Prevent Pennysia logo text from changing color on hover */
 .VPNavBar .VPNavBarTitle:hover .title,
 .VPNavBar .VPNavBarTitle .title:hover {
@@ -480,11 +528,23 @@ border-radius: 15px;
   border: 0.25px solid var(--vp-c-brand-1) !important;
 }
 
-/* Make navbar stretch on mobile to large screens */
-  .VPNavBar .container {
-    max-width: 100% !important;
-    padding: 0 0px !important;
+@media (max-width: 959px) {
+  .VPNavBarSearch button:hover,
+  .VPNavBarSearch button:active {
+    border: none !important;
   }
+}
+
+/* Make navbar stretch; keep horizontal inset aligned with local-nav on compact */
+.VPNavBar .container {
+  max-width: 100% !important;
+}
+
+@media (min-width: 960px) {
+  .VPNavBar .container {
+    padding: 0 !important;
+  }
+}
 
 /* Search modal - change all blue highlights to cyan */
 .VPLocalSearchBox mark,
@@ -515,6 +575,7 @@ border-radius: 15px;
 }
 
 /* Limit search modal height on mobile and pin to bottom */
+/* md */
 @media (max-width: 768px) {
   .VPLocalSearchBox .shell {
     position: fixed !important;
@@ -586,9 +647,7 @@ border-radius: 15px;
   color: var(--vp-c-text-1) !important;
 }
 
-/* Navbar search button and theme toggle hover */
-.VPNavBar button:hover,
-.VPNavBar .VPNavBarSearch button:hover,
+/* Navbar search button and theme toggle hover — exclude compact icon controls */
 .VPNavBar .VPSwitch:hover,
 .VPNavBar .appearance:hover button,
 .VPNavBar .VPSocialLink:hover {
@@ -596,14 +655,130 @@ border-radius: 15px;
   outline-color: var(--vp-c-brand-1) !important;
 }
 
-/* Search button specific */
-.VPNavBarSearch .DocSearch-Button:hover {
-  border-color: var(--vp-c-brand-1) !important;
-  box-shadow: 0 0 0 1px var(--vp-c-brand-1) !important;
+/* Expanded search (desktop) — lives in sidebar; brand hover ring */
+@media (min-width: 960px) {
+  .VPNavBar .content-body > .VPNavBarSearch {
+    display: none !important;
+  }
+
+  /* Force social above search regardless of slot mount order */
+  .VPSidebar .nav {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .VPSidebar .nav > .sidebar-social-slot {
+    order: -2 !important;
+  }
+
+  .VPSidebar .nav > .sidebar-search-slot {
+    order: -1 !important;
+  }
+
+  .sidebar-search-slot,
+  .VPSidebar .sidebar-search-slot {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin: 0 0 10px !important;
+    padding: 0 0 24px !important;
+    border-bottom: 1px solid var(--vp-c-divider) !important;
+  }
+
+  .VPSidebar .VPNavBarSearch,
+  .VPSidebar .VPNavBarSearch > *,
+  .VPSidebar .VPNavBarSearch #local-search {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-grow: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .VPSidebar .VPNavBarSearch .DocSearch-Button,
+  .VPSidebar .DocSearch-Button {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    /* Room on the right so "/" isn't flush against the capsule edge */
+    padding: 0 10px 0 12px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+    border-radius: 9999px !important;
+    background-color: var(--vp-c-bg-alt) !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    flex: 1 1 auto !important;
+  }
+
+  .VPSidebar .DocSearch-Button .DocSearch-Button-Container {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  /* "/" shortcut — perfect square, slightly rounder corners */
+  .VPSidebar .DocSearch-Button::after {
+    content: "/" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    min-width: 1.35rem !important;
+    padding: 0 !important;
+    font-size: 0.65rem !important;
+    line-height: 1 !important;
+    border-radius: 6px !important;
+    text-align: center;
+    box-sizing: border-box !important;
+  }
+
+  .VPSidebar .DocSearch-Button .DocSearch-Search-Icon {
+    top: 1px !important;
+    margin-right: 8px !important;
+    width: 14px !important;
+    height: 14px !important;
+    color: var(--vp-c-text-2) !important;
+    background-color: var(--vp-c-text-2) !important;
+  }
+
+  .VPSidebar .DocSearch-Button .DocSearch-Button-Placeholder {
+    display: inline-block !important;
+  }
+
+  .VPSidebar .VPNavBarSearch button:hover,
+  .VPSidebar .DocSearch-Button:hover {
+    border-color: var(--vp-c-brand-1) !important;
+    outline-color: var(--vp-c-brand-1) !important;
+    box-shadow: 0 0 0 1px var(--vp-c-brand-1) !important;
+    background-color: var(--vp-c-bg-alt) !important;
+  }
+
+  .VPSidebar .DocSearch-Button:hover .DocSearch-Search-Icon {
+    color: var(--vp-c-text-1) !important;
+    background-color: var(--vp-c-text-1) !important;
+  }
+
+  /* Tighter gap under search before first sidebar section */
+  .VPSidebar .nav > .VPSidebarItem.level-0:first-of-type > .item {
+    margin-top: 0 !important;
+  }
 }
 
 
-/* Style h1 headings with Poppins font */
+.VPDoc .content-container {
+  position: relative;
+}
+
+/* Style h1 headings with Poppins font; leave room for Copy page on the same row */
 .vp-doc h1 {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 400 !important;
@@ -611,10 +786,20 @@ border-radius: 15px;
   color: rgb(0, 0, 0) !important;
   border: none !important;
   margin-bottom: 0.75rem !important;
+  padding-right: 9.5rem;
+  line-height: 1.25 !important;
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .vp-doc h1 {
+    padding-right: 0;
+    margin-bottom: 2.5rem !important;
+  }
 }
 
 .dark .vp-doc h1 {
-  color: rgb(255, 255, 255, 0.9) !important;
+  color: var(--vp-c-text-1) !important;
 }
 
 /* Style h2 headings - light mode with Poppins font */
@@ -629,7 +814,7 @@ border-radius: 15px;
 
 /* Style h2 headings - dark mode */
 .dark .vp-doc h2 {
-  color: rgb(255, 255, 255, 0.9) !important;
+  color: var(--vp-c-text-1) !important;
 }
 
 /* Style h3 headings with Poppins font */
@@ -640,12 +825,31 @@ border-radius: 15px;
 }
 
 
-/* Apply solid cyan to all content links */
-.vp-doc a {
-  font-family: "Inter", sans-serif !important;
-  color: var(--vp-c-brand-1) !important;
+/* Content links: text matches body; underline stays brand; hover dims text + thicker underline */
+.vp-doc a:not(.header-anchor):not(.pager-link) {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  color: var(--vp-c-text-1) !important;
+  text-decoration-line: underline !important;
+  text-decoration-color: var(--vp-c-brand-1) !important;
+  text-decoration-thickness: 1px !important;
+  -webkit-text-decoration-thickness: 1px !important;
+  text-underline-offset: 2px;
+  transition: color 0.2s, text-decoration-thickness 0.2s;
 }
 
+.vp-doc a:not(.header-anchor):not(.pager-link):hover {
+  color: var(--vp-c-brand-1) !important;
+  opacity: 1 !important;
+  text-decoration-color: var(--vp-c-brand-1) !important;
+  text-decoration-thickness: 2px !important;
+  -webkit-text-decoration-thickness: 2px !important;
+}
+
+/* Don't force brand color on every bare <a>:hover (breaks other UI) */
+a:hover {
+  opacity: 1;
+}
 
 .vp-doc p {
   font-family: "Inter", sans-serif !important;
@@ -668,14 +872,7 @@ border-radius: 15px;
 
 .vp-doc li {
   font-weight: 400;
-  font-size:0.9rem;
-}
-
-/* Apply solid cyan to links on hover */
-.vp-doc a:hover,
-a:hover {
-  color: var(--vp-c-brand-1) !important;
-  opacity: 0.8;
+  font-size: 0.9rem;
 }
 
 /* Previous/Next page navigation links - light mode default */
@@ -856,11 +1053,16 @@ button.DocSearch-Button kbd {
   margin-left: 8px;
 }
 
-/* Mobile: hide / badge and push search to far right */
-@media (max-width: 768px) {
+/* Compact nav (lg): icon-only search + cluster search/⋮ at far right */
+@media (max-width: 959px) {
   .VPNavBarSearch button::after,
   .DocSearch-Button::after {
     display: none !important;
+  }
+
+  /* Match local-nav horizontal inset (Menu / On this page): 24px phone, 32px tablet */
+  .VPNav .VPNavBar .wrapper {
+    padding: 0 24px !important;
   }
 
   .VPNav .VPNavBar .content {
@@ -870,19 +1072,337 @@ button.DocSearch-Button kbd {
   .VPNav .VPNavBar .content .content-body {
     flex-grow: 1 !important;
     justify-content: flex-end !important;
+    gap: 0 !important;
+    column-gap: 0 !important;
   }
 
   .VPNav .VPNavBar .content .content-body .search {
-    flex-grow: 1 !important;
+    flex-grow: 0 !important;
     display: flex !important;
     justify-content: flex-end !important;
     padding-left: 0 !important;
+    margin-left: auto !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  /* Collapse search to icon-only (VitePress expands it from md / 768) */
+  .VPNavBarSearch,
+  .VPNavBarSearch > *,
+  .VPNavBarSearch #local-search {
+    width: auto !important;
+    max-width: none !important;
+    flex-grow: 0 !important;
+  }
+
+  .VPNavBarSearch {
+    flex-grow: 0 !important;
+    justify-content: flex-end !important;
+    padding-left: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .VPNavBarSearch button,
+  .DocSearch-Button {
+    width: 36px !important;
+    max-width: 36px !important;
+    height: var(--vp-nav-height) !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .VPNavBarSearch button:hover,
+  .DocSearch-Button:hover,
+  .VPNavBarSearch button:active,
+  .DocSearch-Button:active {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .DocSearch-Button .DocSearch-Button-Placeholder,
+  .DocSearch-Button .DocSearch-Button-Keys {
+    display: none !important;
+  }
+
+  .DocSearch-Button .DocSearch-Search-Icon {
+    top: 0 !important;
+    margin-right: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Tighten ⋮ next to search */
+  .VPNavBarHamburger {
+    width: 36px !important;
+    margin-left: -4px !important;
+    margin-right: 0 !important;
   }
 }
 
-/* Hide the extra menu (3 dots) in navbar */
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPNav .VPNavBar .wrapper {
+    padding: 0 32px !important;
+  }
+}
+
+/* Hide Extra flyout (we surface appearance directly on desktop) */
 .VPNavBarExtra {
   display: none !important;
+}
+
+/* Remove vertical | divider before theme toggle */
+.VPNavBar .appearance::before,
+.VPNavBar .VPNavBarAppearance::before,
+.VPNavBar .menu + .appearance::before,
+.VPNavBar .translations + .appearance::before {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Small desktop (≥960): keep theme toggle in navbar (VitePress only shows it at ≥1280) */
+@media (min-width: 960px) {
+  .VPNavBar .VPNavBarAppearance,
+  .VPNavBar .appearance {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Social icons above sidebar search — hide from top bar */
+  .VPNavBar .VPNavBarSocialLinks,
+  .VPNavBar .VPSocialLinks,
+  .VPNavBar .social-links {
+    display: none !important;
+  }
+
+  .sidebar-social-slot,
+  .VPSidebar .sidebar-social-slot {
+    display: flex !important;
+    width: 100% !important;
+    margin: 24px 0 20px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    border-bottom: none !important;
+  }
+
+  .VPSidebar .sidebar-social-slot .VPSocialLinks,
+  .VPSidebar .sidebar-social-slot .VPNavBarSocialLinks {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+  }
+
+  .VPSidebar .sidebar-social-slot .VPSocialLink {
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
+  }
+
+  .VPSidebar .sidebar-social-slot .VPSocialLink > span,
+  .VPSidebar .sidebar-social-slot .VPSocialLink svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* Mobile nav button: vertical three dots instead of hamburger */
+.VPNavBarHamburger .container {
+  width: 16px !important;
+  height: 16px !important;
+  overflow: visible !important;
+}
+
+.VPNavBarHamburger .top,
+.VPNavBarHamburger .middle,
+.VPNavBarHamburger .bottom {
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background-color: currentColor !important;
+  transition: background-color 0.5s, top 0.25s, transform 0.25s !important;
+}
+
+.VPNavBarHamburger .top {
+  top: 0 !important;
+}
+
+.VPNavBarHamburger .middle {
+  top: 6px !important;
+}
+
+.VPNavBarHamburger .bottom {
+  top: 12px !important;
+}
+
+/* Keep dots centered (disable default slide/X morph) */
+.VPNavBarHamburger:hover .top,
+.VPNavBarHamburger:hover .middle,
+.VPNavBarHamburger:hover .bottom,
+.VPNavBarHamburger.active .top,
+.VPNavBarHamburger.active .middle,
+.VPNavBarHamburger.active .bottom,
+.VPNavBarHamburger.active:hover .top,
+.VPNavBarHamburger.active:hover .middle,
+.VPNavBarHamburger.active:hover .bottom {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  opacity: 1 !important;
+}
+
+/* Compact nav (lg: mobile + tablet, <960): hide top-bar App / Website / Status /
+   Feedback; keep them in the ⋮ screen. Menu stays in local-nav (far left).
+   IMPORTANT: VPNavBarMenu also has class "menu" — never use `.content-body > .menu`
+   to show the sidebar Menu or it unhides App/Website/Status/Feedback. */
+@media (max-width: 959px) {
+  .VPNavBar nav.VPNavBarMenu,
+  .VPNavBar .VPNavBarMenu.menu,
+  .VPNavBar .content-body > .VPNavBarMenu {
+    display: none !important;
+  }
+
+  .VPNavBarHamburger {
+    display: flex !important;
+    width: 36px !important;
+    margin-left: -4px !important;
+    margin-right: 0 !important;
+  }
+
+  /* VitePress hides the screen at ≥768 — keep it available through tablet */
+  .VPNavScreen {
+    display: block !important;
+  }
+
+  .VPNavBar .content-body {
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  /* Shared idle / hover / active for ⋮ and search */
+  .VPNavBarHamburger,
+  .VPNavBarSearch .DocSearch-Button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: var(--vp-nav-height);
+    margin: 0;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--vp-c-text-1) !important;
+    line-height: 1;
+    transition: color 0.5s;
+    cursor: pointer;
+  }
+
+  .VPNavBarHamburger:hover,
+  .VPNavBarHamburger:active,
+  .VPNavBarHamburger.active,
+  .VPNavBarSearch .DocSearch-Button:hover,
+  .VPNavBarSearch .DocSearch-Button:active {
+    color: var(--vp-c-text-2) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: color 0.25s;
+  }
+
+  .VPNavBarHamburger .top,
+  .VPNavBarHamburger .middle,
+  .VPNavBarHamburger .bottom {
+    background-color: currentColor !important;
+  }
+
+  .VPNavBarSearch .DocSearch-Button .DocSearch-Search-Icon {
+    color: var(--vp-c-text-1) !important;
+    background-color: var(--vp-c-text-1) !important;
+    transition: color 0.5s, background-color 0.5s;
+  }
+
+  .VPNavBarSearch .DocSearch-Button:hover .DocSearch-Search-Icon,
+  .VPNavBarSearch .DocSearch-Button:active .DocSearch-Search-Icon {
+    color: var(--vp-c-text-2) !important;
+    background-color: var(--vp-c-text-2) !important;
+    transition: color 0.25s, background-color 0.25s;
+  }
+
+  /* Menu on the local-nav row, far left; "On this page" stays right */
+  .VPLocalNav .container {
+    justify-content: space-between !important;
+  }
+
+  .VPLocalNav button.menu[aria-controls="VPSidebarNav"] {
+    display: inline-flex !important;
+    align-items: center;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 12px;
+  }
+
+  .VPLocalNav .VPOutlineDropdown {
+    padding-right: 24px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPLocalNav button.menu[aria-controls="VPSidebarNav"] {
+    padding-left: 32px;
+  }
+
+  .VPLocalNav .VPOutlineDropdown {
+    padding-right: 32px !important;
+  }
+}
+
+/* Divider above Menu / On this page — compact only; match sidebar section divider tone */
+@media (max-width: 959px) {
+  .VPLocalNav {
+    border-bottom-color: transparent !important;
+    border-top: 1px solid var(--vp-c-divider) !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPLocalNav {
+    border-top: none !important;
+    border-bottom-color: transparent !important;
+  }
+}
+
+/* Copy page + On this page dropdowns match page background at all sizes */
+.VPLocalNav .items,
+.VPLocalNavOutlineDropdown .items {
+  background-color: var(--vp-c-bg) !important;
+}
+
+.VPLocalNav .header,
+.VPLocalNav .outline,
+.VPLocalNavOutlineDropdown .header,
+.VPLocalNavOutlineDropdown .outline {
+  background-color: var(--vp-c-bg) !important;
+}
+
+/* lg desktop — hide any leftover Menu if it ended up in the top bar */
+@media (min-width: 960px) {
+  .VPNavBar .content-body > button.menu[aria-controls="VPSidebarNav"] {
+    display: none !important;
+  }
 }
 
 /* Swap social icons and theme toggle in navbar */

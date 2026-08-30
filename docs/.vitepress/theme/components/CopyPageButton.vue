@@ -161,7 +161,7 @@ onUnmounted(() => {
   position: relative;
   display: inline-flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   border: 1px solid var(--vp-c-divider);
   border-radius: 20px;
   background: transparent;
@@ -225,7 +225,7 @@ onUnmounted(() => {
   top: calc(100% + 8px);
   right: 0;
   min-width: 280px;
-  background: var(--vp-c-bg-elv);
+  background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   padding: 6px;
