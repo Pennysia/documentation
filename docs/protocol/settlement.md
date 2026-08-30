@@ -192,7 +192,7 @@ The Pennysia web app:
 | **Price movement** | The price can change between quote and execution. |
 | **Network congestion** | Slow confirmations can cause deadline expiry. |
 | **Venue risk** | A venue failure causes that route to fail, not a loss of principal. |
-| **SODAX async risk** | Fills happen off Settlement. Cancel may need operator action. |
+| **SODAX async risk** | Fills happen off Settlement. Cancel can require operator action. |
 
 ### Responsible disclosure
 

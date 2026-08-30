@@ -19,7 +19,7 @@ outline: [2, 3]
 - Auto-fallback for failed routes
 - Worst Acceptable Price protection
 - Gas-aware quote ranking
-- Settlement contract tested with automated security tools — see [Security](../get-started/security.md)
+- Settlement contract tested with automated security tools. See [Security](../get-started/security.md)
 - Developer documentation and SDKs
 
 ### Coming soon
@@ -41,7 +41,7 @@ Notable product and documentation updates.
 
 - Swap app launched on Ethereum Mainnet at [app.pennysia.com](https://app.pennysia.com)
 - 24 exchanges integrated with parallel quote fanout
-- Pennysia Settlement deployed at `0x3Aad97E5a91b8e43b7Dc830aCEb004307678795E` — see [Deployments](../protocol/deployments.md)
+- Pennysia Settlement deployed at `0x3Aad97E5a91b8e43b7Dc830aCEb004307678795E`. See [Deployments](../protocol/deployments.md)
 - Auto Fallback, WAP, and gas-aware quote ranking live
 - OpenOcean shown as **De1** in the app UI
 - Developer docs published (contracts-sdk, backend-sdk, integration guide)

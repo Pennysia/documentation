@@ -1,20 +1,20 @@
 ---
 layout: page
 title: "Pennysia Documentation"
-description: "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now."
+description: "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets."
 head:
   - - meta
     - property: og:title
       content: "Pennysia Documentation"
   - - meta
     - property: og:description
-      content: "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now."
+      content: "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets."
   - - meta
     - name: twitter:title
       content: "Pennysia Documentation"
   - - meta
     - name: twitter:description
-      content: "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now."
+      content: "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets."
 ---
 
 <script setup>

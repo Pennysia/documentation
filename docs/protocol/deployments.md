@@ -10,7 +10,7 @@ outline: [2, 3]
 
 # Deployments
 
-Pennysia is live on **Ethereum Mainnet**. Most swaps run through Pennysia Settlement — see [Settlement](./settlement.md) for how it works.
+Pennysia is live on **Ethereum Mainnet**. Most swaps run through Pennysia Settlement. See [Settlement](./settlement.md) for how it works.
 
 Addresses are also in [`@pennysia/contracts-sdk`](https://github.com/Pennysia/sdk/tree/main/packages/contracts-sdk/src/constants.ts).
 
@@ -163,7 +163,7 @@ Settlement references these contracts for SODAX-backed routes.
 
 - `getSettlementDeployment(1)` from `@pennysia/contracts-sdk`
 - Settlement is a router, not a pool
-- BUSL-1.1 until 2030-08-16, then MIT — see [Settlement](./settlement.md)
+- BUSL-1.1 until 2030-08-16, then MIT. See [Settlement](./settlement.md)
 
 <div v-if="copiedKey" class="copy-notification">
   <span>✓ Copied to clipboard!</span>

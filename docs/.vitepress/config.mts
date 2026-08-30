@@ -59,7 +59,7 @@ export default defineConfig({
       {
         property: "og:description",
         content:
-          "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
+          "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets.",
       },
     ],
     ["meta", { property: "og:site_name", content: "Pennysia Documentation" }],
@@ -76,7 +76,7 @@ export default defineConfig({
       {
         property: "og:image:alt",
         content:
-          "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
+          "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets.",
       },
     ],
     ["meta", { property: "og:image:width", content: "1600" }],
@@ -89,7 +89,7 @@ export default defineConfig({
       {
         name: "twitter:description",
         content:
-          "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
+          "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets.",
       },
     ],
     [
@@ -104,7 +104,7 @@ export default defineConfig({
   ],
   title: "Pennysia Docs",
   description:
-    "The unified marketplace for all crypto exchanges worldwide. Find the best rates for your trades now.",
+    "One interface for the world's liquidity. Best execution across aggregators, RFQs, intents, and decentralized markets.",
   base: "/",
   lang: "en-US",
   lastUpdated: true,

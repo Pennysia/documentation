@@ -12,7 +12,7 @@ outline: [2, 3]
 
 ## Liquidity sources
 
-**24 exchanges** are queried on every swap. The best rate wins. You do not pick a source — Pennysia does.
+**24 exchanges** are queried on every swap. The best rate is selected automatically. You do not choose a source.
 
 | | | | |
 | --- | --- | --- | --- |
@@ -33,8 +33,8 @@ Disable sources in swap settings. Want another exchange? [Contact us](./contact.
 
 **12,000+ tokens** on Ethereum via a curated mega list:
 
-1. **Curated list** — hand-reviewed metadata
-2. **Mega list** — merged from all exchanges, deduped by address
+1. **Curated list:** hand-reviewed metadata
+2. **Mega list:** merged from all exchanges, deduped by address
 
 Maintained in [@pennysia/token-list](https://github.com/Pennysia/token-list).
 

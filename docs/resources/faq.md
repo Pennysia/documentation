@@ -14,11 +14,11 @@ outline: [2, 3]
 
 **What is Pennysia?**
 
-> An open marketplace for crypto swaps on Ethereum — like OpenRouter, but for exchanges. Pennysia queries **24+ leading exchanges** in parallel and executes the best quote for you.
+> **One interface for the world's liquidity.** Pennysia unifies liquidity across aggregators, RFQs, intents, and decentralized markets to find the best execution for every trade. It connects exchanges and liquidity platforms, on-chain and off-chain, through one interface under a shared security model. **24+** venues are connected today. See [Overview](../get-started/overview.md).
 
 **How is Pennysia different from other swap apps?**
 
-> Most swap sites route through one aggregator. Pennysia is an open marketplace: every connected exchange competes on price, and the best rate wins after gas and fees. You also get Pennysia's zero-trust security layer and a simple wallet flow. See [Overview](../get-started/overview.md).
+> Most swap apps route through a single aggregator or operate as one venue. Pennysia is a liquidity hub: connected sources compete on every trade, you approve Settlement once, and a zero-trust security layer applies across venues. See [Overview](../get-started/overview.md).
 
 **Where can I use Pennysia?**
 
@@ -40,15 +40,15 @@ outline: [2, 3]
 
 **Do I need to pick an exchange?**
 
-> No. Pennysia picks for you. Disable specific sources in settings if you want.
+> No. Pennysia picks for you. Disable specific sources in settings if you prefer.
 
 **What fees does Pennysia charge?**
 
-> **Surplus fee** when execution beats your quote (capped at 10% of output), plus a possible **small gas markup** in native ETH. Exchange fees are set by the winning venue and shown in your quote. See [Fees](./fee.md).
+> **Surplus fee** when execution beats your quote (capped at 10% of output), plus a **small gas markup** in native ETH when applicable. Exchange fees are set by the winning venue and shown in your quote. See [Fees](./fee.md).
 
 **What is auto-fallback?**
 
-> If a route fails Pennysia's security or performance checks, the next best route is tried in the **same transaction**. No manual retry. If all routes fail, your tokens are returned.
+> If a venue overquotes, reverts, or fails Pennysia's security or performance checks, the next best route is tried in the **same transaction**. No manual retry. If all routes fail, your tokens are returned.
 
 **What is Worst Acceptable Price (WAP)?**
 
@@ -88,7 +88,7 @@ outline: [2, 3]
 
 **What is atomic re-routing?**
 
-> A failed route is cancelled and your order moves to the next best option in the **same transaction** — no second signature or manual retry.
+> A failed route is cancelled and your order moves to the next best option in the **same transaction**. No second signature. No manual retry.
 
 **Is Pennysia audited?**
 

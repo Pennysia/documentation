@@ -12,7 +12,7 @@ outline: [2, 3]
 
 ## For traders
 
-No single exchange wins every trade. Rankings change by size, pair, and timing.
+No single exchange wins every trade. Rankings change by size, pair, and timing. Pennysia compares connected venues on each swap and selects the best quote after gas and fees.
 
 ![100 ETH to USDC swap comparison across 6 DEX aggregators: KyberSwap ranks 1st, CowSwap 2nd, Velora 3rd, Matcha(0x) 4th, Uniswap 5th, 1inch 6th](/ETH100_USDC.png)
 
@@ -22,14 +22,14 @@ Pennysia sends your swap to **24 exchanges at once** and picks the best quote af
 
 <div style="display:flex;flex-direction:column;align-items:center;">
   <LottiePlayer srcLight="/SwapLightMode.lottie" srcDark="/SwapDarkMode.lottie" :aspectRatio="450/600" maxWidth="650px"/>
-  <p style="font-size:0.85rem;color:var(--vp-c-text-2);margin-top:0.5rem;">One request, every exchange, best result wins.</p>
+  <p style="font-size:0.85rem;color:var(--vp-c-text-2);margin-top:0.5rem;">One request across connected exchanges. The best quote is selected.</p>
 </div>
 
 ### Steps
 
-1. **Broadcast** — same request to all connected exchanges
-2. **Compare** — rank by net output after gas and fees
-3. **Execute** — you sign; Settlement runs the winning route on-chain
+1. **Broadcast:** same request to all connected exchanges
+2. **Compare:** rank by net output after gas and fees
+3. **Execute:** you sign; Settlement runs the winning route on-chain
 
 Some routes use CoW Protocol, SODAX, or other paths. The app shows the type before you confirm.
 
@@ -61,7 +61,7 @@ Max wait time before the transaction expires. Useful during congestion.
 
 ### Gas-aware routing
 
-Quotes with high gas may rank lower even if the headline output looks better.
+Quotes with high gas rank lower even when the headline output looks better.
 
 ### Source toggles
 
@@ -71,6 +71,6 @@ Disable individual exchanges in settings. Disabled sources are skipped.
 
 ## For exchanges
 
-Pennysia is a swap marketplace. Every trade sends the same quote request to all connected venues. The best rate wins. Integration is free.
+Pennysia is a swap marketplace, not a competing exchange. Each trade sends the same quote request to all connected venues, and the best rate is selected. Integration is free and reduces the cost for new venues to reach traders.
 
 Requirements, route types, and onboarding: [Exchange Integration](../protocol/exchange-integration.md).

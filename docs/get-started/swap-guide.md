@@ -14,9 +14,9 @@ Live on Ethereum Mainnet at [app.pennysia.com](https://app.pennysia.com). Connec
 
 ## Walkthrough
 
-1. **Select tokens** — sell and buy
-2. **Enter amount** — Pennysia fetches quotes from all exchanges
-3. **Confirm** — review the quote, click **Swap**, approve if prompted, sign
+1. **Select tokens:** sell and buy
+2. **Enter amount:** Pennysia fetches quotes from all exchanges
+3. **Confirm:** review the quote, click **Swap**, approve if prompted, then sign
 
 ::: tip :book: TIP
 If a route fails, enable **Auto Fallback** in settings or adjust your **WAP**.
@@ -34,7 +34,7 @@ Examples: Uniswap, 0x, KyberSwap, Sushi, LI.FI (same-chain), De1.
 
 ### SODAX (cross-chain)
 
-Opens a cross-chain intent. Fill is asynchronous — not instant, not part of Auto Fallback.
+Opens a cross-chain intent. Fill is asynchronous: not instant, and not part of Auto Fallback.
 
 ### Hard intents (wallet-side)
 
@@ -62,13 +62,13 @@ Pennysia uses **WalletConnect**. MetaMask, Rabby, Coinbase Wallet, Rainbow, Ledg
 2. Pick your wallet or scan the QR code
 3. Approve in your wallet
 
-Wrong network? Switch to Ethereum Mainnet when prompted.
+Wrong network: switch to Ethereum Mainnet when prompted.
 
 ## Troubleshooting
 
 ### Swap reverted
 
-Your tokens were not swapped. Try: enable **Auto Fallback**, adjust **WAP**, increase **deadline**, or reduce trade size.
+Your tokens were not swapped. Enable **Auto Fallback**, adjust **WAP**, increase **deadline**, or reduce trade size.
 
 ### Quote changed
 
@@ -90,7 +90,7 @@ SODAX fills take longer than SYNC swaps. Contact support with your tx hash if it
 
 Confirm you signed the order and approved the correct spender. Try a SYNC route instead.
 
-### Still stuck?
+### Need more help
 
 [Discord](https://discord.gg/G7rxGgZhXa) · [hello@pennysia.com](mailto:hello@pennysia.com) · [Feedback form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform)
 

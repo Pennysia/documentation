@@ -17,7 +17,7 @@ Two TypeScript SDKs for swap integrations:
 | [`@pennysia/contracts-sdk`](./sdk-reference.md#contracts-sdk) | Settlement ABI, routes, approvals, execution |
 | [`@pennysia/backend-sdk`](./sdk-reference.md#backend-sdk) | Quote types, fanout, ranking, source manifest |
 
-Framework-neutral — no React, Next.js, or wallet code included. The Pennysia webapp composes both SDKs with its own adapters and UI.
+Framework-neutral: no React, Next.js, or wallet code included. The Pennysia webapp composes both SDKs with its own adapters and UI.
 
 ## Architecture
 

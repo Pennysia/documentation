@@ -20,7 +20,7 @@ Set by the **winning exchange**, not Pennysia. Charged from your trade tokens or
 
 ### Network gas
 
-Paid in ETH to publish the transaction. Pennysia may add a **small extra native ETH** above the network estimate (gas markup).
+Paid in ETH to publish the transaction. Pennysia adds a **small extra native ETH** above the network estimate when a gas markup applies.
 
 **Example:** ~$0.50 network gas → ~$0.60 total. Varies by network conditions and route.
 
@@ -35,7 +35,7 @@ No subscription or listing fee for traders.
 
 ### Surplus fee (SYNC routes)
 
-When execution beats your quote, Pennysia keeps the improvement — **100% of surplus, capped at 10% of output**. Zero fee if execution matches or is below the quote.
+When execution beats your quote, Pennysia keeps the improvement: **100% of surplus, capped at 10% of output**. Zero fee if execution matches or is below the quote.
 
 **Example:** Quoted 1,000 USDC, executed 1,030 USDC → surplus is 30 USDC. You receive the 1,000 you were quoted.
 

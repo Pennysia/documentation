@@ -243,8 +243,8 @@ const result = await runQuoteFanout({
   deadlineMs: 8_000,
 });
 
-// result.quotes — all quotes received before deadline
-// result.errors — per-adapter failures
+// result.quotes: all quotes received before deadline
+// result.errors: per-adapter failures
 ```
 
 #### Rank quotes

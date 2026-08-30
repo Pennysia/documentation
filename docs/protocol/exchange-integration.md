@@ -10,7 +10,11 @@ outline: [2, 3]
 
 # Exchange Integration
 
-Pennysia sends the same quote request to every connected exchange. The best rate wins. Integration is **free** — no listing fees. Pennysia runs the frontend, wallet flow, and UX. You provide a quote API and execution calldata.
+Pennysia sends the same quote request to every connected exchange. The best rate is selected. Integration is **free**. There are no listing fees.
+
+Pennysia is not a competing exchange. It is the marketplace layer: venues integrate once, use a shared interface, and reach traders without building separate distribution. This reduces the barrier for new exchanges to compete.
+
+Pennysia provides the frontend, wallet flow, and user experience. Partners provide a quote API and execution calldata.
 
 [Contact us](../resources/contact.md) to start onboarding. See [Fees](../resources/fee.md) for how Pennysia earns.
 
@@ -85,9 +89,9 @@ Each exchange gets a canonical ID (e.g. `kyberswap`, `zerox`). Token support tra
 
 ## SDKs
 
-- [Backend SDK](./sdk-reference.md#backend-sdk) — implement `LiquidityAdapter`
-- [Contracts SDK](./sdk-reference.md#contracts-sdk) — build Settlement routes
-- [Settlement](./settlement.md#execution-flow) — on-chain execution
+- [Backend SDK](./sdk-reference.md#backend-sdk): implement `LiquidityAdapter`
+- [Contracts SDK](./sdk-reference.md#contracts-sdk): build Settlement routes
+- [Settlement](./settlement.md#execution-flow): on-chain execution
 
 Questions: [dev@pennysia.com](mailto:dev@pennysia.com)
 

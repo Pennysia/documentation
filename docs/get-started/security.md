@@ -12,48 +12,48 @@ outline: [2, 3]
 
 Pennysia applies **double-layer security** on every swap.
 
-You get the **same security protection from each exchange** that you would when using that exchange's own frontend. On top of that, Pennysia adds its own layer — a standalone last line of defense that assumes **zero trust** in every integrated exchange.
+Pennysia is **exchange-agnostic** and assumes **zero trust** in every source, whether the venue is new or established. You still receive the **same security protections from each exchange** that apply on that exchange's own frontend. Pennysia adds an independent layer on top.
 
 | Layer | What you get |
 | --- | --- |
-| **Exchange** | The same security policy, contracts, and controls you would get on that venue's own site |
+| **Exchange** | The security policy, contracts, and controls of that venue |
 | **Pennysia** | Zero-trust review, unified approvals, and on-chain execution rules (always applied) |
 
 ## Zero trust on every exchange
 
-Pennysia's security policy does not treat any exchange as trusted by default — whether it is established or brand new.
+Pennysia does not treat any exchange as trusted by default.
 
-Every order is validated against Pennysia's own security and performance rules before it can execute. Routes that fail the gate are blocked or replaced, not run just because they had the best headline price.
+Every order is validated against Pennysia's security and performance rules before execution. Routes that fail validation are blocked or replaced. Headline price alone does not authorize a route.
 
 ## What Pennysia adds
 
 ### Unified token approval
 
-On most swap apps, you approve each exchange separately. On Pennysia, you approve **Settlement once** for ERC-20 sells instead of handing open-ended access to every venue you might route through.
+On most swap apps, each exchange requires a separate approval. On Pennysia, you approve **Settlement once** for ERC-20 sells instead of granting open-ended access to every venue in the route set.
 
-That reduces exposure to drains from untrusted exchanges or exploits in any single exchange's approval flow. Pennysia controls what gets executed, not open-ended third-party spenders.
+This reduces exposure to malicious or compromised spenders across individual exchanges. Pennysia controls execution through Settlement rather than relying on per-venue approvals.
 
 ### Atomic re-routing
 
-If a route fails Pennysia's security or performance threshold during execution, it is cancelled and your order moves to the **next best option in the same transaction**. No second signature. No manual retry.
+If a venue **overquotes**, reverts, or fails Pennysia's security or performance checks, the route is cancelled and the order moves to the **next best option in the same transaction**. No additional signature is required.
 
-With **Auto Fallback** enabled, Settlement tries backup routes until one succeeds or all fail. You get a smoother swap flow without failed transactions and start-over retries. If every route fails, the transaction reverts and your tokens stay with you.
+With **Auto Fallback** enabled, Settlement tries backup routes until one succeeds or all fail. If every route fails, the transaction reverts and your tokens remain in your wallet.
 
-## Try new exchanges with confidence
+## Accessing new exchanges
 
-Every exchange on Pennysia sits under the **same security umbrella**. You can try venues you have never used before without giving up the exchange's own protections or Pennysia's zero-trust layer on top.
+Every exchange on Pennysia operates under the **same security model**. You can use venues you have not used before while retaining both the exchange's own protections and Pennysia's zero-trust layer.
 
-That also helps the industry move faster: new exchanges and routing technology can reach users when Pennysia stands in front as the security layer. **Pennysia stays at the forefront for users** so you benefit from innovation without taking on venue risk alone.
+This also lowers the barrier for new exchanges to reach users: they integrate into the marketplace while Pennysia remains the security and execution layer in front of the trader.
 
 ## Open-source Settlement
 
-Most swaps run through **Pennysia Settlement**, an on-chain router. The contract is open source, tested, and audited. Source code, tests, and [audit reports](https://github.com/Pennysia/settlement/tree/main/audits) are in the [Settlement repository](https://github.com/Pennysia/settlement).
+Most swaps run through **Pennysia Settlement**, an on-chain router. The contract is open source, tested, and audited. Source code, tests, and [audit reports](https://github.com/Pennysia/settlement/tree/main/audits) are available in the [Settlement repository](https://github.com/Pennysia/settlement).
 
 Technical details: [Settlement](../protocol/settlement.md#security).
 
 ## Non-custodial
 
-Pennysia does not hold your tokens. Funds stay in your wallet until a swap executes. Reverted transactions return your tokens.
+Pennysia does not hold your tokens. Funds remain in your wallet until a swap executes. Reverted transactions return your tokens.
 
 ## Report an issue
 

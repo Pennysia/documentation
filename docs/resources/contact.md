@@ -27,9 +27,9 @@ outline: [2, 3]
 
 ## Support
 
-- **Email** — formal inquiries and partnerships ([inbox below](#inquiry))
-- **Discord** — community support and developer chat
-- **Request form** — feedback and feature requests
+- **Email:** formal inquiries and partnerships ([inbox below](#inquiry))
+- **Discord:** community support and developer chat
+- **Request form:** feedback and feature requests
 
 ## Inquiry
 
