@@ -12,8 +12,8 @@
         :alt="item.name"
         width="28"
         height="28"
-        loading="lazy"
         decoding="async"
+        fetchpriority="low"
       />
       <span class="exchange-logos__name">{{ item.name }}</span>
     </div>
@@ -21,32 +21,36 @@
 </template>
 
 <script setup lang="ts">
-/** Unique logo tiles from webapp-interface/public/aggregators (shared brand assets). */
+/**
+ * Logo tiles from webapp aggregator brands.
+ * Served as small 64px PNGs (not the original SVGs — several were 100KB–500KB
+ * with embedded bitmaps and made Overview feel slow).
+ */
 const exchanges = [
-  { id: "uniswap", name: "Uniswap", logo: "/aggregators/uniswap.svg" },
-  { id: "uniswapx", name: "UniswapX", logo: "/aggregators/uniswap.svg" },
-  { id: "zerox", name: "0x", logo: "/aggregators/zerox.svg" },
-  { id: "cowswap", name: "CoW Protocol", logo: "/aggregators/cowswap.svg" },
-  { id: "velora", name: "Velora", logo: "/aggregators/velora.svg" },
-  { id: "velora-delta", name: "Velora Delta", logo: "/aggregators/velora.svg" },
-  { id: "bebop", name: "Bebop RFQ", logo: "/aggregators/bebop.svg" },
-  { id: "bebop_aggregation", name: "Bebop Aggregation", logo: "/aggregators/bebop.svg" },
-  { id: "kyberswap", name: "KyberSwap", logo: "/aggregators/kyberswap.svg" },
-  { id: "openocean", name: "De1", logo: "/aggregators/openocean.svg" },
-  { id: "dodo", name: "DODO", logo: "/aggregators/dodo.svg" },
-  { id: "portals", name: "Portals", logo: "/aggregators/portals.svg" },
-  { id: "lifi", name: "LI.FI", logo: "/aggregators/lifi.svg" },
-  { id: "rango", name: "Rango", logo: "/aggregators/rango.svg" },
-  { id: "squid", name: "Squid", logo: "/aggregators/squid.svg" },
-  { id: "enso", name: "Enso", logo: "/aggregators/enso.svg" },
-  { id: "nordstern", name: "Nordstern", logo: "/aggregators/nordstern.svg" },
-  { id: "liquidmesh", name: "LiquidMesh", logo: "/aggregators/liquidmesh.svg" },
-  { id: "okx_dex", name: "OKX DEX", logo: "/aggregators/okx_dex.svg" },
-  { id: "bitget_swap", name: "Bitget Swap", logo: "/aggregators/bitget_swap.svg" },
-  { id: "rubic", name: "Rubic", logo: "/aggregators/rubic.svg" },
-  { id: "sushi", name: "Sushi", logo: "/aggregators/sushi.svg" },
-  { id: "sodax", name: "SODAX", logo: "/aggregators/sodax.svg" },
-  { id: "fabric", name: "Fabric", logo: "/aggregators/fabric.svg" },
+  { id: "uniswap", name: "Uniswap", logo: "/aggregators/uniswap.png" },
+  { id: "uniswapx", name: "UniswapX", logo: "/aggregators/uniswap.png" },
+  { id: "zerox", name: "0x", logo: "/aggregators/zerox.png" },
+  { id: "cowswap", name: "CoW Protocol", logo: "/aggregators/cowswap.png" },
+  { id: "velora", name: "Velora", logo: "/aggregators/velora.png" },
+  { id: "velora-delta", name: "Velora Delta", logo: "/aggregators/velora.png" },
+  { id: "bebop", name: "Bebop RFQ", logo: "/aggregators/bebop.png" },
+  { id: "bebop_aggregation", name: "Bebop Aggregation", logo: "/aggregators/bebop.png" },
+  { id: "kyberswap", name: "KyberSwap", logo: "/aggregators/kyberswap.png" },
+  { id: "openocean", name: "De1", logo: "/aggregators/openocean.png" },
+  { id: "dodo", name: "DODO", logo: "/aggregators/dodo.png" },
+  { id: "portals", name: "Portals", logo: "/aggregators/portals.png" },
+  { id: "lifi", name: "LI.FI", logo: "/aggregators/lifi.png" },
+  { id: "rango", name: "Rango", logo: "/aggregators/rango.png" },
+  { id: "squid", name: "Squid", logo: "/aggregators/squid.png" },
+  { id: "enso", name: "Enso", logo: "/aggregators/enso.png" },
+  { id: "nordstern", name: "Nordstern", logo: "/aggregators/nordstern.png" },
+  { id: "liquidmesh", name: "LiquidMesh", logo: "/aggregators/liquidmesh.png" },
+  { id: "okx_dex", name: "OKX DEX", logo: "/aggregators/okx_dex.png" },
+  { id: "bitget_swap", name: "Bitget Swap", logo: "/aggregators/bitget_swap.png" },
+  { id: "rubic", name: "Rubic", logo: "/aggregators/rubic.png" },
+  { id: "sushi", name: "Sushi", logo: "/aggregators/sushi.png" },
+  { id: "sodax", name: "SODAX", logo: "/aggregators/sodax.png" },
+  { id: "fabric", name: "Fabric", logo: "/aggregators/fabric.png" },
 ] as const
 </script>
 
