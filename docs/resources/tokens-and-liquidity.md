@@ -14,17 +14,10 @@ outline: [2, 3]
 
 **24 exchanges** are queried on every swap. The best rate is selected automatically. You do not choose a source.
 
-| | | | |
-| --- | --- | --- | --- |
-| **Uniswap** | **UniswapX** | **0x (Matcha)** | **CoW Protocol** |
-| **Velora** (ParaSwap) | **Velora Delta** | **Bebop RFQ** | **Bebop Aggregation** |
-| **KyberSwap** | **De1** | **Rango** | **DODO** |
-| **Portals** | **LI.FI** | **Squid** | **Enso** |
-| **Nordstern** | **LiquidMesh** | **OKX DEX** | **Bitget Swap** |
-| **Rubic** | **Sushi** | **SODAX** | **Fabric** |
+<ExchangeLogos />
 
 ::: info :information_source: INFO
-**De1** is OpenOcean in the Pennysia app.
+**De1:** OpenOcean has been updated to De1 in the Pennysia app.
 :::
 
 Disable sources in swap settings. Want another exchange? [Contact us](./contact.md).
