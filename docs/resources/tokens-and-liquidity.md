@@ -17,7 +17,7 @@ outline: [2, 3]
 | | | | |
 | --- | --- | --- | --- |
 | **Uniswap** | **UniswapX** | **0x (Matcha)** | **CoW Protocol** |
-| **Velora** (ParaSwap) | **Velora Delta** | **Bebop** | **Bebop Aggregation** |
+| **Velora** (ParaSwap) | **Velora Delta** | **Bebop RFQ** | **Bebop Aggregation** |
 | **KyberSwap** | **De1** | **Rango** | **DODO** |
 | **Portals** | **LI.FI** | **Squid** | **Enso** |
 | **Nordstern** | **LiquidMesh** | **OKX DEX** | **Bitget Swap** |

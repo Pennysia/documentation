@@ -16,6 +16,8 @@ Pennysia unifies liquidity across aggregators, RFQs, intents, and decentralized 
 
 **24+ leading exchanges** are connected today. Enter a trade, review the quote, and confirm. Pennysia selects the source and executes the route for you.
 
+<ExchangeLogos />
+
 ## Key features
 
 ### Best rate

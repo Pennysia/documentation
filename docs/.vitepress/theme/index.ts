@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import DocLayout from "./DocLayout.vue";
 import LottiePlayer from "./components/LottiePlayer.vue";
 import TokenPair from "./components/TokenPair.vue";
+import ExchangeLogos from "./components/ExchangeLogos.vue";
 
 library.add(faCopy as any, faCheck as any);
 
@@ -22,5 +23,6 @@ export default {
     ctx.app.component("FontAwesomeIcon", FontAwesomeIcon);
     ctx.app.component("LottiePlayer", LottiePlayer);
     ctx.app.component("TokenPair", TokenPair);
+    ctx.app.component("ExchangeLogos", ExchangeLogos);
   },
 };
