@@ -38,6 +38,18 @@ Addresses are also in [`@pennysia/contracts-sdk`](https://github.com/Pennysia/sd
         </td>
       </tr>
       <tr>
+        <td>Fee recipient</td>
+        <td>
+          <div class="address-container">
+            <code>0x94675E72b654D6e4eE4Cc7313086a064F81bcE26</code>
+            <button class="copy-btn" @click="copyToClipboard('0x94675E72b654D6e4eE4Cc7313086a064F81bcE26', 'feeRecipient')" aria-label="Copy address" title="Copy address">
+              <FontAwesomeIcon :icon="['far', 'copy']" />
+            </button>
+            <a class="external-link-btn" href="https://etherscan.io/address/0x94675E72b654D6e4eE4Cc7313086a064F81bcE26" target="_blank" rel="noopener noreferrer" aria-label="Open Etherscan" title="Open Etherscan">↗</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
         <td>WETH</td>
         <td>
           <div class="address-container">

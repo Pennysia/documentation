@@ -41,6 +41,10 @@ When execution beats your quote, Pennysia keeps the improvement: **100% of surpl
 
 Does not apply to SODAX intent opens.
 
+### Hard-intent partner fee
+
+CoW Protocol, UniswapX, and Velora Delta routes take a partner fee (default 50 bps) paid to the same [Settlement fee recipient](../protocol/deployments.md).
+
 ### Gas markup
 
 Small portion of native ETH above network gas. See [Network gas](#network-gas).
