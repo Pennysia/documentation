@@ -36,7 +36,7 @@ outline: [2, 3]
 
 **How many exchanges are connected?**
 
-> **24+** with access to thousands of liquidity sources and **12,000+ tokens**. See [Tokens and Liquidity](./tokens-and-liquidity.md#liquidity-sources).
+> **24+** with access to thousands of liquidity sources and **12,400+ tokens**. See [Tokens and Liquidity](./tokens-and-liquidity.md#liquidity-sources).
 
 **Do I need to pick an exchange?**
 

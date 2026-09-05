@@ -24,7 +24,7 @@ Pennysia unifies liquidity across aggregators, RFQs, intents, and decentralized 
 
 Every swap compares liquidity across **all connected venues**. Quotes are ranked by net output after gas and fees, so the best executable rate wins rather than the best headline number.
 
-- **12,000+ tokens** on the curated list
+- **12,400+ tokens** on the mega list
 - **Gas-aware ranking:** high gas cost can lower an otherwise strong quote
 
 [How It Works](../how-it-works/how-it-works.md) · [Tokens and Liquidity](../resources/tokens-and-liquidity.md)

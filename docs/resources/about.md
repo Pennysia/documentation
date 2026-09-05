@@ -15,7 +15,7 @@ outline: [2, 3]
 ### Live now
 
 - Swap app on Ethereum Mainnet at [app.pennysia.com](https://app.pennysia.com)
-- 24 integrated exchanges (thousands of liquidity sources, 12,000+ tokens)
+- 24 integrated exchanges (thousands of liquidity sources, 12,400+ tokens)
 - Auto-fallback for failed routes
 - Worst Acceptable Price protection
 - Gas-aware quote ranking

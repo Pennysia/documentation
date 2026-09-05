@@ -67,7 +67,7 @@ Quotes with high gas rank lower even when the headline output looks better.
 
 Disable individual exchanges in settings. Disabled sources are skipped.
 
-24 exchanges, 12,000+ tokens. Full list: [Tokens and Liquidity](../resources/tokens-and-liquidity.md#liquidity-sources).
+24 exchanges, 12,400+ tokens. Full list: [Tokens and Liquidity](../resources/tokens-and-liquidity.md#liquidity-sources).
 
 ## For exchanges
 

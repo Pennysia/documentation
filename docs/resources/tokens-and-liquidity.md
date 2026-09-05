@@ -24,7 +24,7 @@ Disable sources in swap settings. Want another exchange? [Contact us](./contact.
 
 ## Supported tokens
 
-**12,000+ tokens** on Ethereum via a curated mega list:
+**12,400+ tokens** on Ethereum via a curated mega list:
 
 1. **Curated list:** hand-reviewed metadata
 2. **Mega list:** merged from all exchanges, deduped by address
