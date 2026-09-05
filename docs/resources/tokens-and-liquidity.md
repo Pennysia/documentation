@@ -33,6 +33,22 @@ Maintained in [@pennysia/token-list](https://github.com/Pennysia/token-list).
 
 Search by name, symbol, or contract address. Paste an address for newer tokens. Blocked/scam tokens are excluded.
 
+### Categories
+
+In the token selector, tokens are grouped into tabs such as **Tokens**, **Stablecoins**, **LSTs**, **Stocks**, **Commodities**, **Wrapped**, and **Memes**.
+
+On **Stocks** and **Commodities**, you can further filter by **issuer** (for example xStock, Ondo, Anchored, Dinari, Paxos, Tether, NatGold). Choose **All issuers** to see every product in that category.
+
+### Tokenized equity tickers
+
+Brand tickers use mixed case in the app and mega list:
+
+| Issuer | Symbol form | Example |
+| --- | --- | --- |
+| Anchored (aStock) | Leading lowercase `a` | `aAAPL` |
+| Ondo | Trailing lowercase `on` | `TSLAon` |
+| xStock | Trailing lowercase `x` | `TSLAx` |
+
 | Why missing | Reason |
 | --- | --- |
 | Not on any source | No exchange lists it yet |

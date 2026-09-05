@@ -80,7 +80,7 @@ Ensure you have ETH for gas. Wait for approval to confirm before swapping. Nativ
 
 ### Token not found
 
-Search by name or paste the contract address. Some tokens are blocked for safety. See [Supported Tokens](../resources/tokens-and-liquidity.md#supported-tokens).
+Search by name or paste the contract address. Use category tabs (**Stocks**, **Commodities**, and others) or the issuer filter when browsing tokenized equities. Some tokens are blocked for safety. See [Supported Tokens](../resources/tokens-and-liquidity.md#supported-tokens).
 
 ### SODAX pending
 
