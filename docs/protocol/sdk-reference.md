@@ -270,7 +270,7 @@ import {
 
 Each source has an ID, display name, capabilities, and enablement flags. The Pennysia web app uses the same manifest.
 
-Current source IDs include: `uniswap`, `uniswapx`, `zerox`, `cowswap`, `velora`, `velora-delta`, `bebop`, `kyberswap`, `openocean`, `rango`, `dodo`, `portals`, `lifi`, `squid`, `enso`, `nordstern`, `liquidmesh`, `okx_dex`, `bitget_swap`, `rubic`, `sushi`, `sodax`, `fabric`, and others.
+Current source IDs include: `uniswap`, `uniswapx`, `zerox`, `cowswap`, `velora`, `velora-delta`, `bebop`, `bebop_aggregation`, `bebop_bopamm`, `kyberswap`, `openocean`, `rango`, `dodo`, `portals`, `lifi`, `squid`, `enso`, `nordstern`, `liquidmesh`, `okx_dex`, `bitget_swap`, `rubic`, `sushi`, `sodax`, `fabric`, and others.
 
 ### Enablement helpers
 

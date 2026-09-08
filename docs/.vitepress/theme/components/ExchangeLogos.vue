@@ -32,6 +32,7 @@
  */
 const exchanges = [
   { id: "zerox", name: "0x", logo: "/aggregators/zerox.png" },
+  { id: "bebop_bopamm", name: "Bebop BopAMM", logo: "/aggregators/bebop.png" },
   { id: "bebop_aggregation", name: "Bebop Aggregation", logo: "/aggregators/bebop.png" },
   { id: "bebop", name: "Bebop RFQ", logo: "/aggregators/bebop.png" },
   { id: "bitget_swap", name: "Bitget Swap", logo: "/aggregators/bitget_swap.png" },
