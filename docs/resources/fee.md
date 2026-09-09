@@ -20,9 +20,9 @@ Set by the **winning exchange**, not Pennysia. Charged from your trade tokens or
 
 ### Network gas
 
-Paid in ETH to publish the transaction. Pennysia adds a **small extra native ETH** above the network estimate when a gas markup applies.
+Paid in ETH to publish the transaction. Pennysia adds a **15% markup on the expected network gas cost** (estimated gas × base fee + tip) as extra native ETH when applicable.
 
-**Example:** ~$0.50 network gas → ~$0.60 total. Varies by network conditions and route.
+**Example:** ~$0.50 expected network gas → ~$0.575 total with markup. Varies by network conditions and route.
 
 ### Other costs
 
