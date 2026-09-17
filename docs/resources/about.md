@@ -15,7 +15,7 @@ outline: [2, 3]
 ### Live now
 
 - Swap app on Ethereum Mainnet at [app.pennysia.com](https://app.pennysia.com)
-- 24 integrated exchanges (thousands of liquidity sources, 12,400+ tokens)
+- 25 integrated exchanges (thousands of liquidity sources, 12,400+ tokens)
 - Auto-fallback for failed routes
 - Worst Acceptable Price protection
 - Gas-aware quote ranking
@@ -36,6 +36,10 @@ Have a feature request? [Contact us](./contact.md).
 ## Changelog
 
 Notable product and documentation updates.
+
+### September 2026
+
+- Bebop BopAMM added as the 25th integrated exchange
 
 ### August 2026
 

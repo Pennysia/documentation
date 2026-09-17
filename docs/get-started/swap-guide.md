@@ -30,7 +30,7 @@ The confirm modal shows which route you are getting.
 
 One Ethereum transaction. Settlement calls the winning exchange. **Auto Fallback** retries the next route if the first fails.
 
-Examples: Uniswap, 0x, KyberSwap, Sushi, LI.FI (same-chain), De1.
+Examples: Uniswap, 0x, KyberSwap, Sushi, LI.FI (same-chain), De1, Bebop BopAMM.
 
 ### SODAX (cross-chain)
 

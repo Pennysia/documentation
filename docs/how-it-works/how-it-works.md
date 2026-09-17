@@ -18,7 +18,7 @@ No single exchange wins every trade. Rankings change by size, pair, and timing. 
 
 ![1000 ETH to USDC swap comparison across 6 DEX aggregators: Velora ranks 1st, CowSwap 2nd, Matcha(0x) 3rd, 1inch 4th, KyberSwap 5th, Uniswap 6th](/ETH1K_USDC.png)
 
-Pennysia sends your swap to **24 exchanges at once** and picks the best quote after gas and fees.
+Pennysia sends your swap to **25 exchanges at once** and picks the best quote after gas and fees.
 
 <div style="display:flex;flex-direction:column;align-items:center;">
   <LottiePlayer srcLight="/SwapLightMode.lottie" srcDark="/SwapDarkMode.lottie" :aspectRatio="450/600" maxWidth="650px"/>
@@ -35,7 +35,7 @@ Some routes use CoW Protocol, SODAX, or other paths. The app shows the type befo
 
 | | Single exchange | Pennysia |
 | --- | --- | --- |
-| Quotes | One venue | 24 in parallel |
+| Quotes | One venue | 25 in parallel |
 | Failed routes | Manual retry | Auto-fallback (when enabled) |
 | Your effort | Compare platforms | Enter swap and confirm |
 
@@ -67,7 +67,7 @@ Quotes with high gas rank lower even when the headline output looks better.
 
 Disable individual exchanges in settings. Disabled sources are skipped.
 
-24 exchanges, 12,400+ tokens. Full list: [Tokens and Liquidity](../resources/tokens-and-liquidity.md#liquidity-sources).
+25 exchanges, 12,400+ tokens. Full list: [Tokens and Liquidity](../resources/tokens-and-liquidity.md#liquidity-sources).
 
 ## For exchanges
 
