@@ -41,7 +41,7 @@ const exchanges = [
   { id: "dodo", name: "DODO", logo: "/aggregators/dodo.png" },
   { id: "enso", name: "Enso", logo: "/aggregators/enso.png" },
   { id: "fabric", name: "Fabric", logo: "/aggregators/fabric.png" },
-  { id: "instaswap", name: "InstaSwap", logo: "/aggregators/instaswap.png" },
+  { id: "instaswap", name: "InstaSwap", logo: "/aggregators/instaswap.svg" },
   { id: "kyberswap", name: "KyberSwap", logo: "/aggregators/kyberswap.png" },
   { id: "lifi", name: "LI.FI", logo: "/aggregators/lifi.png" },
   { id: "liquidmesh", name: "LiquidMesh", logo: "/aggregators/liquidmesh.png" },
