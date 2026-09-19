@@ -93,4 +93,4 @@ The app follows a standard swap flow: connect a wallet, select tokens, and confi
 
 **SODAX route:** Cross-chain intent; fill completes asynchronously on the hub chain.
 
-**Deposit-address route:** Walletless transfer to an ephemeral deposit (e.g. InstaSwap, RocketX Walletless); fill completes asynchronously off Settlement.
+**Deposit-address route:** Walletless transfer to an ephemeral deposit (e.g. InstaSwap, RocketX CEX); fill completes asynchronously off Settlement.

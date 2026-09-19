@@ -39,7 +39,7 @@ Notable product and documentation updates.
 
 ### September 2026
 
-- RocketX added as the 27th and 28th integrated sources (Settlement SYNC calldata + walletless deposit-address)
+- RocketX added as the 27th and 28th integrated sources (Settlement SYNC + RocketX CEX deposit-address)
 - InstaSwap added as the 26th integrated exchange (deposit-address lane)
 - Bebop BopAMM added as the 25th integrated exchange
 
