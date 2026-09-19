@@ -94,7 +94,12 @@ const exchanges = [
   height: 28px;
   object-fit: contain;
   border-radius: 6px;
-  background: var(--vp-c-bg-alt);
+  /* Avoid light fringe between rounded bitmap edges and page bg. */
+  background: transparent;
+  overflow: hidden;
+  /* Subpixel AA on dark tiles can read as a 1px hairline. */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .exchange-logos__name {
