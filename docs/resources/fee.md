@@ -45,6 +45,8 @@ Does not apply to SODAX intent opens.
 
 CoW Protocol, UniswapX, and Velora Delta routes take a partner fee (default 50 bps) paid to the same [Settlement fee recipient](../protocol/deployments.md).
 
+InstaSwap deposit-address routes do not use Settlement or hard-intent partner hooks; fees follow Instaswap’s own breakdown (affiliate attribution via partner id).
+
 ### Gas markup
 
 Small portion of native ETH above network gas. See [Network gas](#network-gas).
