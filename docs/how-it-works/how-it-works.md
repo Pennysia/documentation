@@ -31,7 +31,7 @@ Pennysia sends your swap to **26 exchanges at once** and picks the best quote af
 2. **Compare:** rank by net output after gas and fees
 3. **Execute:** you sign; Settlement runs the winning route on-chain
 
-Some routes use CoW Protocol, SODAX, or other paths. The app shows the type before you confirm.
+Some routes use CoW Protocol, SODAX, InstaSwap deposit-address, or other paths. The app shows the type before you confirm.
 
 | | Single exchange | Pennysia |
 | --- | --- | --- |

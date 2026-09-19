@@ -95,6 +95,10 @@ Some exchanges use off-chain intent auctions:
 
 These routes are signed and submitted from your wallet. They do not go through Settlement's `executeSwap`. The Pennysia app handles them as separate execution lanes.
 
+### Deposit-address (walletless)
+
+InstaSwap and similar walletless lanes do not use Settlement. You transfer sell tokens to an ephemeral deposit address; the operator fills asynchronously. Approvals, surplus fees, and Auto Fallback do not apply.
+
 ### Fees
 
 #### Surplus fee (SYNC only)

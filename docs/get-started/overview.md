@@ -92,3 +92,5 @@ The app follows a standard swap flow: connect a wallet, select tokens, and confi
 **SYNC route:** Same-transaction swap through a DEX or aggregator.
 
 **SODAX route:** Cross-chain intent; fill completes asynchronously on the hub chain.
+
+**Deposit-address route:** Walletless transfer to an ephemeral deposit (e.g. InstaSwap); fill completes asynchronously off Settlement.

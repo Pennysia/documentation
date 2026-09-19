@@ -40,6 +40,10 @@ Opens a cross-chain intent. Fill is asynchronous: not instant, and not part of A
 
 CoW Protocol, UniswapX, Velora Delta. You sign an off-chain order; a solver fills it. Settlement is not the executor.
 
+### Deposit-address (walletless)
+
+InstaSwap. You transfer sell tokens to an ephemeral deposit address; the operator fills asynchronously. No Settlement approval and not part of Auto Fallback.
+
 ## Settings
 
 Open the gear icon on the swap page.
@@ -89,6 +93,10 @@ SODAX fills take longer than SYNC swaps. Contact support with your tx hash if it
 ### Hard intent failed
 
 Confirm you signed the order and approved the correct spender. Try a SYNC route instead.
+
+### Deposit-address pending
+
+After the deposit transfer confirms, fill can take longer than a SYNC swap. Funds may still settle or refund to your refund address if the window expires. Contact support with your deposit tx hash if it stalls.
 
 ### Need more help
 
