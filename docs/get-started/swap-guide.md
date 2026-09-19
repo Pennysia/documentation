@@ -30,7 +30,7 @@ The confirm modal shows which route you are getting.
 
 One Ethereum transaction. Settlement calls the winning exchange. **Auto Fallback** retries the next route if the first fails.
 
-Examples: Uniswap, 0x, KyberSwap, Sushi, LI.FI (same-chain), De1, Bebop BopAMM.
+Examples: Uniswap, 0x, KyberSwap, Sushi, LI.FI (same-chain), De1, Bebop BopAMM, RocketX.
 
 ### SODAX (cross-chain)
 
@@ -42,7 +42,7 @@ CoW Protocol, UniswapX, Velora Delta. You sign an off-chain order; a solver fill
 
 ### Deposit-address (walletless)
 
-InstaSwap. You transfer sell tokens to an ephemeral deposit address; the operator fills asynchronously. No Settlement approval and not part of Auto Fallback.
+InstaSwap and RocketX Walletless. You transfer sell tokens to an ephemeral deposit address; the operator fills asynchronously. No Settlement approval and not part of Auto Fallback.
 
 ## Settings
 

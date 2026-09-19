@@ -53,7 +53,7 @@ Cross-chain intents. Settlement opens on Ethereum; fill is async on the hub chai
 
 #### Deposit-address
 
-Walletless lanes such as InstaSwap. The user transfers sell tokens to an ephemeral deposit address; fill is async off Settlement. Quote APIs return estimated output and deposit metadata rather than Settlement calldata. Contact Pennysia for onboarding.
+Walletless lanes such as InstaSwap and RocketX Walletless. The user transfers sell tokens to an ephemeral deposit address; fill is async off Settlement. Quote APIs return estimated output and deposit metadata rather than Settlement calldata. Contact Pennysia for onboarding.
 
 ## Quote response
 
@@ -112,7 +112,7 @@ User → POST /api/quotes/fanout → rank quotes → rebuild route → lane disp
 | **Settlement SYNC** | DEX/aggregator via `executeSwap` |
 | **SODAX** | Cross-chain intents |
 | **Hard intents** | CoW, UniswapX, Velora Delta |
-| **Deposit-address** | InstaSwap walletless deposit → operator fill |
+| **Deposit-address** | InstaSwap / RocketX walletless deposit → operator fill |
 
 | Package | Role |
 | --- | --- |
