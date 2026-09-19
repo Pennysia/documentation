@@ -103,7 +103,7 @@ const exchanges = [
 
 /* InstaSwap mark uses white strokes — keep a dark plate in light theme too. */
 .exchange-logos__item img.exchange-logos__img--dark-plate {
-  background: #0b1220;
+  background: #191919;
 }
 
 .exchange-logos__name {
