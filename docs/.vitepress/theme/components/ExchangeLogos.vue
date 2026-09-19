@@ -15,6 +15,10 @@
           height="28"
           decoding="async"
           fetchpriority="low"
+          :class="{
+            'exchange-logos__img--dark-plate':
+              'plate' in item && item.plate === 'dark',
+          }"
         />
         <span class="exchange-logos__name">{{ item.name }}</span>
       </div>
@@ -41,7 +45,7 @@ const exchanges = [
   { id: "dodo", name: "DODO", logo: "/aggregators/dodo.png" },
   { id: "enso", name: "Enso", logo: "/aggregators/enso.png" },
   { id: "fabric", name: "Fabric", logo: "/aggregators/fabric.png" },
-  { id: "instaswap", name: "InstaSwap", logo: "/aggregators/instaswap.png" },
+  { id: "instaswap", name: "InstaSwap", logo: "/aggregators/instaswap.png", plate: "dark" as const },
   { id: "kyberswap", name: "KyberSwap", logo: "/aggregators/kyberswap.png" },
   { id: "lifi", name: "LI.FI", logo: "/aggregators/lifi.png" },
   { id: "liquidmesh", name: "LiquidMesh", logo: "/aggregators/liquidmesh.png" },
@@ -95,6 +99,11 @@ const exchanges = [
   object-fit: contain;
   border-radius: 6px;
   background: var(--vp-c-bg-alt);
+}
+
+/* InstaSwap mark uses white strokes — keep a dark plate in light theme too. */
+.exchange-logos__item img.exchange-logos__img--dark-plate {
+  background: #0b1220;
 }
 
 .exchange-logos__name {
