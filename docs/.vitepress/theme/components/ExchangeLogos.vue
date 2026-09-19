@@ -41,7 +41,7 @@ const exchanges = [
   { id: "bebop", name: "Bebop RFQ", logo: "/aggregators/bebop.png" },
   { id: "bitget_swap", name: "Bitget Swap", logo: "/aggregators/bitget_swap.png" },
   { id: "cowswap", name: "CoW Protocol", logo: "/aggregators/cowswap.png" },
-  { id: "openocean", name: "De1", logo: "/aggregators/openocean.png" },
+  { id: "openocean", name: "De1", logo: "/aggregators/openocean.png", plate: "dark" as const },
   { id: "dodo", name: "DODO", logo: "/aggregators/dodo.png" },
   { id: "enso", name: "Enso", logo: "/aggregators/enso.png" },
   { id: "fabric", name: "Fabric", logo: "/aggregators/fabric.png" },
