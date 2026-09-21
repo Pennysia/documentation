@@ -85,7 +85,7 @@ The app follows a standard swap flow: connect a wallet, select tokens, and confi
 
 **Exchange fee:** Set by the winning exchange and shown in your quote (tokens or native ETH).
 
-**Gas markup:** Additional native ETH Pennysia may include above the network gas estimate when applicable.
+**Protocol fee:** Flat $0.50 USD charged as native ETH on Settlement swaps (converted at live ETH/USD). Shown in Review; subtracted from minimum received when buying ETH.
 
 **Settlement:** On-chain router that executes most swaps. [Details](../protocol/settlement.md).
 

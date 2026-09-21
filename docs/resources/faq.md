@@ -44,7 +44,7 @@ outline: [2, 3]
 
 **What fees does Pennysia charge?**
 
-> **Surplus fee** when execution beats your quote (capped at 10% of output), plus a **small gas markup** in native ETH when applicable. Exchange fees are set by the winning venue and shown in your quote. See [Fees](./fee.md).
+> **Surplus fee** when execution beats your quote (capped at 10% of output), plus a **flat $0.50 protocol fee** in native ETH on Settlement swaps. Exchange fees are set by the winning venue and shown in your quote. See [Fees](./fee.md).
 
 **What is auto-fallback?**
 

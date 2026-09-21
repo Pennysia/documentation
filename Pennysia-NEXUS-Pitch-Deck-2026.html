@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pennysia — Pitch Deck 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f9f8f7;
+        --black: #0b1120;
+        --powder: #d3e5ef;
+        --ice: #e7f0f3;
+        --cream: #fbfbed;
+        --slate: #9eb5c0;
+        --muted: #4a5568;
+        --line: #d8e0e6;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #e8ecef;
+        color: var(--black);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .deck {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+        align-items: center;
+      }
+
+      .slide {
+        width: 1280px;
+        height: 720px;
+        background: var(--paper);
+        position: relative;
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+        flex-shrink: 0;
+        box-shadow: 0 8px 28px rgba(11, 17, 32, 0.08);
+      }
+
+      .slide:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .pad {
+        padding: 44px 56px 40px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+
+      .logo {
+        height: 28px;
+        width: auto;
+        display: block;
+      }
+
+      .badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--black);
+        border: 1px solid var(--black);
+        border-radius: 999px;
+        padding: 7px 12px;
+        background: var(--white);
+      }
+
+      .kicker {
+        margin: 0 0 10px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 54px;
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+      }
+
+      .lead {
+        margin: 16px 0 0;
+        font-size: 20px;
+        line-height: 1.45;
+        color: var(--muted);
+        max-width: 760px;
+        font-weight: 500;
+      }
+
+      .body {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.45;
+        color: var(--muted);
+        max-width: 920px;
+      }
+
+      .footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .footer strong {
+        color: var(--black);
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px 18px 16px;
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 750;
+        letter-spacing: -0.01em;
+      }
+
+      .card p,
+      .card li {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .card li + li {
+        margin-top: 6px;
+      }
+
+      .stat {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px 16px;
+        min-height: 110px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+      }
+
+      .stat span {
+        display: block;
+        font-size: 13px;
+        line-height: 1.35;
+        color: var(--muted);
+      }
+
+      .powder {
+        background: var(--powder);
+        border-color: transparent;
+      }
+
+      .ice {
+        background: var(--ice);
+        border-color: transparent;
+      }
+
+      .cream {
+        background: var(--cream);
+        border-color: transparent;
+      }
+
+      .black {
+        background: var(--black);
+        color: var(--white);
+        border-color: transparent;
+      }
+
+      .black h3,
+      .black strong {
+        color: var(--white);
+      }
+
+      .black p,
+      .black span,
+      .black li {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .step {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px 16px;
+      }
+
+      .step .n {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: var(--slate);
+        margin-bottom: 10px;
+      }
+
+      .step h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 750;
+      }
+
+      .step p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.35;
+        color: var(--muted);
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 18px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .table th,
+      .table td {
+        text-align: left;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+        vertical-align: top;
+        line-height: 1.35;
+      }
+
+      .table th {
+        background: var(--ice);
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .table td strong {
+        font-weight: 700;
+      }
+
+      .hero-slide {
+        background:
+          radial-gradient(900px 420px at 85% 15%, rgba(211, 229, 239, 0.95), transparent 60%),
+          radial-gradient(700px 380px at 10% 90%, rgba(231, 240, 243, 0.9), transparent 55%),
+          var(--paper);
+      }
+
+      .hero-slide .pad {
+        justify-content: center;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .chip {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .title-block {
+        max-width: 920px;
+      }
+
+      .title-block .lead {
+        font-size: 22px;
+        max-width: 720px;
+      }
+
+      .one-liner {
+        margin-top: 20px;
+        display: inline-block;
+        background: var(--black);
+        color: var(--white);
+        border-radius: 12px;
+        padding: 14px 18px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .team-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .member {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 28px 16px;
+        text-align: center;
+      }
+
+      .member strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+
+      .member span {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .links {
+        margin-top: 16px;
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .links span {
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .screen-hint {
+        display: block;
+        text-align: center;
+        color: #667788;
+        font-size: 13px;
+        padding: 8px 16px 0;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .screen-hint {
+          display: none !important;
+        }
+
+        .deck {
+          padding: 0;
+          gap: 0;
+        }
+
+        .slide {
+          box-shadow: none;
+          width: 100%;
+          height: 100vh;
+          margin: 0;
+        }
+
+        @page {
+          size: 13.333in 7.5in;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="screen-hint">
+      Pennysia pitch deck · Open in browser → Print → Save as PDF (landscape, no margins)
+    </p>
+    <div class="deck">
+      <!-- 1. Title -->
+      <section class="slide hero-slide">
+        <div class="pad">
+          <div class="top" style="margin-bottom: 48px">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Pitch Deck 2026</div>
+          </div>
+          <div class="title-block">
+            <p class="kicker">Crypto · DeFi · Liquidity Infrastructure</p>
+            <h1>One interface for<br />the world’s liquidity.</h1>
+            <p class="lead">
+              An open marketplace where DEXs, aggregators, intents, RFQs, and market makers
+              compete for every swap — best net execution, one security layer, live on Ethereum.
+            </p>
+            <div class="hero-meta">
+              <div class="chip">Live · app.pennysia.com</div>
+              <div class="chip">24+ exchanges</div>
+              <div class="chip">12,400+ tokens</div>
+              <div class="chip">Ethereum Mainnet</div>
+            </div>
+          </div>
+          <div class="footer">
+            <span><strong>Pennysia</strong> · Unified liquidity marketplace</span>
+            <span>1 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Problem + Why now -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Problem · Why now</div>
+          </div>
+          <p class="kicker">The gap</p>
+          <h2>Liquidity is fragmented. Best execution is not default.</h2>
+          <p class="body" style="margin-top: 12px">
+            No single DEX, aggregator, RFQ, or intent venue wins across every trade size, pair, and moment.
+            Traders settle for one app — or waste time comparing many. New venues still rebuild distribution from scratch.
+          </p>
+          <div class="grid-3" style="margin-top: 18px">
+            <div class="card">
+              <h3>Inconsistent winners</h3>
+              <p>
+                Rankings flip by trade size. A venue that wins at 100 ETH can lose at 1,000 ETH
+                on the same pair.
+              </p>
+            </div>
+            <div class="card">
+              <h3>High comparison cost</h3>
+              <p>
+                Checking multiple frontends burns time, gas awareness, and attention —
+                especially when markets move.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Why now</h3>
+              <p>
+                Intents and RFQs multiplied the quote surface. Headline price ≠ executable outcome
+                after gas and failure risk. Execution quality needs a marketplace layer.
+              </p>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Beachhead: Ethereum Mainnet swaps · Expand: more venues, then more chains</span>
+            <span>2 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Solution -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Solution</div>
+          </div>
+          <p class="kicker">What Pennysia is</p>
+          <h2>An open marketplace for swaps.</h2>
+          <p class="body" style="margin-top: 12px">
+            Connected DEXs, aggregators, intents, RFQs, and market makers compete on every trade.
+            Pennysia ranks net output after gas and fees, then executes through Settlement.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <div class="n">01</div>
+              <h3>Broadcast</h3>
+              <p>Same quote request hits all connected venues in parallel.</p>
+            </div>
+            <div class="step">
+              <div class="n">02</div>
+              <h3>Compare</h3>
+              <p>Rank by executable net result — not headline price alone.</p>
+            </div>
+            <div class="step">
+              <div class="n">03</div>
+              <h3>Protect</h3>
+              <p>Zero-trust checks, WAP floor, and unified Settlement approval.</p>
+            </div>
+            <div class="step">
+              <div class="n">04</div>
+              <h3>Execute</h3>
+              <p>Best route runs on-chain; auto-fallback if a path fails.</p>
+            </div>
+          </div>
+          <div class="one-liner">Venues compete. Traders get the best net rate. One security layer.</div>
+          <div class="footer">
+            <span>Marketplace layer · not another single-venue swap app</span>
+            <span>3 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Product -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Product · Live</div>
+          </div>
+          <p class="kicker">What we ship today</p>
+          <h2>Working product on Ethereum Mainnet.</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Coverage</strong></td>
+                <td>24 exchanges · 12,400+ tokens · Ethereum Mainnet</td>
+              </tr>
+              <tr>
+                <td><strong>Routing</strong></td>
+                <td>SYNC aggregators · hard intents (CoW, UniswapX, Velora Delta) · SODAX</td>
+              </tr>
+              <tr>
+                <td><strong>Execution UX</strong></td>
+                <td>Connect wallet → review best quote → approve Settlement once → sign → settle</td>
+              </tr>
+              <tr>
+                <td><strong>Protections</strong></td>
+                <td>Gas-aware ranking · Worst Acceptable Price · atomic auto-fallback</td>
+              </tr>
+              <tr>
+                <td><strong>Security</strong></td>
+                <td>Exchange safeguards + Pennysia zero-trust Settlement layer</td>
+              </tr>
+              <tr>
+                <td><strong>Developer surface</strong></td>
+                <td>Docs, contracts-sdk, backend-sdk, open Settlement, token-list, status page</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="footer">
+            <span><strong>Demo:</strong> app.pennysia.com · Settlement 0x3Aad…795E</span>
+            <span>4 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Competition + Why us -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Competition · Why us</div>
+          </div>
+          <p class="kicker">Where we sit</p>
+          <h2>A competition layer above aggregators and venues.</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Single aggregator / DEX</th>
+                <th>Intent / RFQ venue</th>
+                <th>Pennysia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Examples</strong></td>
+                <td>1inch, Uniswap, Kyber, OKX DEX</td>
+                <td>CoW, UniswapX, Bebop, Velora Delta</td>
+                <td>Marketplace across all of the above</td>
+              </tr>
+              <tr>
+                <td><strong>Quote scope</strong></td>
+                <td>Own liquidity / own routing graph</td>
+                <td>Solver or RFQ network</td>
+                <td>24+ venues in parallel per trade</td>
+              </tr>
+              <tr>
+                <td><strong>Trust model</strong></td>
+                <td>Per-venue approvals &amp; frontend trust</td>
+                <td>Protocol-specific trust</td>
+                <td>Approve Settlement once · zero-trust gate</td>
+              </tr>
+              <tr>
+                <td><strong>Failure UX</strong></td>
+                <td>Manual retry / new quote</td>
+                <td>Depends on venue</td>
+                <td>Same-tx auto-fallback to next best</td>
+              </tr>
+              <tr>
+                <td><strong>Distribution</strong></td>
+                <td>Compete for own users</td>
+                <td>Compete for own users</td>
+                <td>Free listing into shared trader demand</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="footer">
+            <span>Competitors become liquidity sources — not enemies of the model</span>
+            <span>5 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Traction -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Traction</div>
+          </div>
+          <p class="kicker">Proof we can ship</p>
+          <h2>From hackathon win to mainnet marketplace.</h2>
+          <div class="grid-4">
+            <div class="stat black">
+              <strong>1st</strong>
+              <span>Sonic S-Tier Global Hackathon (2025)</span>
+            </div>
+            <div class="stat">
+              <strong>Live</strong>
+              <span>Ethereum Mainnet launch · August 2026</span>
+            </div>
+            <div class="stat">
+              <strong>24+</strong>
+              <span>Integrated exchanges across aggregators, RFQ, intents</span>
+            </div>
+            <div class="stat">
+              <strong>12.4k+</strong>
+              <span>Tokens on curated mega list</span>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-top: 12px">
+            <div class="card">
+              <h3>Connected venues include</h3>
+              <p>
+                0x, Uniswap / UniswapX, KyberSwap, CoW Protocol, Velora / Velora Delta,
+                Bebop, OKX DEX, LI.FI, SODAX, De1, Sushi, DODO, and more.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Security &amp; engineering</h3>
+              <p>
+                Open-source Settlement with automated audit tooling
+                (Slither, Foundry, Halmos, Medusa, Certora). Full product surface shipping.
+              </p>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Early-stage · product live · stage-ready demo · usage metrics available on request</span>
+            <span>6 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Business model -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Business model</div>
+          </div>
+          <p class="kicker">How we earn</p>
+          <h2>Aligned with better execution — not worse spreads.</h2>
+          <div class="grid-3" style="margin-top: 18px">
+            <div class="card powder">
+              <h3>Surplus fee</h3>
+              <p>
+                When a SYNC fill beats the quoted rate, Pennysia keeps the improvement,
+                capped at 10% of output. No surplus fee if execution matches or is worse.
+              </p>
+            </div>
+            <div class="card ice">
+              <h3>Intent partner fee</h3>
+              <p>
+                Hard-intent routes (CoW, UniswapX, Velora Delta) take a partner fee
+                (~50 bps) to the Settlement fee recipient.
+              </p>
+            </div>
+            <div class="card cream">
+              <h3>Protocol fee</h3>
+              <p>
+                Flat $0.50 USD charged as native ETH on Settlement swaps
+                (converted at live ETH/USD). Exchange fees stay with the winning venue.
+              </p>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-top: 12px">
+            <div class="card">
+              <h3>What we do not charge</h3>
+              <ul>
+                <li>No trader subscription</li>
+                <li>No exchange listing fee — integration is free</li>
+                <li>No hidden post-sign fees; costs shown before confirm</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Why the model fits</h3>
+              <ul>
+                <li>Revenue grows with successful competitive execution</li>
+                <li>Exchanges keep their fee economics when they win</li>
+                <li>Marketplace scales by adding venues, not listing rent</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Trader-side monetization · free venue distribution</span>
+            <span>7 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Go-to-market -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Go-to-market</div>
+          </div>
+          <p class="kicker">How we grow</p>
+          <h2>Two-sided marketplace: traders in, venues on.</h2>
+          <div class="grid-3" style="margin-top: 18px">
+            <div class="card">
+              <h3>Traders</h3>
+              <ul>
+                <li>Lead with best-net-execution demos and comparison content</li>
+                <li>Familiar swap UX at app.pennysia.com</li>
+                <li>WalletConnect coverage across major wallets</li>
+                <li>Community via X, Telegram, Discord</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Exchanges</h3>
+              <ul>
+                <li>Free integration into shared trader demand</li>
+                <li>Docs + SDKs for SYNC and intent routes</li>
+                <li>Same security model for new and established venues</li>
+                <li>Venues earn as they would on their own frontend</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Partners</h3>
+              <ul>
+                <li>Wallets, frontends, and protocols that need execution</li>
+                <li>Developer docs and contracts / backend SDKs</li>
+                <li>Conference / stage demos (incl. TOKEN2049 NEXUS)</li>
+                <li>Status page and public engineering surface</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card black" style="margin-top: 14px">
+            <h3>Flywheel</h3>
+            <p style="font-size: 16px; color: #fff; font-weight: 500; line-height: 1.4">
+              More venues → better net quotes → more trader volume → more reason for venues to integrate.
+            </p>
+          </div>
+          <div class="footer">
+            <span>Beachhead Ethereum · then broaden liquidity sources and chains</span>
+            <span>8 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Roadmap -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Roadmap</div>
+          </div>
+          <p class="kicker">What’s next</p>
+          <h2>Deepen the marketplace. Then expand the surface.</h2>
+          <div class="grid-3" style="margin-top: 22px">
+            <div class="card powder">
+              <h3>Now</h3>
+              <ul>
+                <li>Grow Ethereum volume and retention</li>
+                <li>Onboard more exchanges and liquidity sources</li>
+                <li>Harden Settlement, monitoring, and status</li>
+                <li>Strengthen docs and partner integrations</li>
+              </ul>
+            </div>
+            <div class="card ice">
+              <h3>Next</h3>
+              <ul>
+                <li>Additional chain support</li>
+                <li>Advanced routing features</li>
+                <li>Deeper intent / RFQ coverage</li>
+                <li>Partner and wallet distribution</li>
+              </ul>
+            </div>
+            <div class="card cream">
+              <h3>Later</h3>
+              <ul>
+                <li>Passive directional AMM for LPs</li>
+                <li>Mobile app</li>
+                <li>Broader multi-chain liquidity surface</li>
+                <li>Expanded developer / white-label surfaces</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 14px">
+            <h3>Near-term proof points</h3>
+            <p>
+              More integrated venues · measurable best-execution wins · reliable Settlement uptime ·
+              clear path from single-chain marketplace to multi-chain liquidity interface.
+            </p>
+          </div>
+          <div class="footer">
+            <span>Ship credibility first · expand after the marketplace flywheel is proven</span>
+            <span>9 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Team -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">Team</div>
+          </div>
+          <p class="kicker">Who’s building</p>
+          <h2>Small team. Shipping product.</h2>
+          <p class="body" style="margin-top: 12px">
+            A focused core team building the marketplace, Settlement layer, and exchange integrations end to end.
+          </p>
+          <div class="team-row">
+            <div class="member">
+              <strong>@SetteeCh</strong>
+              <span>Core team<br />x.com/SetteeCh</span>
+            </div>
+            <div class="member">
+              <strong>@ThanapolJao</strong>
+              <span>Core team<br />x.com/ThanapolJao</span>
+            </div>
+            <div class="member">
+              <strong>@Sutach_Pennysia</strong>
+              <span>Core team<br />x.com/Sutach_Pennysia</span>
+            </div>
+            <div class="member">
+              <strong>@ImmuTiaras</strong>
+              <span>Core team<br />x.com/ImmuTiaras</span>
+            </div>
+          </div>
+          <div class="card ice" style="margin-top: 20px">
+            <h3>Track record</h3>
+            <p>
+              1st place at the Sonic S-Tier Global Hackathon (2025) → live Ethereum Mainnet marketplace
+              with 24+ exchange integrations, open Settlement, and full product surface.
+            </p>
+          </div>
+          <div class="footer">
+            <span>Roles and bios available on request</span>
+            <span>10 / 11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Ask -->
+      <section class="slide">
+        <div class="pad">
+          <div class="top">
+            <img class="logo" src="pennysia-logo-light.png" alt="Pennysia" />
+            <div class="badge">The ask</div>
+          </div>
+          <p class="kicker">What we’re seeking</p>
+          <h2>Strategic leverage to scale the marketplace.</h2>
+          <div class="grid-3" style="margin-top: 22px">
+            <div class="card powder">
+              <h3>Capital &amp; partners</h3>
+              <p>
+                Strategic capital for multi-chain expansion, exchange onboarding, security depth, and GTM.
+              </p>
+            </div>
+            <div class="card ice">
+              <h3>Distribution</h3>
+              <p>
+                Venue integrations plus wallet, frontend, and protocol partners that need best-net execution.
+              </p>
+            </div>
+            <div class="card cream">
+              <h3>Security depth</h3>
+              <p>
+                Continued audits, formal methods, and production monitoring as volume and chains grow.
+              </p>
+            </div>
+          </div>
+          <div class="card black" style="margin-top: 16px">
+            <h3>One line</h3>
+            <p style="font-size: 18px; color: #fff; font-weight: 600; line-height: 1.4">
+              Open marketplace for Ethereum swaps — 24+ exchanges compete in parallel;
+              Pennysia executes the best net rate under one Settlement security layer.
+            </p>
+          </div>
+          <div class="links">
+            <div>Web <span>pennysia.com</span></div>
+            <div>App <span>app.pennysia.com</span></div>
+            <div>Docs <span>docs.pennysia.com</span></div>
+            <div>GitHub <span>github.com/Pennysia</span></div>
+            <div>Contact <span>hello@pennysia.com</span></div>
+          </div>
+          <div class="footer">
+            <span>Ready to demo · TOKEN2049 NEXUS · Singapore</span>
+            <span>11 / 11</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

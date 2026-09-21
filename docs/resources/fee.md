@@ -20,9 +20,13 @@ Set by the **winning exchange**, not Pennysia. Charged from your trade tokens or
 
 ### Network gas
 
-Paid in ETH to publish the transaction. Pennysia adds a **15% markup on the expected network gas cost** (estimated gas × base fee + tip) as extra native ETH when applicable.
+Paid in ETH to publish the transaction. Amount varies by network conditions and route.
 
-**Example:** ~$0.50 expected network gas → ~$0.575 total with markup. Varies by network conditions and route.
+### Protocol fee (Settlement)
+
+Pennysia charges a **flat $0.50 USD** protocol fee on Settlement swaps, converted to native ETH at the live ETH/USD spot and added as extra `msg.value`. The Review screen’s **Minimum received** already subtracts this fee when you buy native ETH.
+
+**Example:** At $2,500 ETH → about **0.0002 ETH**. Omitted on balance-tight max native ETH sells.
 
 ### Other costs
 
@@ -47,9 +51,9 @@ CoW Protocol, UniswapX, and Velora Delta routes take a partner fee (default 50 b
 
 InstaSwap and RocketX CEX deposit-address routes do not use Settlement or hard-intent partner hooks; fees follow each provider’s own breakdown (affiliate / partner fee + referrer attribution).
 
-### Gas markup
+### Protocol fee
 
-Small portion of native ETH above network gas. See [Network gas](#network-gas).
+Flat **$0.50** in native ETH on Settlement swaps. See [Protocol fee (Settlement)](#protocol-fee-settlement).
 
 ## For exchanges
 

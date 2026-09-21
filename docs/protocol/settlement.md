@@ -30,6 +30,7 @@ Anyone can call `executeSwap`. You do not need to trust a specific frontend.
 - **Single pull, ordered retry:** tokens are pulled once, then routes are tried until one works
 - **Permissionless:** any integrator can build routes; no allowlist on venues
 - **Surplus fee:** on SYNC routes, Pennysia keeps improvement above the quoted amount, capped at 10% of gross output
+- **Protocol fee:** flat $0.50 USD as native ETH on Settlement swaps (app-priced; see [Fees](../resources/fee.md))
 - **ETH ↔ WETH fast path:** direct wrap/unwrap without an external venue
 - **Reentrancy protection:** all entrypoints use a transient lock
 
@@ -115,9 +116,13 @@ This is hardcoded in the contract. It cannot be changed by the owner.
 
 No surplus fee on Settlement for SODAX intent opens. Fees on the SODAX side follow SODAX protocol rules.
 
+#### Protocol fee (app-side)
+
+Settlement swaps attach a flat **$0.50 USD** protocol fee as excess native ETH (`msg.value`), priced at the live ETH/USD spot by the webapp. It is swept to the fee recipient with other excess ETH. Omitted on balance-tight max native ETH sells. Not hardcoded in the Settlement contract.
+
 #### Excess ETH
 
-If you send more ETH than needed, the excess is swept to the fee recipient after settlement.
+If you send more ETH than needed (including the protocol fee), the excess is swept to the fee recipient after settlement.
 
 ### ETH and WETH
 
