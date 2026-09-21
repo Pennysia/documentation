@@ -14,7 +14,7 @@ outline: [2, 3]
 
 Pennysia unifies liquidity across aggregators, RFQs, intents, and decentralized markets to find the **best execution** for every trade. It is a hub that connects exchanges and liquidity platforms, on-chain and off-chain, so different venues can compete through one interface under a shared security model.
 
-**28 leading exchanges** are connected today. Enter a trade, review the quote, and confirm. Pennysia selects the source and executes the route for you.
+**29 leading exchanges** are connected today. Enter a trade, review the quote, and confirm. Pennysia selects the source and executes the route for you.
 
 <ExchangeLogos />
 

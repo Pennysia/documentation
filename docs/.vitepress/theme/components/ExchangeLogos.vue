@@ -50,6 +50,7 @@ const exchanges = [
   { id: "lifi", name: "LI.FI", logo: "/aggregators/lifi.png" },
   { id: "liquidmesh", name: "LiquidMesh", logo: "/aggregators/liquidmesh.png" },
   { id: "nordstern", name: "Nordstern", logo: "/aggregators/nordstern.png" },
+  { id: "odos", name: "Odos", logo: "/aggregators/odos.png" },
   { id: "okx_dex", name: "OKX DEX", logo: "/aggregators/okx_dex.png" },
   { id: "portals", name: "Portals", logo: "/aggregators/portals.png" },
   { id: "rango", name: "Rango", logo: "/aggregators/rango.png" },

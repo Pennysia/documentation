@@ -15,7 +15,7 @@ outline: [2, 3]
 ### Live now
 
 - Swap app on Ethereum Mainnet at [app.pennysia.com](https://app.pennysia.com)
-- 28 integrated exchanges (thousands of liquidity sources, 12,400+ tokens)
+- 29 integrated exchanges (thousands of liquidity sources, 12,400+ tokens)
 - Auto-fallback for failed routes
 - Worst Acceptable Price protection
 - Gas-aware quote ranking
@@ -39,6 +39,7 @@ Notable product and documentation updates.
 
 ### September 2026
 
+- Odos added as the 29th integrated exchange
 - RocketX added as the 27th and 28th integrated sources (Settlement SYNC + RocketX CEX deposit-address)
 - InstaSwap added as the 26th integrated exchange (deposit-address lane)
 - Bebop BopAMM added as the 25th integrated exchange
