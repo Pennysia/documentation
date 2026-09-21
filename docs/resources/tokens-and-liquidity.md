@@ -12,7 +12,7 @@ outline: [2, 3]
 
 ## Liquidity sources
 
-**29 exchanges** are queried on every swap. The best rate is selected automatically. You do not choose a source.
+**30 exchanges** are queried on every swap. The best rate is selected automatically. You do not choose a source.
 
 <ExchangeLogos />
 
