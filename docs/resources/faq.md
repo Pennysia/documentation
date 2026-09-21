@@ -14,7 +14,7 @@ outline: [2, 3]
 
 **What is Pennysia?**
 
-> **One interface for the world's liquidity.** Pennysia unifies liquidity across aggregators, RFQs, intents, and decentralized markets to find the best execution for every trade. It connects exchanges and liquidity platforms, on-chain and off-chain, through one interface under a shared security model. **29** venues are connected today. See [Overview](../get-started/overview.md).
+> **One interface for the world's liquidity.** Pennysia unifies liquidity across aggregators, RFQs, intents, and decentralized markets to find the best execution for every trade. It connects exchanges and liquidity platforms, on-chain and off-chain, through one interface under a shared security model. **30** venues are connected today. See [Overview](../get-started/overview.md).
 
 **How is Pennysia different from other swap apps?**
 
@@ -36,7 +36,7 @@ outline: [2, 3]
 
 **How many exchanges are connected?**
 
-> **29** with access to thousands of liquidity sources and **12,400+ tokens**. See [Tokens and Liquidity](./tokens-and-liquidity.md#liquidity-sources).
+> **30** with access to thousands of liquidity sources and **12,400+ tokens**. See [Tokens and Liquidity](./tokens-and-liquidity.md#liquidity-sources).
 
 **Do I need to pick an exchange?**
 
