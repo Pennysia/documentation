@@ -49,7 +49,7 @@ Does not apply to SODAX intent opens.
 
 CoW Protocol, UniswapX, and Velora Delta routes take a partner fee (default 50 bps) paid to the same [Settlement fee recipient](../protocol/deployments.md).
 
-InstaSwap and RocketX CEX deposit-address routes do not use Settlement or hard-intent partner hooks; fees follow each provider’s own breakdown (affiliate / partner fee + referrer attribution).
+InstaSwap and RocketX (CEX / Private) deposit-address routes do not use Settlement or hard-intent partner hooks; fees follow each provider’s own breakdown (affiliate / partner fee + referrer attribution).
 
 ### Protocol fee
 

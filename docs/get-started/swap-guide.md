@@ -42,7 +42,7 @@ CoW Protocol, UniswapX, Velora Delta. You sign an off-chain order; a solver fill
 
 ### Deposit-address (walletless)
 
-InstaSwap and RocketX CEX. You transfer sell tokens to an ephemeral deposit address; the operator fills asynchronously. No Settlement approval and not part of Auto Fallback.
+InstaSwap, RocketX CEX, and RocketX Private. You transfer sell tokens to an ephemeral deposit address; the operator fills asynchronously. No Settlement approval and not part of Auto Fallback.
 
 ## Settings
 

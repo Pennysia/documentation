@@ -56,6 +56,7 @@ const exchanges = [
   { id: "rango", name: "Rango", logo: "/aggregators/rango.png" },
   { id: "rocketx", name: "RocketX", logo: "/aggregators/rocketx.png", plate: "dark" as const },
   { id: "rocketx-walletless", name: "RocketX CEX", logo: "/aggregators/rocketx-walletless.png", plate: "dark" as const },
+  { id: "rocketx-privacy", name: "RocketX Private", logo: "/aggregators/rocketx-privacy.png", plate: "dark" as const },
   { id: "rubic", name: "Rubic", logo: "/aggregators/rubic.png" },
   { id: "sodax", name: "SODAX", logo: "/aggregators/sodax.png" },
   { id: "squid", name: "Squid", logo: "/aggregators/squid.png" },
