@@ -12,6 +12,7 @@ import DocLayout from "./DocLayout.vue";
 import LottiePlayer from "./components/LottiePlayer.vue";
 import TokenPair from "./components/TokenPair.vue";
 import ExchangeLogos from "./components/ExchangeLogos.vue";
+import OfficialLinks from "./components/OfficialLinks.vue";
 
 library.add(faCopy as any, faCheck as any);
 
@@ -24,5 +25,6 @@ export default {
     ctx.app.component("LottiePlayer", LottiePlayer);
     ctx.app.component("TokenPair", TokenPair);
     ctx.app.component("ExchangeLogos", ExchangeLogos);
+    ctx.app.component("OfficialLinks", OfficialLinks);
   },
 };

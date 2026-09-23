@@ -112,6 +112,13 @@ export default defineConfig({
     math: true,
   },
   vite: {
+    server: {
+      // Agent/editor writes on macOS often skip FSEvents; polling keeps HMR reliable.
+      watch: {
+        usePolling: true,
+        interval: 300,
+      },
+    },
     plugins: [
       {
         name: "serve-raw-md",
@@ -149,7 +156,6 @@ export default defineConfig({
     search: { provider: "local" },
 
     nav: [
-      { text: "App", link: "https://app.pennysia.com" },
       { text: "Website", link: "https://pennysia.com" },
       { text: "Status", link: "https://status.pennysia.com" },
       {
@@ -160,7 +166,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Get Started',
+        text: "Get Started",
         collapsed: false,
         items: [
           { text: "Overview", link: "/get-started/overview" },
@@ -170,7 +176,7 @@ export default defineConfig({
         ],
       },
       {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>Protocol',
+        text: "Protocol",
         collapsed: false,
         items: [
           { text: "Developer Guide", link: "/protocol/developer-guide" },
@@ -181,7 +187,7 @@ export default defineConfig({
         ],
       },
       {
-        text: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>Resources',
+        text: "Resources",
         collapsed: false,
         items: [
           { text: "About", link: "/resources/about" },
@@ -200,6 +206,14 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/Pennysia" },
       { icon: "linkedin", link: "https://www.linkedin.com/company/pennysia" },
       { icon: "youtube", link: "https://www.youtube.com/@PennysiaLabs" },
+      { icon: "facebook", link: "https://www.facebook.com/profile.php?id=61594649040356" },
+      { icon: "instagram", link: "https://www.instagram.com/pennysia_official/" },
+      { icon: "threads", link: "https://www.threads.com/@pennysia_official" },
+      { icon: "tiktok", link: "https://www.tiktok.com/@pennysia_official" },
+      { icon: "reddit", link: "https://www.reddit.com/user/Pennysia_Official/" },
+      { icon: "medium", link: "https://medium.com/@pennysia" },
+      { icon: "bluesky", link: "https://bsky.app/profile/pennysia.com" },
+      { icon: "farcaster", link: "https://farcaster.xyz/pennysiaofficial" },
     ],
     footer: {
       message:

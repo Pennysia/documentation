@@ -12,25 +12,13 @@ outline: [2, 3]
 
 ## Official links
 
-| Title | Url |
-| --- | --- |
-| Web App | [app.pennysia.com](https://app.pennysia.com) |
-| Website | [pennysia.com](https://pennysia.com) |
-| Documentation | [docs.pennysia.com](https://docs.pennysia.com) |
-| Status | [status.pennysia.com](https://status.pennysia.com) |
-| Github | [github.com/Pennysia](https://github.com/Pennysia) |
-| LinkedIn | [linkedin.com/company/pennysia](https://www.linkedin.com/company/pennysia) |
-| X/Twitter | [x.com/PennysiaLabs](https://x.com/PennysiaLabs) |
-| Telegram | [t.me/pennysiaprotocol](https://t.me/pennysiaprotocol) |
-| Discord | [discord.gg/G7rxGgZhXa](https://discord.gg/G7rxGgZhXa) |
-| Youtube | [youtube.com/@PennysiaLabs](https://www.youtube.com/channel/UCUKtUUwPZ9WOdiNvQAtJDdg/) |
-| Request Form | [Feedback form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform) |
+<OfficialLinks />
 
 ## Support
 
 - **Email:** formal inquiries and partnerships ([inbox below](#inquiry))
-- **Discord:** community support and developer chat
-- **Request form:** feedback and feature requests
+- **[Discord](https://discord.gg/G7rxGgZhXa):** community support and developer chat
+- **[Request form](https://docs.google.com/forms/d/e/1FAIpQLScnudg5yaAFL1ZOz28co1CJ202a3k2ntr3LhLa-rCohBQIorg/viewform):** feedback and feature requests
 
 ## Inquiry
 

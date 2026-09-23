@@ -1,8 +1,34 @@
 <template>
   <Layout>
     <template #sidebar-nav-before>
-      <div class="sidebar-social-slot" aria-hidden="false" />
       <div class="sidebar-search-slot" aria-hidden="false" />
+    </template>
+
+    <template #nav-bar-content-after>
+      <AppearanceSegment class="nav-appearance-segment" />
+      <a
+        class="nav-launch-app"
+        href="https://app.pennysia.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Launch App
+      </a>
+    </template>
+
+    <template #nav-screen-content-after>
+      <div class="nav-screen-appearance">
+        <span class="nav-screen-appearance__label">Appearance</span>
+        <AppearanceSegment />
+      </div>
+      <a
+        class="nav-screen-launch"
+        href="https://app.pennysia.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Launch App
+      </a>
     </template>
 
     <template #doc-before>
@@ -20,6 +46,7 @@
 import { watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import AppearanceSegment from './components/AppearanceSegment.vue'
 import CopyPageButton from './components/CopyPageButton.vue'
 import SectionTag from './components/SectionTag.vue'
 
@@ -42,14 +69,6 @@ function placeCompactNav() {
   const searchSlot = document.querySelector(
     '.sidebar-search-slot',
   ) as HTMLElement | null
-  const social =
-    (document.querySelector(
-      '.VPNavBar .content-body > .VPNavBarSocialLinks, .VPNavBar .content-body > .social-links',
-    ) as HTMLElement | null) ||
-    (document.querySelector('.sidebar-social-slot .VPSocialLinks, .sidebar-social-slot .VPNavBarSocialLinks') as HTMLElement | null)
-  const socialSlot = document.querySelector(
-    '.sidebar-social-slot',
-  ) as HTMLElement | null
   const contentBody = document.querySelector(
     '.VPNavBar .content-body',
   ) as HTMLElement | null
@@ -57,7 +76,7 @@ function placeCompactNav() {
   // lg compact: same breakpoint as custom.css (max-width: 959px / min-width: 960px)
   const isCompact = window.matchMedia('(max-width: 959px)').matches
 
-  // Belt-and-suspenders: never let top-nav App/Website/Status/Feedback show on mobile/tablet
+  // Belt-and-suspenders: never let top-nav Website/Status/Feedback show on mobile/tablet
   if (navLinks) {
     navLinks.style.display = isCompact ? 'none' : ''
   }
@@ -68,30 +87,6 @@ function placeCompactNav() {
       searchSlot.appendChild(search)
     } else if (isCompact && contentBody && search.parentElement !== contentBody) {
       contentBody.insertBefore(search, contentBody.firstElementChild)
-    }
-  }
-
-  // Social: under sidebar search on desktop; back in navbar on compact
-  if (social && socialSlot && contentBody) {
-    if (!isCompact) {
-      if (social.parentElement !== socialSlot) {
-        socialSlot.appendChild(social)
-      }
-    } else if (social.parentElement !== contentBody) {
-      // Restore near the end of content-body (before hamburger)
-      const hamburger = contentBody.querySelector('.VPNavBarHamburger')
-      if (hamburger) {
-        contentBody.insertBefore(social, hamburger)
-      } else {
-        contentBody.appendChild(social)
-      }
-    }
-  }
-
-  // Keep social slot above search slot in the sidebar DOM
-  if (searchSlot && socialSlot && searchSlot.parentElement === socialSlot.parentElement) {
-    if (socialSlot.nextElementSibling !== searchSlot) {
-      searchSlot.parentElement.insertBefore(socialSlot, searchSlot)
     }
   }
 
@@ -137,30 +132,133 @@ onBeforeUnmount(() => {
   margin: 0 0 0 auto;
 }
 
-.sidebar-search-slot,
-.sidebar-social-slot {
+.sidebar-search-slot {
   display: none;
 }
 
 @media (min-width: 960px) {
-  .sidebar-social-slot {
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 24px 0 20px;
-    padding: 0;
-    order: -2;
-  }
-
   .sidebar-search-slot {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    /* Divider below search separates from GET STARTED */
-    margin: 0 0 10px;
-    padding: 0 0 24px;
-    border-bottom: 1px solid var(--vp-c-divider);
+    margin: 0;
+    padding: 0 0 8px;
+    border-bottom: none;
     order: -1;
+  }
+}
+</style>
+
+<style>
+/* Hide VitePress default sun/moon switch — replaced by AppearanceSegment */
+.VPNavBarAppearance,
+.VPNavBar .appearance,
+.VPNavScreenAppearance {
+  display: none !important;
+}
+
+.nav-launch-app {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  margin-left: 12px;
+  margin-right: 4px;
+  padding: 0 0.875rem;
+  border-radius: 8px;
+  background: var(--vp-c-text-1);
+  color: var(--vp-c-bg);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 160ms ease;
+}
+
+.nav-launch-app:hover {
+  opacity: 0.88;
+  color: var(--vp-c-bg);
+}
+
+.nav-appearance-segment {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav-screen-launch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  margin: 20px 12px 16px;
+  border-radius: 10px;
+  background: var(--vp-c-text-1);
+  color: var(--vp-c-bg);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-screen-launch:hover {
+  opacity: 0.9;
+  color: var(--vp-c-bg);
+}
+
+.nav-screen-appearance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0 8px;
+  padding: 0 12px;
+}
+
+.nav-screen-appearance__label {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+/* Desktop: center Website / Status / Feedback on the screen;
+   appearance + CTA stay right */
+@media (min-width: 960px) {
+  /* content-body is position:relative and only spans the right side —
+     force static so absolute menu centers against full-width .content */
+  .VPNavBar .content-body {
+    position: static !important;
+    justify-content: flex-end !important;
+  }
+
+  .VPNavBar .content {
+    position: relative;
+  }
+
+  .VPNavBar .VPNavBarMenu {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .nav-appearance-segment {
+    margin-left: 16px;
+  }
+
+  .nav-screen-launch,
+  .nav-screen-appearance {
+    display: none !important;
+  }
+}
+
+/* Mobile + tablet: hide desktop CTA + appearance; keep them in the 3-dot screen */
+@media (max-width: 959px) {
+  .nav-launch-app,
+  .nav-appearance-segment {
+    display: none !important;
   }
 }
 </style>

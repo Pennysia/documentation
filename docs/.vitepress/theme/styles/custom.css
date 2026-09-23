@@ -657,32 +657,34 @@ border-radius: 15px;
 
 /* Expanded search (desktop) — lives in sidebar; brand hover ring */
 @media (min-width: 960px) {
+  /* Search slot owns the under-nav clearance (avoids double-spacing from sidebar padding) */
+  .VPSidebar {
+    padding-top: 0 !important;
+  }
+
   .VPNavBar .content-body > .VPNavBarSearch {
     display: none !important;
   }
 
-  /* Force social above search regardless of slot mount order */
+  /* Force search above sidebar groups */
   .VPSidebar .nav {
     display: flex !important;
     flex-direction: column !important;
   }
 
-  .VPSidebar .nav > .sidebar-social-slot {
-    order: -2 !important;
-  }
-
   .VPSidebar .nav > .sidebar-search-slot {
     order: -1 !important;
-  }
-
-  .sidebar-search-slot,
-  .VPSidebar .sidebar-search-slot {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
     display: block !important;
     box-sizing: border-box !important;
-    width: 100% !important;
-    margin: 0 0 10px !important;
-    padding: 0 0 24px !important;
-    border-bottom: 1px solid var(--vp-c-divider) !important;
+    width: auto !important;
+    margin: 0 -32px 0 !important;
+    /* Nav clearance + small filled gap under the logo */
+    padding: calc(var(--vp-nav-height) + 12px) 32px 8px !important;
+    border-bottom: none !important;
+    background-color: var(--vp-c-bg) !important;
   }
 
   .VPSidebar .VPNavBarSearch,
@@ -706,8 +708,8 @@ border-radius: 15px;
     padding: 0 10px 0 12px !important;
     justify-content: space-between !important;
     align-items: center !important;
-    border: 1px solid transparent !important;
-    border-radius: 9999px !important;
+    border: 1px solid var(--vp-c-divider) !important;
+    border-radius: 16px !important;
     background-color: var(--vp-c-bg-alt) !important;
     box-shadow: none !important;
     box-sizing: border-box !important;
@@ -768,6 +770,12 @@ border-radius: 15px;
   }
 
   /* Tighter gap under search before first sidebar section */
+  .VPSidebar .nav > .group:first-of-type,
+  .VPSidebar .nav > .VPSidebarItem.level-0:first-of-type {
+    margin-top: 0 !important;
+  }
+
+  .VPSidebar .nav > .group:first-of-type > .VPSidebarItem.level-0 > .item,
   .VPSidebar .nav > .VPSidebarItem.level-0:first-of-type > .item {
     margin-top: 0 !important;
   }
@@ -1162,53 +1170,14 @@ button.DocSearch-Button kbd {
   margin: 0 !important;
 }
 
-/* Small desktop (≥960): keep theme toggle in navbar (VitePress only shows it at ≥1280) */
+/* Small desktop (≥960): hide social icons everywhere in chrome (Official links page keeps its own) */
 @media (min-width: 960px) {
-  .VPNavBar .VPNavBarAppearance,
-  .VPNavBar .appearance {
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  /* Social icons above sidebar search — hide from top bar */
   .VPNavBar .VPNavBarSocialLinks,
   .VPNavBar .VPSocialLinks,
-  .VPNavBar .social-links {
+  .VPNavBar .social-links,
+  .VPSidebar .VPNavBarSocialLinks,
+  .VPSidebar .VPSocialLinks {
     display: none !important;
-  }
-
-  .sidebar-social-slot,
-  .VPSidebar .sidebar-social-slot {
-    display: flex !important;
-    width: 100% !important;
-    margin: 24px 0 20px !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4px;
-    border-bottom: none !important;
-  }
-
-  .VPSidebar .sidebar-social-slot .VPSocialLinks,
-  .VPSidebar .sidebar-social-slot .VPNavBarSocialLinks {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 0;
-  }
-
-  .VPSidebar .sidebar-social-slot .VPSocialLink {
-    width: 28px !important;
-    height: 28px !important;
-    margin: 0 !important;
-  }
-
-  .VPSidebar .sidebar-social-slot .VPSocialLink > span,
-  .VPSidebar .sidebar-social-slot .VPSocialLink svg {
-    width: 16px !important;
-    height: 16px !important;
   }
 }
 
@@ -1258,10 +1227,10 @@ button.DocSearch-Button kbd {
   opacity: 1 !important;
 }
 
-/* Compact nav (lg: mobile + tablet, <960): hide top-bar App / Website / Status /
+/* Compact nav (lg: mobile + tablet, <960): hide top-bar Website / Status /
    Feedback; keep them in the ⋮ screen. Menu stays in local-nav (far left).
    IMPORTANT: VPNavBarMenu also has class "menu" — never use `.content-body > .menu`
-   to show the sidebar Menu or it unhides App/Website/Status/Feedback. */
+   to show the sidebar Menu or it unhides Website/Status/Feedback. */
 @media (max-width: 959px) {
   .VPNavBar nav.VPNavBarMenu,
   .VPNavBar .VPNavBarMenu.menu,
@@ -1279,6 +1248,11 @@ button.DocSearch-Button kbd {
   /* VitePress hides the screen at ≥768 — keep it available through tablet */
   .VPNavScreen {
     display: block !important;
+  }
+
+  /* Socials live in sidebar / Official links — not in the ⋮ screen */
+  .VPNavScreenSocialLinks {
+    display: none !important;
   }
 
   .VPNavBar .content-body {
