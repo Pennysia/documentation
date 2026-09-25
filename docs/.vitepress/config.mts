@@ -203,6 +203,7 @@ export default defineConfig({
       { icon: "x", link: "https://x.com/PennysiaLabs" },
       { icon: "telegram", link: "https://t.me/pennysiaprotocol" },
       { icon: "discord", link: "https://discord.gg/G7rxGgZhXa" },
+      { icon: "whatsapp", link: "https://www.whatsapp.com/channel/0029VbDQs9q6rsQzmJ9kAh3f" },
       { icon: "github", link: "https://github.com/Pennysia" },
       { icon: "linkedin", link: "https://www.linkedin.com/company/pennysia" },
       { icon: "youtube", link: "https://www.youtube.com/@PennysiaLabs" },
