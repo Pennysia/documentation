@@ -22,15 +22,9 @@ Set by the **winning exchange**, not Pennysia. Charged from your trade tokens or
 
 Paid in ETH to publish the transaction. Amount varies by network conditions and route.
 
-### Protocol fee
-
-Pennysia charges a **flat $0.50 USD** protocol fee on swaps, converted to native ETH at the live ETH/USD rate. The Review screen’s **Minimum received** already subtracts this fee when you buy native ETH.
-
-**Example:** At $2,500 ETH → about **0.0002 ETH**. Omitted on balance-tight max native ETH sells.
-
 ## How Pennysia earns
 
-Revenue comes from the surplus fee on on-chain sources, partner fees on off-chain sources, and the [protocol fee](#protocol-fee) above.
+Revenue comes from the surplus fee on on-chain sources and partner fees on off-chain sources. There is **no flat protocol fee** on Settlement swaps.
 
 ### Surplus fee (on-chain sources)
 
