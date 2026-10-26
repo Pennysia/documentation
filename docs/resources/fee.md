@@ -32,8 +32,6 @@ When execution beats your quote, Pennysia keeps the improvement: **100% of surpl
 
 **Example:** Quoted 1,000 USDC, executed 1,030 USDC → surplus is 30 USDC. You receive the 1,000 you were quoted.
 
-Does not apply to cross-chain (SODAX) routes.
-
 ### Partner fee (off-chain sources)
 
 CoW Protocol, UniswapX, and Velora Delta take a partner fee (default 50 bps) paid to the same [Settlement fee recipient](../protocol/deployments.md).
